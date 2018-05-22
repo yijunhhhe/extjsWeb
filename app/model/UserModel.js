@@ -11,5 +11,12 @@
         { name: 'Type', type: 'string' },
         { name: 'Role', type: 'string' },
         { name: 'OrganizationId', type: 'string' },
-    ]
+        { name: 'IsDisabled', type: 'string' },
+        { name: 'IsDeleted', type: 'string' },
+        { name: 'Remark', type: 'string' },
+        { name: 'CreateBy', type: 'string' },
+        { name: 'ModifyBy', type: 'string' },
+        { name: 'ModifyDate', type: 'string' },
+        { name: 'CreateDate', type: 'string' },
+    ]    
 });

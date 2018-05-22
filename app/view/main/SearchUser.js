@@ -27,7 +27,9 @@
     columns:[
         { text: 'Account', dataIndex: 'AccountNo',  },
         { text: 'Password', dataIndex: 'Password', flex: 1,  },
+        { text: 'Role', dataIndex: 'Role', flex: 1, },
         { text: 'Name', dataIndex: 'Name', flex: 1, },
+        { text: 'IsDisabled', dataIndex: 'IsDisabled', flex: 1, },
     ],
 
     tbar:[

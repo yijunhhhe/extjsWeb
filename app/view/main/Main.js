@@ -96,8 +96,8 @@ Ext.define('WebAppClassic.view.main.Main', {
            xtype:'user'
 		}],
 	},{
-	    title: 'Search',
-	    iconCls: 'fa-user'
+	    //title: 'Search',
+	    //iconCls: 'fa-user'
 	}],
    
 });

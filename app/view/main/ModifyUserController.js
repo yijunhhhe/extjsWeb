@@ -8,6 +8,7 @@
         var addUserView = this.getView();
         var userModel = addUserView.down('#userfield').getViewModel().data;
         var userInfo = {};
+        //console.log(addUserView.down('#userfield').down('#checkbox').getValue().Role);
         //console.log(addUserView.down('#userfield').getViewModel().data);
         userInfo.AccountNo = userModel.AccountNo;
         userInfo.Password = userModel.Password;
@@ -15,7 +16,11 @@
         userInfo.Name = userModel.Name;
         userInfo.EnName = userModel.EnName;
         userInfo.Type = userModel.Type;
-        userInfo.Role = addUserView.down('#userfield').down('#checkbox').getValue().Role.toString();
+        if (addUserView.down('#userfield').down('#checkbox').getValue().Role != undefined) {
+            userInfo.Role = addUserView.down('#userfield').down('#checkbox').getValue().Role.toString();
+        } else {
+            userInfo.Role = "";
+        }
         userInfo.OrganizationId = userModel.OrganizationId;
         userInfo.IsDisabled = userModel.IsDisabled;
         userInfo.IsDeleted = userModel.IsDeleted;
@@ -35,7 +40,9 @@
                 var data = Ext.decode(Result.responseText);
                 console.log(data);
                 if (data.IsSuccess === true) {
-                    console.log("success");
+                    console.log("success");            
+                    addUserView.up('user').setActiveTab(0);
+                    addUserView.getForm().reset();
                 } else {
                     alert(data.ErrorMessage);
                 }
@@ -58,15 +65,20 @@
 
     selectUser: function () {
         //modify user
-        var edit = Ext.create({
-            xtype: 'edituser'
-        });
-        edit.show();
-        console.log(this.getView().getSelectionModel().getSelected().items.length);
-        var data = this.getView().getSelectionModel().getSelected().items[0].data;
-        var form = edit.down('#userfield').getForm();
-        data.Role = data.Role.split(",");
-        form.setValues(data);
+        if (this.getView().getSelectionModel().getSelected().items.length == 0) {
+            alert("please select an user");
+        } else {
+            var edit = Ext.create({
+                xtype: 'edituser'
+            });
+            edit.show();
+            console.log(this.getView().getSelectionModel().getSelected().items.length);
+            var data = this.getView().getSelectionModel().getSelected().items[0].data;
+            var form = edit.down('#userfield').getForm();
+            data.Role = data.Role.split(",");
+            form.setValues(data);
+        }
+       
     },
 
     modifyUser: function () {
