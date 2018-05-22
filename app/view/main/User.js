@@ -8,7 +8,7 @@
         'WebAppClassic.view.main.EditUser',
     ],
     scrollable: true,
-    
+    ui:'navigation',
     items: [{
         itemId:'searchuser',
         title: 'Search User',
