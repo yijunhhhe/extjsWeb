@@ -34,7 +34,7 @@
             success: function (Result) {
                 var data = Ext.decode(Result.responseText);
                 console.log(data);
-                if (data.IsSuccess == true) {
+                if (data.IsSuccess === true) {
                     console.log("success");
                 } else {
                     alert(data.ErrorMessage);

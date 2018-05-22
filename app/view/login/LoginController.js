@@ -18,7 +18,7 @@ Ext.define('WebAppClassic.view.login.LoginController', {
 		    headers: { 'Content-Type': 'application/json' },
 		    success: function (Result) {
 		        var data = Ext.decode(Result.responseText);
-		        if (data.ErrorMessage == "not exist") {
+		        if (data.ErrorMessage == "user doesnt exist") {
 		            alert("user does not exist");
 		        } else if(data.ErrorMessage == "incorrect password") {
 		            alert("incorrect password");
