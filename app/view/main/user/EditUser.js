@@ -1,11 +1,11 @@
-﻿Ext.define('WebAppClassic.view.main.EditUser', {
+﻿Ext.define('WebAppClassic.view.main.user.EditUser', {
     extend: 'Ext.form.Panel',
     xtype: 'edituser',
     //id: 'editId',
     requires: [
-        'WebAppClassic.view.main.UserField',
-        'WebAppClassic.view.main.ModifyUserController',
-        'WebAppClassic.view.main.UserViewModel',
+        'WebAppClassic.view.main.user.UserField',
+        'WebAppClassic.view.main.user.ModifyUserController',
+        'WebAppClassic.view.main.user.UserViewModel',
     ],
 
     title: 'Edit User',

@@ -2,7 +2,7 @@
     extend: 'Ext.data.Model',
    
     fields: [
-        { name:'id', type:'string' },
+        { name:'Id', type:'string' },
         { name: 'AccountNo', type: 'string' },
         { name: 'Password', type: 'string' },
         { name: 'EpcCode', type: 'string' },

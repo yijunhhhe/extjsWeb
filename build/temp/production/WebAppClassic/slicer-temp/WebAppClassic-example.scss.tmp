@@ -1,6 +1,6 @@
 $app-name:  dynamic( 'WebAppClassic' );
 $image-search-path: 'D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/build/production/WebAppClassic/resources';
-$theme-name:  dynamic( 'theme-triton' );
+$theme-name:  dynamic( 'theme-spotifext' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;
 $include-ext-abstractmanager: dynamic(true);;
@@ -876,23 +876,27 @@ $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-webappclassic-application: dynamic(true);;
 $include-webappclassic-model-mainmodel: dynamic(true);;
+$include-webappclassic-model-ordermodel: dynamic(true);;
 $include-webappclassic-model-usermodel: dynamic(true);;
 $include-webappclassic-model-users: dynamic(true);;
+$include-webappclassic-store-orderstore: dynamic(true);;
 $include-webappclassic-store-personnel: dynamic(true);;
 $include-webappclassic-store-userstore: dynamic(true);;
 $include-webappclassic-store-users: dynamic(true);;
 $include-webappclassic-view-login-login: dynamic(true);;
 $include-webappclassic-view-login-logincontroller: dynamic(true);;
 $include-webappclassic-view-login-loginviewmodel: dynamic(true);;
-$include-webappclassic-view-main-adduser: dynamic(true);;
 $include-webappclassic-view-main-list: dynamic(true);;
 $include-webappclassic-view-main-main: dynamic(true);;
 $include-webappclassic-view-main-maincontroller: dynamic(true);;
-$include-webappclassic-view-main-modifyusercontroller: dynamic(true);;
-$include-webappclassic-view-main-searchuser: dynamic(true);;
-$include-webappclassic-view-main-user: dynamic(true);;
-$include-webappclassic-view-main-userfield: dynamic(true);;
-$include-webappclassic-view-main-userviewmodel: dynamic(true);;
+$include-webappclassic-view-main-purchaseorder-order: dynamic(true);;
+$include-webappclassic-view-main-user-adduser: dynamic(true);;
+$include-webappclassic-view-main-user-edituser: dynamic(true);;
+$include-webappclassic-view-main-user-modifyusercontroller: dynamic(true);;
+$include-webappclassic-view-main-user-searchuser: dynamic(true);;
+$include-webappclassic-view-main-user-user: dynamic(true);;
+$include-webappclassic-view-main-user-userfield: dynamic(true);;
+$include-webappclassic-view-main-user-userviewmodel: dynamic(true);;
 
 
 /* ======================== ETC ======================== */
@@ -960,6 +964,14 @@ $current-package: 'theme-triton';
 $current-resource-root: $theme-triton-resource-root;
 $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/classic/theme-triton/sass/etc/all';
+
+/* including package theme-spotifext */
+$theme-spotifext-resource-root: '' !default;
+$theme-spotifext-resource-path: 'images' !default;
+$current-package: 'theme-spotifext';
+$current-resource-root: $theme-spotifext-resource-root;
+$relative-image-path-for-uis: $theme-spotifext-resource-path;
+@import '../../../../../packages/local/theme-spotifext/sass/etc/all';
 
 /* including package WebAppClassic */
 $WebAppClassic-resource-root: '' !default;
@@ -1141,6 +1153,18 @@ $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/classic/theme-triton/sass/var/tab/Tab';
 @import '../../../../../ext/classic/theme-triton/sass/var/tab/Bar';
 @import '../../../../../ext/classic/theme-triton/sass/var/tree/View';
+
+/* including package theme-spotifext */
+$theme-spotifext-resource-root: '' !default;
+$theme-spotifext-resource-path: 'images' !default;
+$current-package: 'theme-spotifext';
+$current-resource-root: $theme-spotifext-resource-root;
+$relative-image-path-for-uis: $theme-spotifext-resource-path;
+@import '../../../../../packages/local/theme-spotifext/sass/var/Component';
+@import '../../../../../packages/local/theme-spotifext/sass/var/button/Button';
+@import '../../../../../packages/local/theme-spotifext/sass/var/form/field/Base';
+@import '../../../../../packages/local/theme-spotifext/sass/var/grid/Panel';
+@import '../../../../../packages/local/theme-spotifext/sass/var/tab/Panel';
 
 /* including package WebAppClassic */
 $WebAppClassic-resource-root: '' !default;
@@ -1341,6 +1365,15 @@ $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/classic/theme-triton/sass/src/tab/Tab';
 @import '../../../../../ext/classic/theme-triton/sass/src/tree/View';
 @import '../../../../../ext/classic/theme-triton/sass/src/window/Toast';
+
+/* including package theme-spotifext */
+$theme-spotifext-resource-root: '' !default;
+$theme-spotifext-resource-path: 'images' !default;
+$current-package: 'theme-spotifext';
+$current-resource-root: $theme-spotifext-resource-root;
+$relative-image-path-for-uis: $theme-spotifext-resource-path;
+@import '../../../../../packages/local/theme-spotifext/sass/src/button/Button';
+@import '../../../../../packages/local/theme-spotifext/sass/src/tab/Panel';
 
 /* including package WebAppClassic */
 $WebAppClassic-resource-root: '' !default;

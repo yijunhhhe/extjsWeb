@@ -1,10 +1,10 @@
-﻿Ext.define("WebAppClassic.view.main.SearchUser", {
+﻿Ext.define("WebAppClassic.view.main.user.SearchUser", {
     extend: 'Ext.grid.Panel',
     xtype: 'searchuser',
     
     requires: [
-        'WebAppClassic.view.main.ModifyUserController',
-        'WebAppClassic.view.main.UserViewModel',
+        'WebAppClassic.view.main.user.ModifyUserController',
+        'WebAppClassic.view.main.user.UserViewModel',
         'WebAppClassic.store.UserStore',
     ],
 

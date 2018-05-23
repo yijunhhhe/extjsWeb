@@ -12,19 +12,12 @@ Ext.define('WebAppClassic.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-        'WebAppClassic.view.main.AddUser',
-        'WebAppClassic.view.main.MainController',
-        'WebAppClassic.view.main.MainModel',
-        'WebAppClassic.view.main.List',
-        'WebAppClassic.view.main.UserViewModel',
-        'WebAppClassic.view.main.ModifyUserController',
-        'WebAppClassic.view.main.SearchUser',
-        'WebAppClassic.store.UserStore',
-        'WebAppClassic.view.main.User'
+        'WebAppClassic.view.main.MainController', 
+       'WebAppClassic.view.main.purchaseorder.Order',    
+        'WebAppClassic.view.main.user.User'
     ],
     
     controller: 'main',
-    viewModel: 'main',
 	plugins: 'viewport',
     
 	ui: 'navigation',
@@ -40,9 +33,9 @@ Ext.define('WebAppClassic.view.main.Main', {
 	        align: 'stretchmax'
 	    },
 	    title: {
-	        bind: {
-	            text: 'RFID'
-	        },
+	       
+	       text: 'RFID',
+	        
 	        flex: 0
 	    },
 	    
@@ -100,8 +93,10 @@ Ext.define('WebAppClassic.view.main.Main', {
            xtype:'user'
 		}],
 	},{
-	    //title: 'Search',
-	    //iconCls: 'fa-user'
+	    title: 'Orders',
+	    items: [{
+            xtype:'order'
+	    }],
 	}],
    
 });

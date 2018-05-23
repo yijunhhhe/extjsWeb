@@ -1,4 +1,4 @@
-﻿Ext.define('WebAppClassic.view.main.UserViewModel', {
+﻿Ext.define('WebAppClassic.view.main.user.UserViewModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.userViewModel',
     required:[

@@ -1,387 +1,3 @@
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/feature/Grouping.scss:14 */
-.x-grid-group-hd-collapsible .x-grid-group-title {
-    padding: 0 0 0 24px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:125 */
-.x-grid-group-hd-collapsible .x-grid-group-title:before {
-    content: "\f146";
-    font-size: 14px;
-    font-family: FontAwesome;
-    color: #919191;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/feature/Grouping.scss:30 */
-.x-rtl.x-grid-view .x-grid-group-hd-collapsible .x-grid-group-title {
-    background-position: right center;
-    padding: 0 24px 0 0;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/feature/Grouping.scss:36 */
-.x-grid-group-title {
-    color: #79ac38;
-    font: 400 12px/14px 'Montserrat', helvetica, arial, verdana, sans-serif;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:125 */
-.x-grid-group-hd-collapsed .x-grid-group-title:before {
-    content: "\f0fe";
-    font-size: 14px;
-    font-family: FontAwesome;
-    color: #919191;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/feature/Grouping.scss:54 */
-.x-group-by-icon {
-    font: 16px/24px ExtJS;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:125 */
-.x-group-by-icon:before {
-    content: "\e607";
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/feature/RowBody.scss:1 */
-.x-grid-rowbody {
-    font: 300 12px/28px 'Montserrat', helvetica, arial, verdana, sans-serif;
-    padding: 5px 10px 5px 10px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/feature/Summary.scss:1 */
-.x-docked-summary {
-    border-width: 1px;
-    border-color: #d0d0d0;
-    border-style: solid;
-    background: #121314!important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/feature/Summary.scss:6 */
-.x-docked-summary .x-grid-table {
-    border: 0 none;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/feature/Summary.scss:14 */
-.x-grid-row-summary .x-grid-cell,
-.x-grid-row-summary .x-grid-rowwrap,
-.x-grid-row-summary .x-grid-cell-rowbody {
-    border-color: #2a2d2f;
-    background-color: #121314 !important;
-    border-top: 1px solid #2a2d2f;
-    font: 300 12px/28px 'Montserrat', helvetica, arial, verdana, sans-serif;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/feature/Summary.scss:26 */
-.x-docked-summary .x-grid-item,
-.x-docked-summary .x-grid-row-summary .x-grid-cell {
-    border-bottom: 0 none;
-    border-top: 0 none;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/feature/Summary.scss:34 */
-.x-grid-row-summary .x-grid-cell-inner-row-expander {
-    display: none;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:317 */
-.x-menu-default {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #626365;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:323 */
-.x-menu-body-default {
-    background: #000;
-    padding: 0;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:328 */
-.x-menu-icon-separator-default {
-    left: 32px;
-    border-left: solid 1px #000;
-    background-color: #fff;
-    width: 1px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:335 */
-.x-menu-icon-separator-default.x-rtl {
-    left: auto;
-    right: 32px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:342 */
-.x-menu-item-default {
-    border-width: 0;
-    cursor: pointer;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:346 */
-.x-menu-item-default.x-menu-item-active {
-    background-image: none;
-    background-color: #222326;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:358 */
-.x-nlg .x-menu-item-default.x-menu-item-active {
-    background: #222326 repeat-x left top;
-    background-image: url(images/menu/menu-item-default-active-bg.gif);
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:365 */
-.x-menu-item-default.x-menu-item-disabled {
-    cursor: default;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:368 */
-.x-menu-item-default.x-menu-item-disabled a {
-    cursor: default;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:373 */
-.x-menu-item-default.x-menu-item-separator {
-    height: 1px;
-    border-top: solid 1px #000;
-    background-color: #fff;
-    margin: 2px 0;
-    padding: 0;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:381 */
-.x-menu-item-default.x-menu-item-disabled {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    opacity: 0.5;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:386 */
-.x-ie9m .x-menu-item-default.x-menu-item-disabled .x-menu-item-icon-ui {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    opacity: 0.5;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:390 */
-.x-ie9m .x-menu-item-default.x-menu-item-disabled .x-menu-item-text-default {
-    background-color: transparent;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:400 */
-.x-menu-item-default .x-form-item-label {
-    font-size: 12px;
-    color: #adafb2;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:407 */
-.x-menu-item-text-default,
-.x-menu-item-cmp-default {
-    margin: 0 8px 0 8px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:412 */
-.x-menu-item-text-default {
-    font: 300 12px 'Montserrat', helvetica, arial, verdana, sans-serif;
-    line-height: 31px;
-    padding-top: 1px;
-    color: #adafb2;
-    cursor: pointer;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:424 */
-.x-menu-item-active .x-menu-item-text-default {
-    color: #fff;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:429 */
-.x-menu-item-text-default.x-menu-item-indent {
-    margin-left: 41px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:433 */
-.x-menu-item-text-default.x-menu-item-indent-no-separator {
-    margin-left: 36px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:437 */
-.x-menu-item-text-default.x-menu-item-indent-right-icon {
-    margin-right: 40px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:441 */
-.x-menu-item-text-default.x-menu-item-indent-right-arrow {
-    margin-right: 29px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:445 */
-.x-menu-item-disabled .x-menu-item-text-default {
-    cursor: default;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:452 */
-.x-rtl.x-menu-item-text-default,
-.x-rtl.x-menu-item-cmp-default {
-    margin: 0 8px 0 8px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:458 */
-.x-rtl.x-menu-item-text-default.x-menu-item-indent {
-    margin-right: 41px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:462 */
-.x-rtl.x-menu-item-text-default.x-menu-item-indent-no-separator {
-    margin-right: 36px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:466 */
-.x-rtl.x-menu-item-text-default.x-menu-item-indent-right-icon {
-    margin-left: 40px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:470 */
-.x-rtl.x-menu-item-text-default.x-menu-item-indent-right-arrow {
-    margin-left: 29px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:477 */
-.x-menu-item-indent-default {
-    margin-left: 41px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:480 */
-.x-menu-item-indent-default.x-rtl {
-    margin-left: 0;
-    margin-right: 41px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:487 */
-.x-menu-item-icon-default {
-    width: 24px;
-    height: 24px;
-    top: 4px;
-    left: 4px;
-    line-height: 24px;
-    font-size: 16px;
-    color: #919191;
-    background-position: center center;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:496 */
-.x-menu-item-active .x-menu-item-icon-default {
-    color: #fff;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:502 */
-.x-ie8 .x-menu-item-active .x-menu-item-icon-default {
-    color: #fff !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:511 */
-.x-menu-item-icon-default.x-rtl {
-    left: auto;
-    right: 4px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:515 */
-.x-menu-item-active .x-menu-item-icon-default.x-rtl {
-    right: 4px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:534 */
-.x-ie8 .x-menu-item-icon-default.x-menu-item-glyph {
-    color: #919191;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:542 */
-.x-menu-item-icon-default.x-menu-item-icon-right {
-    width: 24px;
-    height: 24px;
-    top: 4px;
-    right: 4px;
-    left: auto;
-    background-position: center center;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:551 */
-.x-menu-item-icon-default.x-menu-item-icon-right.x-rtl {
-    right: auto;
-    left: 4px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:555 */
-.x-menu-item-active .x-menu-item-icon-default.x-menu-item-icon-right.x-rtl {
-    left: 4px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:562 */
-.x-menu-item-icon-default.x-menu-item-checkbox {
-    color: #919191;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:572 */
-.x-menu-item-active .x-menu-item-icon-default.x-menu-item-checkbox {
-    color: #fff;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:578 */
-.x-menu-item-checked .x-menu-item-icon-default.x-menu-item-checkbox {
-    font: 18px/24px FontAwesome;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:125 */
-.x-menu-item-checked .x-menu-item-icon-default.x-menu-item-checkbox:before {
-    content: "\f046";
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:586 */
-.x-menu-item-unchecked .x-menu-item-icon-default.x-menu-item-checkbox {
-    font: 18px/24px FontAwesome;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:125 */
-.x-menu-item-unchecked .x-menu-item-icon-default.x-menu-item-checkbox:before {
-    content: "\f096";
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:601 */
-.x-menu-item-active .x-menu-item-icon-default.x-menu-group-icon {
-    color: #fff;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:607 */
-.x-menu-item-checked .x-menu-item-icon-default.x-menu-group-icon {
-    font: 18px/24px FontAwesome;
-    background-image: url(images/menu/default-group-checked.png);
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:125 */
-.x-menu-item-checked .x-menu-item-icon-default.x-menu-group-icon:before {
-    content: "\f00c";
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:614 */
-.x-menu-item-unchecked .x-menu-item-icon-default.x-menu-group-icon {
-    background-image: none;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:619 */
-.x-menu-item-unchecked .x-menu-item-icon-default.x-menu-group-icon:before {
-    content: '';
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:629 */
-.x-menu-item-arrow-default {
-    width: 16px;
-    height: 16px;
-    top: 8px;
-    right: 0;
-    margin: 0 4px 0;
-    font: 16px/1 FontAwesome;
-    color: #919191;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:125 */
-.x-menu-item-arrow-default:before {
-    content: "\f0da";
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:641 */
-.x-menu-item-active .x-menu-item-arrow-default {
-    color: #fff;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:649 */
-.x-menu-item-active .x-menu-item-arrow-default {
-    top: 8px;
-    right: 0;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:655 */
-.x-menu-item-arrow-default.x-rtl {
-    left: 0;
-    right: auto;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/menu/Menu.scss:663 */
-.x-menu-item-active .x-menu-item-arrow-default.x-rtl {
-    left: 0;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:170 */
-.x-menu-default-scroller .x-box-scroller-body-horizontal {
-    margin-left: 16px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:176 */
-.x-menu-default-vertical-scroller .x-box-scroller-body-vertical {
-    margin-top: 24px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:181 */
-.x-box-scroller-menu-default {
-    cursor: pointer;
-    color: #919191;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    opacity: 0.5;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:191 */
-.x-box-scroller-menu-default.x-box-scroller-hover {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-    opacity: 0.6;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:197 */
-.x-box-scroller-menu-default.x-box-scroller-pressed {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-    opacity: 0.7;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:203 */
-.x-box-scroller-menu-default.x-box-scroller-disabled {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
-    opacity: 0.25;
-    cursor: default;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:292 */
-.x-box-scroller-menu-default.x-box-scroller-top,
-.x-box-scroller-menu-default.x-box-scroller-bottom {
-    height: 16px;
-    width: 16px;
-    left: 50%;
-    margin-left: -8px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:319 */
-.x-box-scroller-menu-default.x-box-scroller-top {
-    margin-top: 4px;
-    margin-right: 0;
-    margin-bottom: 4px;
-    font: 16px/16px FontAwesome;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:125 */
 .x-box-scroller-menu-default.x-box-scroller-top:before {
     content: "\f077";
@@ -673,12 +289,6 @@
 .x-grid-row-editor-buttons-default-bottom-mc {
     padding: 5px 1px 1px 1px;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-grid-row-editor-buttons-default-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:0 5px 5px 5px, corners:url(images/grid-row-editor-buttons/grid-row-editor-buttons-default-bottom-corners.gif), sides:url(images/grid-row-editor-buttons/grid-row-editor-buttons-default-bottom-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-grid-row-editor-buttons-default-top {
     -moz-border-radius-topleft: 5px;
@@ -790,12 +400,6 @@
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-grid-row-editor-buttons-default-top-mc {
     padding: 1px 1px 5px 1px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-grid-row-editor-buttons-default-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:5px 5px 0 5px, corners:url(images/grid-row-editor-buttons/grid-row-editor-buttons-default-top-corners.gif), sides:url(images/grid-row-editor-buttons/grid-row-editor-buttons-default-top-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/grid/plugin/RowEditing.scss:98 */
 .x-grid-row-editor-buttons {
@@ -1449,12 +1053,6 @@ div.x-border-layout-ct {
 .x-tab-default-top-mc {
     padding: 8px 10px 8px 10px;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-default-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:0 0 0 0" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-tab-default-bottom {
     -moz-border-radius-topleft: 0;
@@ -1549,12 +1147,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-tab-default-bottom-mc {
     padding: 8px 10px 8px 10px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-default-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:0 0 0 0" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-tab-default-left {
@@ -1651,12 +1243,6 @@ div.x-border-layout-ct {
 .x-tab-default-left-mc {
     padding: 8px 10px 8px 10px;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-default-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:0 0 0 0" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-tab-default-right {
     -moz-border-radius-topleft: 0;
@@ -1751,12 +1337,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-tab-default-right-mc {
     padding: 8px 10px 8px 10px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-default-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:0 0 0 0" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1587 */
 .x-tab-default {
@@ -2659,150 +2239,6 @@ div.x-border-layout-ct {
     padding-right: 0px;
     padding-left: 16px;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-default-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-top-focus-corners.gif), sides:url(images/tab/tab-default-top-focus-sides.gif), frame-bg:url(images/tab/tab-default-top-focus-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-default-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-right-focus-corners.gif), sides:url(images/tab/tab-default-right-focus-sides.gif), frame-bg:url(images/tab/tab-default-right-focus-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-default-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-bottom-focus-corners.gif), sides:url(images/tab/tab-default-bottom-focus-sides.gif), frame-bg:url(images/tab/tab-default-bottom-focus-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-default-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-left-focus-corners.gif), sides:url(images/tab/tab-default-left-focus-sides.gif), frame-bg:url(images/tab/tab-default-left-focus-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-over.x-tab-default-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-top-over-corners.gif), sides:url(images/tab/tab-default-top-over-sides.gif), frame-bg:url(images/tab/tab-default-top-over-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-over.x-tab-default-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-right-over-corners.gif), sides:url(images/tab/tab-default-right-over-sides.gif), frame-bg:url(images/tab/tab-default-right-over-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-over.x-tab-default-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-bottom-over-corners.gif), sides:url(images/tab/tab-default-bottom-over-sides.gif), frame-bg:url(images/tab/tab-default-bottom-over-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-over.x-tab-default-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-left-over-corners.gif), sides:url(images/tab/tab-default-left-over-sides.gif), frame-bg:url(images/tab/tab-default-left-over-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-active.x-tab-default-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-top-active-corners.gif), sides:url(images/tab/tab-default-top-active-sides.gif), frame-bg:url(images/tab/tab-default-top-active-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-active.x-tab-default-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-right-active-corners.gif), sides:url(images/tab/tab-default-right-active-sides.gif), frame-bg:url(images/tab/tab-default-right-active-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-active.x-tab-default-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-bottom-active-corners.gif), sides:url(images/tab/tab-default-bottom-active-sides.gif), frame-bg:url(images/tab/tab-default-bottom-active-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-active.x-tab-default-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-left-active-corners.gif), sides:url(images/tab/tab-default-left-active-sides.gif), frame-bg:url(images/tab/tab-default-left-active-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-over.x-tab-default-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-top-focus-over-corners.gif), sides:url(images/tab/tab-default-top-focus-over-sides.gif), frame-bg:url(images/tab/tab-default-top-focus-over-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-over.x-tab-default-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-right-focus-over-corners.gif), sides:url(images/tab/tab-default-right-focus-over-sides.gif), frame-bg:url(images/tab/tab-default-right-focus-over-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-over.x-tab-default-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-bottom-focus-over-corners.gif), sides:url(images/tab/tab-default-bottom-focus-over-sides.gif), frame-bg:url(images/tab/tab-default-bottom-focus-over-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-over.x-tab-default-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-left-focus-over-corners.gif), sides:url(images/tab/tab-default-left-focus-over-sides.gif), frame-bg:url(images/tab/tab-default-left-focus-over-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-active.x-tab-default-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-top-focus-active-corners.gif), sides:url(images/tab/tab-default-top-focus-active-sides.gif), frame-bg:url(images/tab/tab-default-top-focus-active-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-active.x-tab-default-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-right-focus-active-corners.gif), sides:url(images/tab/tab-default-right-focus-active-sides.gif), frame-bg:url(images/tab/tab-default-right-focus-active-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-active.x-tab-default-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-bottom-focus-active-corners.gif), sides:url(images/tab/tab-default-bottom-focus-active-sides.gif), frame-bg:url(images/tab/tab-default-bottom-focus-active-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-active.x-tab-default-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-left-focus-active-corners.gif), sides:url(images/tab/tab-default-left-focus-active-sides.gif), frame-bg:url(images/tab/tab-default-left-focus-active-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-disabled.x-tab-default-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-top-disabled-corners.gif), sides:url(images/tab/tab-default-top-disabled-sides.gif), frame-bg:url(images/tab/tab-default-top-disabled-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-disabled.x-tab-default-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-right-disabled-corners.gif), sides:url(images/tab/tab-default-right-disabled-sides.gif), frame-bg:url(images/tab/tab-default-right-disabled-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-disabled.x-tab-default-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-bottom-disabled-corners.gif), sides:url(images/tab/tab-default-bottom-disabled-sides.gif), frame-bg:url(images/tab/tab-default-bottom-disabled-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-disabled.x-tab-default-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-default-left-disabled-corners.gif), sides:url(images/tab/tab-default-left-disabled-sides.gif), frame-bg:url(images/tab/tab-default-left-disabled-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Bar.scss:158 */
 .x-tab-bar-default {
     background-color: #000;
@@ -3011,30 +2447,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Bar.scss:560 */
 .x-box-scroller-tab-bar-default .x-ie8 .x-box-scroller-plain {
     background-color: #fff;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-bar-default-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-bar-default-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:top" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-bar-default-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:right" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-bar-default-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:left" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/toolbar/Breadcrumb.scss:158 */
 .x-breadcrumb-btn-default {
@@ -3471,12 +2883,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-plain-toolbar-small-mc {
     padding: 7px 7px 7px 7px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-plain-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:1px 1px 1px 1px" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-plain-toolbar-small {
@@ -3926,42 +3332,6 @@ div.x-border-layout-ct {
     border-width: 0;
     border-color: #79ac38;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-plain-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-small-focus-corners.gif), sides:url(images/btn/btn-plain-toolbar-small-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-plain-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-small-over-corners.gif), sides:url(images/btn/btn-plain-toolbar-small-over-sides.gif), frame-bg:url(images/btn/btn-plain-toolbar-small-over-fbg.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-plain-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-small-focus-over-corners.gif), sides:url(images/btn/btn-plain-toolbar-small-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-plain-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-small-pressed-corners.gif), sides:url(images/btn/btn-plain-toolbar-small-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-plain-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-small-focus-pressed-corners.gif), sides:url(images/btn/btn-plain-toolbar-small-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-plain-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-small-disabled-corners.gif), sides:url(images/btn/btn-plain-toolbar-small-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-plain-toolbar-small-cell > .x-grid-cell-inner {
     padding-top: 5px;
@@ -4058,12 +3428,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-plain-toolbar-medium-mc {
     padding: 8px 8px 8px 8px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-plain-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:1px 1px 1px 1px" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-plain-toolbar-medium {
@@ -4513,42 +3877,6 @@ div.x-border-layout-ct {
     border-width: 0;
     border-color: #79ac38;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-plain-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-medium-focus-corners.gif), sides:url(images/btn/btn-plain-toolbar-medium-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-plain-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-medium-over-corners.gif), sides:url(images/btn/btn-plain-toolbar-medium-over-sides.gif), frame-bg:url(images/btn/btn-plain-toolbar-medium-over-fbg.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-plain-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-medium-focus-over-corners.gif), sides:url(images/btn/btn-plain-toolbar-medium-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-plain-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-medium-pressed-corners.gif), sides:url(images/btn/btn-plain-toolbar-medium-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-plain-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-medium-focus-pressed-corners.gif), sides:url(images/btn/btn-plain-toolbar-medium-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-plain-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-medium-disabled-corners.gif), sides:url(images/btn/btn-plain-toolbar-medium-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-plain-toolbar-medium-cell > .x-grid-cell-inner {
     padding-top: 2px;
@@ -4645,12 +3973,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-plain-toolbar-large-mc {
     padding: 9px 9px 9px 9px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-plain-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:1px 1px 1px 1px" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-plain-toolbar-large {
@@ -5100,42 +4422,6 @@ div.x-border-layout-ct {
     border-width: 0;
     border-color: #79ac38;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-plain-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-large-focus-corners.gif), sides:url(images/btn/btn-plain-toolbar-large-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-plain-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-large-over-corners.gif), sides:url(images/btn/btn-plain-toolbar-large-over-sides.gif), frame-bg:url(images/btn/btn-plain-toolbar-large-over-fbg.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-plain-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-large-focus-over-corners.gif), sides:url(images/btn/btn-plain-toolbar-large-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-plain-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-large-pressed-corners.gif), sides:url(images/btn/btn-plain-toolbar-large-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-plain-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-large-focus-pressed-corners.gif), sides:url(images/btn/btn-plain-toolbar-large-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-plain-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-plain-toolbar-large-disabled-corners.gif), sides:url(images/btn/btn-plain-toolbar-large-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-plain-toolbar-large-cell > .x-grid-cell-inner {
     padding-top: 0;
@@ -5342,30 +4628,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/panel/Panel.scss:745 */
 .x-panel .x-panel-header-light-collapsed-border-left {
     border-right-width: 1px !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:top" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:right" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:left" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/panel/Panel.scss:781 */
 .x-panel-header-light-horizontal .x-tool-after-title {
@@ -5801,12 +5063,6 @@ div.x-border-layout-ct {
 .x-panel-light-framed-mc {
     padding: 0px 0px 0px 0px;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-light-framed:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/panel/panel-light-framed-corners.gif), sides:url(images/panel/panel-light-framed-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-panel-header-light-framed-top {
     -moz-border-radius-topleft: 0;
@@ -5918,12 +5174,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-panel-header-light-framed-top-mc {
     padding: 10px 14px 10px 14px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-framed-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 0 2px, corners:url(images/panel-header/panel-header-light-framed-top-corners.gif), sides:url(images/panel-header/panel-header-light-framed-top-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-panel-header-light-framed-right {
@@ -6051,12 +5301,6 @@ div.x-border-layout-ct {
 .x-panel-header-light-framed-right-mc {
     padding: 14px 10px 14px 10px;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-framed-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 0, corners:url(images/panel-header/panel-header-light-framed-right-corners.gif), corners-rtl:url(images/panel-header/panel-header-light-framed-right-corners-rtl.gif), sides:url(images/panel-header/panel-header-light-framed-right-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-panel-header-light-framed-bottom {
     -moz-border-radius-topleft: 0;
@@ -6168,12 +5412,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-panel-header-light-framed-bottom-mc {
     padding: 10px 14px 10px 14px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-framed-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:0 2px 2px 2px, corners:url(images/panel-header/panel-header-light-framed-bottom-corners.gif), sides:url(images/panel-header/panel-header-light-framed-bottom-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-panel-header-light-framed-left {
@@ -6301,12 +5539,6 @@ div.x-border-layout-ct {
 .x-panel-header-light-framed-left-mc {
     padding: 14px 10px 14px 10px;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-framed-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 0 2px 2px, corners:url(images/panel-header/panel-header-light-framed-left-corners.gif), corners-rtl:url(images/panel-header/panel-header-light-framed-left-corners-rtl.gif), sides:url(images/panel-header/panel-header-light-framed-left-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-panel-header-light-framed-collapsed-top {
     -moz-border-radius-topleft: 0;
@@ -6418,12 +5650,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-panel-header-light-framed-collapsed-top-mc {
     padding: 10px 14px 10px 14px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-framed-collapsed-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/panel-header/panel-header-light-framed-collapsed-top-corners.gif), sides:url(images/panel-header/panel-header-light-framed-collapsed-top-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-panel-header-light-framed-collapsed-right {
@@ -6551,12 +5777,6 @@ div.x-border-layout-ct {
 .x-panel-header-light-framed-collapsed-right-mc {
     padding: 14px 10px 14px 10px;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-framed-collapsed-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/panel-header/panel-header-light-framed-collapsed-right-corners.gif), corners-rtl:url(images/panel-header/panel-header-light-framed-collapsed-right-corners-rtl.gif), sides:url(images/panel-header/panel-header-light-framed-collapsed-right-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-panel-header-light-framed-collapsed-bottom {
     -moz-border-radius-topleft: 0;
@@ -6668,12 +5888,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-panel-header-light-framed-collapsed-bottom-mc {
     padding: 10px 14px 10px 14px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-framed-collapsed-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/panel-header/panel-header-light-framed-collapsed-bottom-corners.gif), sides:url(images/panel-header/panel-header-light-framed-collapsed-bottom-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-panel-header-light-framed-collapsed-left {
@@ -6800,12 +6014,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-panel-header-light-framed-collapsed-left-mc {
     padding: 14px 10px 14px 10px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-panel-header-light-framed-collapsed-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/panel-header/panel-header-light-framed-collapsed-left-corners.gif), corners-rtl:url(images/panel-header/panel-header-light-framed-collapsed-left-corners-rtl.gif), sides:url(images/panel-header/panel-header-light-framed-collapsed-left-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/panel/Panel.scss:633 */
 .x-panel .x-panel-header-light-framed-top {
@@ -7323,12 +6531,6 @@ div.x-border-layout-ct {
 .x-btn-round-small-mc {
     padding: 5px 5px 5px 5px;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-round-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-small-corners.gif), sides:url(images/btn/btn-round-small-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-round-small {
     border-color: #71a034;
@@ -7768,42 +6970,6 @@ div.x-border-layout-ct {
     border-width: 1px;
     border-color: #d2dac8;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-round-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-small-focus-corners.gif), sides:url(images/btn/btn-round-small-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-round-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-small-over-corners.gif), sides:url(images/btn/btn-round-small-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-round-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-small-focus-over-corners.gif), sides:url(images/btn/btn-round-small-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-round-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-small-pressed-corners.gif), sides:url(images/btn/btn-round-small-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-round-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-small-focus-pressed-corners.gif), sides:url(images/btn/btn-round-small-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-round-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-small-disabled-corners.gif), sides:url(images/btn/btn-round-small-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-round-small-cell > .x-grid-cell-inner {
     padding-top: 7px;
@@ -7917,12 +7083,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-round-toolbar-small-mc {
     padding: 5px 5px 5px 5px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-round-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-small-corners.gif), sides:url(images/btn/btn-round-toolbar-small-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-round-toolbar-small {
@@ -8371,42 +7531,6 @@ div.x-border-layout-ct {
     border-width: 0;
     border-color: #79ac38;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-round-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-small-focus-corners.gif), sides:url(images/btn/btn-round-toolbar-small-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-round-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-small-over-corners.gif), sides:url(images/btn/btn-round-toolbar-small-over-sides.gif), frame-bg:url(images/btn/btn-round-toolbar-small-over-fbg.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-round-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-small-focus-over-corners.gif), sides:url(images/btn/btn-round-toolbar-small-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-round-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-small-pressed-corners.gif), sides:url(images/btn/btn-round-toolbar-small-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-round-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-small-focus-pressed-corners.gif), sides:url(images/btn/btn-round-toolbar-small-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-round-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-small-disabled-corners.gif), sides:url(images/btn/btn-round-toolbar-small-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-round-toolbar-small-cell > .x-grid-cell-inner {
     padding-top: 7px;
@@ -8520,12 +7644,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-round-medium-mc {
     padding: 8px 8px 8px 8px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-round-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-medium-corners.gif), sides:url(images/btn/btn-round-medium-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-round-medium {
@@ -8966,42 +8084,6 @@ div.x-border-layout-ct {
     border-width: 1px;
     border-color: #d2dac8;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-round-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-medium-focus-corners.gif), sides:url(images/btn/btn-round-medium-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-round-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-medium-over-corners.gif), sides:url(images/btn/btn-round-medium-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-round-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-medium-focus-over-corners.gif), sides:url(images/btn/btn-round-medium-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-round-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-medium-pressed-corners.gif), sides:url(images/btn/btn-round-medium-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-round-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-medium-focus-pressed-corners.gif), sides:url(images/btn/btn-round-medium-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-round-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-medium-disabled-corners.gif), sides:url(images/btn/btn-round-medium-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-round-medium-cell > .x-grid-cell-inner {
     padding-top: 2px;
@@ -9115,12 +8197,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-round-toolbar-medium-mc {
     padding: 8px 8px 8px 8px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-round-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-medium-corners.gif), sides:url(images/btn/btn-round-toolbar-medium-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-round-toolbar-medium {
@@ -9569,42 +8645,6 @@ div.x-border-layout-ct {
     border-width: 0;
     border-color: #79ac38;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-round-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-medium-focus-corners.gif), sides:url(images/btn/btn-round-toolbar-medium-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-round-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-medium-over-corners.gif), sides:url(images/btn/btn-round-toolbar-medium-over-sides.gif), frame-bg:url(images/btn/btn-round-toolbar-medium-over-fbg.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-round-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-medium-focus-over-corners.gif), sides:url(images/btn/btn-round-toolbar-medium-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-round-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-medium-pressed-corners.gif), sides:url(images/btn/btn-round-toolbar-medium-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-round-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-medium-focus-pressed-corners.gif), sides:url(images/btn/btn-round-toolbar-medium-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-round-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-medium-disabled-corners.gif), sides:url(images/btn/btn-round-toolbar-medium-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-round-toolbar-medium-cell > .x-grid-cell-inner {
     padding-top: 2px;
@@ -9718,12 +8758,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-round-large-mc {
     padding: 12px 12px 12px 12px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-round-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-large-corners.gif), sides:url(images/btn/btn-round-large-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-round-large {
@@ -10164,42 +9198,6 @@ div.x-border-layout-ct {
     border-width: 1px;
     border-color: #d2dac8;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-round-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-large-focus-corners.gif), sides:url(images/btn/btn-round-large-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-round-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-large-over-corners.gif), sides:url(images/btn/btn-round-large-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-round-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-large-focus-over-corners.gif), sides:url(images/btn/btn-round-large-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-round-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-large-pressed-corners.gif), sides:url(images/btn/btn-round-large-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-round-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-large-focus-pressed-corners.gif), sides:url(images/btn/btn-round-large-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-round-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-round-large-disabled-corners.gif), sides:url(images/btn/btn-round-large-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-round-large-cell > .x-grid-cell-inner {
     padding-top: 0;
@@ -10313,12 +9311,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-round-toolbar-large-mc {
     padding: 12px 12px 12px 12px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-round-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-large-corners.gif), sides:url(images/btn/btn-round-toolbar-large-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-round-toolbar-large {
@@ -10767,42 +9759,6 @@ div.x-border-layout-ct {
     border-width: 0;
     border-color: #79ac38;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-round-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-large-focus-corners.gif), sides:url(images/btn/btn-round-toolbar-large-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-round-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-large-over-corners.gif), sides:url(images/btn/btn-round-toolbar-large-over-sides.gif), frame-bg:url(images/btn/btn-round-toolbar-large-over-fbg.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-round-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-large-focus-over-corners.gif), sides:url(images/btn/btn-round-toolbar-large-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-round-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-large-pressed-corners.gif), sides:url(images/btn/btn-round-toolbar-large-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-round-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-large-focus-pressed-corners.gif), sides:url(images/btn/btn-round-toolbar-large-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-round-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-round-toolbar-large-disabled-corners.gif), sides:url(images/btn/btn-round-toolbar-large-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-round-toolbar-large-cell > .x-grid-cell-inner {
     padding-top: 0;
@@ -10916,12 +9872,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-gray-small-mc {
     padding: 5px 5px 5px 5px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-gray-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-small-corners.gif), sides:url(images/btn/btn-gray-small-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-gray-small {
@@ -11362,42 +10312,6 @@ div.x-border-layout-ct {
     border-width: 1px;
     border-color: #d2dac8;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-gray-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-small-focus-corners.gif), sides:url(images/btn/btn-gray-small-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-gray-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-small-over-corners.gif), sides:url(images/btn/btn-gray-small-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-gray-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-small-focus-over-corners.gif), sides:url(images/btn/btn-gray-small-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-gray-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-small-pressed-corners.gif), sides:url(images/btn/btn-gray-small-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-gray-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-small-focus-pressed-corners.gif), sides:url(images/btn/btn-gray-small-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-gray-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-small-disabled-corners.gif), sides:url(images/btn/btn-gray-small-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-gray-small-cell > .x-grid-cell-inner {
     padding-top: 6px;
@@ -11511,12 +10425,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-gray-toolbar-small-mc {
     padding: 5px 5px 5px 5px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-gray-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-small-corners.gif), sides:url(images/btn/btn-gray-toolbar-small-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-gray-toolbar-small {
@@ -11966,42 +10874,6 @@ div.x-border-layout-ct {
     border-width: 0;
     border-color: #79ac38;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-gray-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-small-focus-corners.gif), sides:url(images/btn/btn-gray-toolbar-small-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-gray-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-small-over-corners.gif), sides:url(images/btn/btn-gray-toolbar-small-over-sides.gif), frame-bg:url(images/btn/btn-gray-toolbar-small-over-fbg.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-gray-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-small-focus-over-corners.gif), sides:url(images/btn/btn-gray-toolbar-small-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-gray-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-small-pressed-corners.gif), sides:url(images/btn/btn-gray-toolbar-small-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-gray-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-small-focus-pressed-corners.gif), sides:url(images/btn/btn-gray-toolbar-small-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-gray-toolbar-small:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-small-disabled-corners.gif), sides:url(images/btn/btn-gray-toolbar-small-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-gray-toolbar-small-cell > .x-grid-cell-inner {
     padding-top: 6px;
@@ -12115,12 +10987,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-gray-medium-mc {
     padding: 8px 8px 8px 8px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-gray-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-medium-corners.gif), sides:url(images/btn/btn-gray-medium-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-gray-medium {
@@ -12561,42 +11427,6 @@ div.x-border-layout-ct {
     border-width: 1px;
     border-color: #d2dac8;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-gray-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-medium-focus-corners.gif), sides:url(images/btn/btn-gray-medium-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-gray-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-medium-over-corners.gif), sides:url(images/btn/btn-gray-medium-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-gray-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-medium-focus-over-corners.gif), sides:url(images/btn/btn-gray-medium-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-gray-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-medium-pressed-corners.gif), sides:url(images/btn/btn-gray-medium-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-gray-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-medium-focus-pressed-corners.gif), sides:url(images/btn/btn-gray-medium-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-gray-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-medium-disabled-corners.gif), sides:url(images/btn/btn-gray-medium-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-gray-medium-cell > .x-grid-cell-inner {
     padding-top: 1px;
@@ -12710,12 +11540,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-gray-toolbar-medium-mc {
     padding: 8px 8px 8px 8px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-gray-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-medium-corners.gif), sides:url(images/btn/btn-gray-toolbar-medium-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-gray-toolbar-medium {
@@ -13165,42 +11989,6 @@ div.x-border-layout-ct {
     border-width: 0;
     border-color: #79ac38;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-gray-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-medium-focus-corners.gif), sides:url(images/btn/btn-gray-toolbar-medium-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-gray-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-medium-over-corners.gif), sides:url(images/btn/btn-gray-toolbar-medium-over-sides.gif), frame-bg:url(images/btn/btn-gray-toolbar-medium-over-fbg.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-gray-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-medium-focus-over-corners.gif), sides:url(images/btn/btn-gray-toolbar-medium-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-gray-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-medium-pressed-corners.gif), sides:url(images/btn/btn-gray-toolbar-medium-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-gray-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-medium-focus-pressed-corners.gif), sides:url(images/btn/btn-gray-toolbar-medium-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-gray-toolbar-medium:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-medium-disabled-corners.gif), sides:url(images/btn/btn-gray-toolbar-medium-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-gray-toolbar-medium-cell > .x-grid-cell-inner {
     padding-top: 1px;
@@ -13314,12 +12102,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-gray-large-mc {
     padding: 12px 12px 12px 12px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-gray-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-large-corners.gif), sides:url(images/btn/btn-gray-large-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-gray-large {
@@ -13760,42 +12542,6 @@ div.x-border-layout-ct {
     border-width: 1px;
     border-color: #d2dac8;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-gray-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-large-focus-corners.gif), sides:url(images/btn/btn-gray-large-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-gray-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-large-over-corners.gif), sides:url(images/btn/btn-gray-large-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-gray-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-large-focus-over-corners.gif), sides:url(images/btn/btn-gray-large-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-gray-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-large-pressed-corners.gif), sides:url(images/btn/btn-gray-large-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-gray-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-large-focus-pressed-corners.gif), sides:url(images/btn/btn-gray-large-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-gray-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-gray-large-disabled-corners.gif), sides:url(images/btn/btn-gray-large-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-gray-large-cell > .x-grid-cell-inner {
     padding-top: 0;
@@ -13909,12 +12655,6 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
 .x-btn-gray-toolbar-large-mc {
     padding: 12px 12px 12px 12px;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-gray-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-large-corners.gif), sides:url(images/btn/btn-gray-toolbar-large-sides.gif)" !important;
 }
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-gray-toolbar-large {
@@ -14364,42 +13104,6 @@ div.x-border-layout-ct {
     border-width: 0;
     border-color: #79ac38;
 }
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-gray-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-large-focus-corners.gif), sides:url(images/btn/btn-gray-toolbar-large-focus-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-over.x-btn-gray-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-large-over-corners.gif), sides:url(images/btn/btn-gray-toolbar-large-over-sides.gif), frame-bg:url(images/btn/btn-gray-toolbar-large-over-fbg.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-gray-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-large-focus-over-corners.gif), sides:url(images/btn/btn-gray-toolbar-large-focus-over-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-pressed.x-btn-gray-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-large-pressed-corners.gif), sides:url(images/btn/btn-gray-toolbar-large-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-gray-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-large-focus-pressed-corners.gif), sides:url(images/btn/btn-gray-toolbar-large-focus-pressed-sides.gif)" !important;
-}
-/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-disabled.x-btn-gray-toolbar-large:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:2px 2px 2px 2px, corners:url(images/btn/btn-gray-toolbar-large-disabled-corners.gif), sides:url(images/btn/btn-gray-toolbar-large-disabled-sides.gif)" !important;
-}
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
 .x-button-gray-toolbar-large-cell > .x-grid-cell-inner {
     padding-top: 0;
@@ -14479,4 +13183,822 @@ div.x-border-layout-ct {
 /* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
 .x-tab-alternative-top-frameInfo {
     font-family: th-0-0-0-0-0-0-0-0-8-10-8-10;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
+.x-tab-alternative-top-tl {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
+.x-tab-alternative-top-tr {
+    background-position: right 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
+.x-tab-alternative-top-bl {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
+.x-tab-alternative-top-br {
+    background-position: right 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
+.x-tab-alternative-top-ml {
+    background-position: 0 top;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
+.x-tab-alternative-top-mr {
+    background-position: right top;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
+.x-tab-alternative-top-tc {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
+.x-tab-alternative-top-bc {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
+.x-tab-alternative-top-tr,
+.x-tab-alternative-top-br,
+.x-tab-alternative-top-mr {
+    padding-right: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
+.x-tab-alternative-top-tl,
+.x-tab-alternative-top-bl,
+.x-tab-alternative-top-ml {
+    padding-left: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
+.x-tab-alternative-top-tc {
+    height: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
+.x-tab-alternative-top-bc {
+    height: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:407 */
+.x-tab-alternative-top-tl,
+.x-tab-alternative-top-bl,
+.x-tab-alternative-top-tr,
+.x-tab-alternative-top-br,
+.x-tab-alternative-top-tc,
+.x-tab-alternative-top-bc,
+.x-tab-alternative-top-ml,
+.x-tab-alternative-top-mr {
+    background-image: url(images/tab/tab-alternative-top-corners.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:453 */
+.x-tab-alternative-top-ml,
+.x-tab-alternative-top-mr {
+    background-image: url(images/tab/tab-alternative-top-sides.gif);
+    background-repeat: repeat-y;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
+.x-tab-alternative-top-mc {
+    padding: 8px 10px 8px 10px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
+.x-tab-alternative-bottom {
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 8px 10px 8px 10px;
+    border-width: 0 0 0 0;
+    border-style: solid;
+    background-color: #000;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
+.x-tab-alternative-bottom-mc {
+    background-color: #000;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
+.x-nbr .x-tab-alternative-bottom {
+    padding: 0 !important;
+    border-width: 0 !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
+.x-tab-alternative-bottom-frameInfo {
+    font-family: th-0-0-0-0-0-0-0-0-8-10-8-10;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
+.x-tab-alternative-bottom-tl {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
+.x-tab-alternative-bottom-tr {
+    background-position: right 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
+.x-tab-alternative-bottom-bl {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
+.x-tab-alternative-bottom-br {
+    background-position: right 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
+.x-tab-alternative-bottom-ml {
+    background-position: 0 bottom;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
+.x-tab-alternative-bottom-mr {
+    background-position: right bottom;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
+.x-tab-alternative-bottom-tc {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
+.x-tab-alternative-bottom-bc {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
+.x-tab-alternative-bottom-tr,
+.x-tab-alternative-bottom-br,
+.x-tab-alternative-bottom-mr {
+    padding-right: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
+.x-tab-alternative-bottom-tl,
+.x-tab-alternative-bottom-bl,
+.x-tab-alternative-bottom-ml {
+    padding-left: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
+.x-tab-alternative-bottom-tc {
+    height: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
+.x-tab-alternative-bottom-bc {
+    height: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:407 */
+.x-tab-alternative-bottom-tl,
+.x-tab-alternative-bottom-bl,
+.x-tab-alternative-bottom-tr,
+.x-tab-alternative-bottom-br,
+.x-tab-alternative-bottom-tc,
+.x-tab-alternative-bottom-bc,
+.x-tab-alternative-bottom-ml,
+.x-tab-alternative-bottom-mr {
+    background-image: url(images/tab/tab-alternative-bottom-corners.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:453 */
+.x-tab-alternative-bottom-ml,
+.x-tab-alternative-bottom-mr {
+    background-image: url(images/tab/tab-alternative-bottom-sides.gif);
+    background-repeat: repeat-y;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
+.x-tab-alternative-bottom-mc {
+    padding: 8px 10px 8px 10px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
+.x-tab-alternative-left {
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 8px 10px 8px 10px;
+    border-width: 0 0 0 0;
+    border-style: solid;
+    background-color: #000;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
+.x-tab-alternative-left-mc {
+    background-color: #000;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
+.x-nbr .x-tab-alternative-left {
+    padding: 0 !important;
+    border-width: 0 !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
+.x-tab-alternative-left-frameInfo {
+    font-family: th-0-0-0-0-0-0-0-0-8-10-8-10;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
+.x-tab-alternative-left-tl {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
+.x-tab-alternative-left-tr {
+    background-position: right 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
+.x-tab-alternative-left-bl {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
+.x-tab-alternative-left-br {
+    background-position: right 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
+.x-tab-alternative-left-ml {
+    background-position: 0 top;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
+.x-tab-alternative-left-mr {
+    background-position: right top;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
+.x-tab-alternative-left-tc {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
+.x-tab-alternative-left-bc {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
+.x-tab-alternative-left-tr,
+.x-tab-alternative-left-br,
+.x-tab-alternative-left-mr {
+    padding-right: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
+.x-tab-alternative-left-tl,
+.x-tab-alternative-left-bl,
+.x-tab-alternative-left-ml {
+    padding-left: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
+.x-tab-alternative-left-tc {
+    height: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
+.x-tab-alternative-left-bc {
+    height: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:407 */
+.x-tab-alternative-left-tl,
+.x-tab-alternative-left-bl,
+.x-tab-alternative-left-tr,
+.x-tab-alternative-left-br,
+.x-tab-alternative-left-tc,
+.x-tab-alternative-left-bc,
+.x-tab-alternative-left-ml,
+.x-tab-alternative-left-mr {
+    background-image: url(images/tab/tab-alternative-left-corners.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:453 */
+.x-tab-alternative-left-ml,
+.x-tab-alternative-left-mr {
+    background-image: url(images/tab/tab-alternative-left-sides.gif);
+    background-repeat: repeat-y;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
+.x-tab-alternative-left-mc {
+    padding: 8px 10px 8px 10px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
+.x-tab-alternative-right {
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 8px 10px 8px 10px;
+    border-width: 0 0 0 0;
+    border-style: solid;
+    background-color: #000;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
+.x-tab-alternative-right-mc {
+    background-color: #000;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
+.x-nbr .x-tab-alternative-right {
+    padding: 0 !important;
+    border-width: 0 !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
+.x-tab-alternative-right-frameInfo {
+    font-family: th-0-0-0-0-0-0-0-0-8-10-8-10;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
+.x-tab-alternative-right-tl {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
+.x-tab-alternative-right-tr {
+    background-position: right 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
+.x-tab-alternative-right-bl {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
+.x-tab-alternative-right-br {
+    background-position: right 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
+.x-tab-alternative-right-ml {
+    background-position: 0 top;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
+.x-tab-alternative-right-mr {
+    background-position: right top;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
+.x-tab-alternative-right-tc {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
+.x-tab-alternative-right-bc {
+    background-position: 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
+.x-tab-alternative-right-tr,
+.x-tab-alternative-right-br,
+.x-tab-alternative-right-mr {
+    padding-right: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
+.x-tab-alternative-right-tl,
+.x-tab-alternative-right-bl,
+.x-tab-alternative-right-ml {
+    padding-left: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
+.x-tab-alternative-right-tc {
+    height: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
+.x-tab-alternative-right-bc {
+    height: 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:407 */
+.x-tab-alternative-right-tl,
+.x-tab-alternative-right-bl,
+.x-tab-alternative-right-tr,
+.x-tab-alternative-right-br,
+.x-tab-alternative-right-tc,
+.x-tab-alternative-right-bc,
+.x-tab-alternative-right-ml,
+.x-tab-alternative-right-mr {
+    background-image: url(images/tab/tab-alternative-right-corners.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:453 */
+.x-tab-alternative-right-ml,
+.x-tab-alternative-right-mr {
+    background-image: url(images/tab/tab-alternative-right-sides.gif);
+    background-repeat: repeat-y;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
+.x-tab-alternative-right-mc {
+    padding: 8px 10px 8px 10px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1587 */
+.x-tab-alternative {
+    border-color: transparent;
+    cursor: pointer;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1631 */
+.x-tab-alternative-top {
+    margin: 0 4px 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1635 */
+.x-tab-alternative-top.x-rtl {
+    margin: 0 0 0 4px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1640 */
+.x-tab-alternative-top.x-tab-rotate-left {
+    margin: 0 0 0 4px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1644 */
+.x-tab-alternative-top.x-tab-rotate-left.x-rtl {
+    margin: 0 4px 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1662 */
+.x-tab-alternative-top.x-tab-focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1691 */
+.x-tab-alternative-top.x-tab-focus.x-tab-over {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1720 */
+.x-tab-alternative-top.x-tab-focus.x-tab-active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1746 */
+.x-tab-alternative-right {
+    margin: 0 0 4px 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1750 */
+.x-tab-alternative-right.x-rtl {
+    margin: 0 0 4px 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1755 */
+.x-tab-alternative-right.x-tab-rotate-right {
+    margin: 4px 0 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1759 */
+.x-tab-alternative-right.x-tab-rotate-right.x-rtl {
+    margin: 4px 0 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1777 */
+.x-tab-alternative-right.x-tab-focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1806 */
+.x-tab-alternative-right.x-tab-focus.x-tab-over {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1835 */
+.x-tab-alternative-right.x-tab-focus.x-tab-active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1861 */
+.x-tab-alternative-bottom {
+    margin: 0 4px 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1865 */
+.x-tab-alternative-bottom.x-rtl {
+    margin: 0 0 0 4px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1870 */
+.x-tab-alternative-bottom.x-tab-rotate-left {
+    margin: 0 0 0 4px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1874 */
+.x-tab-alternative-bottom.x-tab-rotate-left.x-rtl {
+    margin: 0 4px 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1892 */
+.x-tab-alternative-bottom.x-tab-focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1921 */
+.x-tab-alternative-bottom.x-tab-focus.x-tab-over {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1950 */
+.x-tab-alternative-bottom.x-tab-focus.x-tab-active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1976 */
+.x-tab-alternative-left {
+    margin: 0 0 4px 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1980 */
+.x-tab-alternative-left.x-rtl {
+    margin: 0 0 4px 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1985 */
+.x-tab-alternative-left.x-tab-rotate-right {
+    margin: 4px 0 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1989 */
+.x-tab-alternative-left.x-tab-rotate-right.x-rtl {
+    margin: 4px 0 0 0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2007 */
+.x-tab-alternative-left.x-tab-focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2036 */
+.x-tab-alternative-left.x-tab-focus.x-tab-over {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2065 */
+.x-tab-alternative-left.x-tab-focus.x-tab-active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2091 */
+.x-tab-button-alternative {
+    height: 20px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2096 */
+.x-tab-inner-alternative {
+    font: 400 12px/20px 'Montserrat', helvetica, arial, verdana, sans-serif;
+    color: #adafb2;
+    max-width: 100%;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2112 */
+.x-tab-icon-right > .x-tab-inner-alternative,
+.x-tab-icon-left > .x-tab-inner-alternative {
+    max-width: calc(100% - 20px);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2120 */
+.x-tab-icon-el-alternative {
+    min-height: 20px;
+    background-position: center center;
+    font-size: 20px;
+    line-height: 20px;
+    color: #f0f0f0;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2121 */
+.x-tab-icon-left > .x-tab-icon-el-alternative,
+.x-tab-icon-right > .x-tab-icon-el-alternative {
+    width: 20px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2126 */
+.x-tab-icon-top > .x-tab-icon-el-alternative,
+.x-tab-icon-bottom > .x-tab-icon-el-alternative {
+    min-width: 20px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2137 */
+.x-tab-bar-plain .x-tab-icon-el-alternative {
+    color: #adafb2;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2142 */
+.x-tab-icon-el-alternative.x-tab-glyph {
+    opacity: 0.7;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2155 */
+.x-ie8 .x-tab-icon-el-alternative.x-tab-glyph {
+    color: #a8a8a8;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2162 */
+.x-tab-text.x-tab-icon-left > .x-tab-icon-el-alternative {
+    margin-right: 6px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2166 */
+.x-tab-text.x-tab-icon-left > .x-tab-icon-el-alternative.x-rtl {
+    margin-right: 0;
+    margin-left: 6px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2173 */
+.x-tab-text.x-tab-icon-right > .x-tab-icon-el-alternative {
+    margin-left: 6px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2177 */
+.x-tab-text.x-tab-icon-right > .x-tab-icon-el-alternative.x-rtl {
+    margin-left: 0;
+    margin-right: 6px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2184 */
+.x-tab-text.x-tab-icon-top > .x-tab-icon-el-alternative {
+    margin-bottom: 6px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2188 */
+.x-tab-text.x-tab-icon-bottom > .x-tab-icon-el-alternative {
+    margin-top: 6px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2193 */
+.x-tab-focus.x-tab-alternative {
+    border-color: transparent;
+    background-color: #000;
+    outline: 1px solid #79ac38;
+    outline-offset: -3px;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/css-outline.scss:58 */
+.x-ie8 .x-tab-focus.x-tab-alternative {
+    outline: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/css-outline.scss:38 */
+.x-ie8 .x-tab-focus.x-tab-alternative:after {
+    position: absolute;
+    content: ' ';
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border: 1px solid #79ac38;
+    pointer-events: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2306 */
+.x-tab-bar-plain .x-tab-focus.x-tab-alternative .x-tab-icon-el {
+    color: #adafb2;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2314 */
+.x-tab-over.x-tab-alternative {
+    border-color: #abd377;
+    background-image: none;
+    background-color: rgba(171, 211, 119, 0.08);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/background-opacity.scss:19 */
+.x-ie8 .x-tab-over.x-tab-alternative {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#14abd377, endColorstr=#14abd377);
+    zoom: 1;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2344 */
+.x-tab-bar-plain .x-tab-over.x-tab-alternative {
+    background-color: #435f1f;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2355 */
+.x-tab-over.x-tab-alternative .x-tab-inner-alternative {
+    color: #79ac38;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2360 */
+.x-tab-bar-plain .x-tab-over.x-tab-alternative .x-tab-inner-alternative {
+    color: #fff;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2375 */
+.x-tab-over.x-tab-alternative .x-tab-icon-el {
+    color: #79ac38;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2384 */
+.x-ie8m .x-tab-over.x-tab-alternative .x-tab-icon-el {
+    color: #88b84b;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2391 */
+.x-tab-bar-plain .x-tab-over.x-tab-alternative .x-tab-icon-el {
+    color: #fff;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2411 */
+.x-tab-focus.x-tab-over.x-tab-alternative {
+    border-color: #abd377;
+    background-image: none;
+    background-color: rgba(171, 211, 119, 0.08);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-base/sass/etc/mixins/background-opacity.scss:19 */
+.x-ie8 .x-tab-focus.x-tab-over.x-tab-alternative {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#14abd377, endColorstr=#14abd377);
+    zoom: 1;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2441 */
+.x-tab-bar-plain .x-tab-focus.x-tab-over.x-tab-alternative {
+    background-color: #435f1f;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2457 */
+.x-tab-bar-plain .x-tab-focus.x-tab-over.x-tab-alternative .x-tab-inner-alternative {
+    color: #fff;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2488 */
+.x-tab-bar-plain .x-tab-focus.x-tab-over.x-tab-alternative .x-tab-icon-el {
+    color: #fff;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2511 */
+.x-tab.x-tab-active.x-tab-alternative {
+    border-color: #79ac38;
+    background-color: #79ac38;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2552 */
+.x-tab.x-tab-active.x-tab-alternative .x-tab-inner-alternative {
+    color: #fff;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2572 */
+.x-tab.x-tab-active.x-tab-alternative .x-tab-icon-el {
+    color: #fff;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2580 */
+.x-ie8 .x-tab.x-tab-active.x-tab-alternative .x-tab-icon-el {
+    color: #d7e6c3;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2607 */
+.x-tab-focus.x-tab-active.x-tab-alternative {
+    border-color: #79ac38;
+    background-color: #79ac38;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2708 */
+.x-tab.x-tab-disabled.x-tab-alternative {
+    border-color: transparent;
+    background-color: #000;
+    cursor: default;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2753 */
+.x-tab.x-tab-disabled.x-tab-alternative .x-tab-inner-alternative {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    opacity: 0.3;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2777 */
+.x-tab.x-tab-disabled.x-tab-alternative .x-tab-icon-el-alternative {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    opacity: 0.5;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2782 */
+.x-tab.x-tab-disabled.x-tab-alternative .x-tab-icon-el {
+    color: #f0f0f0;
+    opacity: 0.3;
+    filter: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2797 */
+.x-ie8 .x-tab.x-tab-disabled.x-tab-alternative .x-tab-icon-el {
+    color: #484848;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2803 */
+.x-tab-bar-plain .x-tab.x-tab-disabled.x-tab-alternative .x-tab-icon-el {
+    color: #adafb2;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2823 */
+.x-nbr .x-tab-alternative {
+    background-image: none;
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2842 */
+.x-tab-over .x-tab-alternative-top-tl,
+.x-tab-over .x-tab-alternative-top-bl,
+.x-tab-over .x-tab-alternative-top-tr,
+.x-tab-over .x-tab-alternative-top-br,
+.x-tab-over .x-tab-alternative-top-tc,
+.x-tab-over .x-tab-alternative-top-bc {
+    background-image: url(images/tab/tab-alternative-top-over-corners.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2851 */
+.x-tab-over .x-tab-alternative-top-ml,
+.x-tab-over .x-tab-alternative-top-mr {
+    background-image: url(images/tab/tab-alternative-top-over-sides.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2856 */
+.x-tab-over .x-tab-alternative-top-mc {
+    background-repeat: repeat-x;
+    background-image: url(images/tab/tab-alternative-top-over-fbg.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2842 */
+.x-tab-focus .x-tab-alternative-top-tl,
+.x-tab-focus .x-tab-alternative-top-bl,
+.x-tab-focus .x-tab-alternative-top-tr,
+.x-tab-focus .x-tab-alternative-top-br,
+.x-tab-focus .x-tab-alternative-top-tc,
+.x-tab-focus .x-tab-alternative-top-bc {
+    background-image: url(images/tab/tab-alternative-top-focus-corners.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2851 */
+.x-tab-focus .x-tab-alternative-top-ml,
+.x-tab-focus .x-tab-alternative-top-mr {
+    background-image: url(images/tab/tab-alternative-top-focus-sides.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2856 */
+.x-tab-focus .x-tab-alternative-top-mc {
+    background-repeat: repeat-x;
+    background-image: url(images/tab/tab-alternative-top-focus-fbg.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2842 */
+.x-tab-focus.x-tab-over .x-tab-alternative-top-tl,
+.x-tab-focus.x-tab-over .x-tab-alternative-top-bl,
+.x-tab-focus.x-tab-over .x-tab-alternative-top-tr,
+.x-tab-focus.x-tab-over .x-tab-alternative-top-br,
+.x-tab-focus.x-tab-over .x-tab-alternative-top-tc,
+.x-tab-focus.x-tab-over .x-tab-alternative-top-bc {
+    background-image: url(images/tab/tab-alternative-top-focus-over-corners.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2851 */
+.x-tab-focus.x-tab-over .x-tab-alternative-top-ml,
+.x-tab-focus.x-tab-over .x-tab-alternative-top-mr {
+    background-image: url(images/tab/tab-alternative-top-focus-over-sides.gif);
+}
+/* D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2856 */
+.x-tab-focus.x-tab-over .x-tab-alternative-top-mc {
+    background-repeat: repeat-x;
+    background-image: url(images/tab/tab-alternative-top-focus-over-fbg.gif);
 }

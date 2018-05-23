@@ -10,11 +10,11 @@
     ]
 });
 
-Ext.define('WebAppClassic.view.main.UserField', {
+Ext.define('WebAppClassic.view.main.user.UserField', {
     extend: 'Ext.form.Panel',
     xtype: 'userfield',
     requires: [
-        'WebAppClassic.view.main.UserViewModel',
+        'WebAppClassic.view.main.user.UserViewModel',
         'WebAppClassic.model.UserModel'
     ],
     model:'userModel',

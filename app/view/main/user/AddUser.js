@@ -1,9 +1,9 @@
-﻿Ext.define('WebAppClassic.view.main.AddUser', {
+﻿Ext.define('WebAppClassic.view.main.user.AddUser', {
     extend: 'Ext.form.Panel',
     requires: [
-        "WebAppClassic.view.main.UserViewModel",
-        "WebAppClassic.view.main.ModifyUserController",
-        "WebAppClassic.view.main.UserField",
+        "WebAppClassic.view.main.user.UserViewModel",
+        "WebAppClassic.view.main.user.ModifyUserController",
+        "WebAppClassic.view.main.user.UserField",
     ],
     title: "add user",   
     viewModel: 'userViewModel',

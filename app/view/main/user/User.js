@@ -1,11 +1,11 @@
-﻿Ext.define('WebAppClassic.view.main.User', {
+﻿Ext.define('WebAppClassic.view.main.user.User', {
     extend: 'Ext.tab.Panel',
     xtype: 'user',
     id:'user',
     requires: [
-        'WebAppClassic.view.main.AddUser',
-        'WebAppClassic.view.main.SearchUser',
-        'WebAppClassic.view.main.EditUser',
+        'WebAppClassic.view.main.user.AddUser',
+        'WebAppClassic.view.main.user.SearchUser',
+        'WebAppClassic.view.main.user.EditUser',
     ],
     scrollable: true,
     height: 610,

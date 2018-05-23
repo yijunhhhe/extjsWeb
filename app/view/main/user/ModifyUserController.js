@@ -1,4 +1,4 @@
-﻿Ext.define('WebAppClassic.view.main.ModifyUserController', {
+﻿Ext.define('WebAppClassic.view.main.user.ModifyUserController', {
     extend: 'Ext.app.ViewController',
 
     alias: 'controller.modifyUserController',
