@@ -15,10 +15,7 @@
     controller: 'modifyUserController',
     viewModel: 'userViewModel',
     height: 600,
-    buttons: [{
-        text:'fck'
-    }],
-
+   
     title: 'search User',
     viewConfig: {
         //scrollable: true,

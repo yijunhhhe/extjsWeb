@@ -1,6 +1,9 @@
 /**
  * Generates a set of style rules for the "navigation" tab UI.
  */
+
+
+
 @include extjs-tab-panel-ui(
     $ui: 'navigation',
     $ui-tab-background-color: transparent,
@@ -51,11 +54,20 @@
     $ui-header-icon-height: 24px,
     $ui-header-icon-width: 24px,
     $ui-header-icon-spacing: 15px,
-    $ui-header-background-color: $base-color,
+    $ui-header-background-color: grey,
     $ui-header-padding: 0,
     $ui-header-text-margin: 36px,
     $ui-header-noborder-adjust: false
 );
+
+
+@include extjs-button-ui(
+	$ui: 'navigation',
+    $button-default-color: blue,
+	$border-radius : 2px
+)
+ 
+
 
 .x-title-icon-navigation {
     font-family: FontAwesome;

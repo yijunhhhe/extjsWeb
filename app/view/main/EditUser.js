@@ -14,6 +14,7 @@
     scrollable: true,
     padding: '10px',
     height: 500,
+    width:400,
     floating: true,
     closable:true,
     items: [

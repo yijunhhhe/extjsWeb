@@ -3,7 +3,6 @@ Ext.define('WebAppClassic.view.login.LoginController', {
     alias: 'controller.login',
 	
     onLoginClick: function() {
-		
 		var loginView = this.getView();
 		var viewModel = loginView.getViewModel();
 		var accountInfo = {}

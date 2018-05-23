@@ -11,7 +11,7 @@
     xtype: 'adduser',
     padding: '10px',
     defaultType: 'textfield',
-    height:600,
+    height:540,
     scrollable: true,
     items: [
         {

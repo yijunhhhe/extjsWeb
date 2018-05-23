@@ -7,7 +7,7 @@ Ext.define('WebAppClassic.view.login.Login', {
         'Ext.form.Panel',
 		'WebAppClassic.view.login.LoginViewModel'
     ],
-
+    navigation:'ui',
 	controller: 'login',
 	
 	viewModel: {

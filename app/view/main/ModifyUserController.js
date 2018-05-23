@@ -29,7 +29,7 @@
         userInfo.CreateDate = userModel.CreateDate;
         userInfo.ModifyBy = userModel.ModifyBy;
         userInfo.ModifyDate = userModel.ModifyDate;
-        console.log(userInfo);
+        //console.log(userInfo);
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/Account/AddAccount',
@@ -40,9 +40,12 @@
                 var data = Ext.decode(Result.responseText);
                 console.log(data);
                 if (data.IsSuccess === true) {
-                    console.log("success");            
+                    console.log("success");
+                    var store = Ext.getCmp('user').down("#searchuser").getStore();
+                    store.reload();
                     addUserView.up('user').setActiveTab(0);
                     addUserView.getForm().reset();
+                    
                 } else {
                     alert(data.ErrorMessage);
                 }
@@ -60,7 +63,7 @@
 
 
         mystore.filter('AccountNo', account);
-        searchUserView.refresh();
+        
     },
 
     selectUser: function () {
@@ -72,7 +75,7 @@
                 xtype: 'edituser'
             });
             edit.show();
-            console.log(this.getView().getSelectionModel().getSelected().items.length);
+            //console.log(this.getView().getSelectionModel().getSelected().items.length);
             var data = this.getView().getSelectionModel().getSelected().items[0].data;
             var form = edit.down('#userfield').getForm();
             data.Role = data.Role.split(",");
@@ -83,10 +86,16 @@
 
     modifyUser: function () {
         var edit = this.getView();
-        console.log(edit.getForm().getValues());
-
+       
         //get new value from the form
-        var userValue = edit.getValues();  
+        var userValue = edit.getValues();
+        if (userValue.Role != undefined) {
+            userValue.Role = userValue.Role.toString();
+        } else {
+            userValue.Role = "";
+        }
+        
+        console.log(userValue);
         Ext.Ajax.request({
             method: 'POST',
             url: '/api/Account/EditAccount',
