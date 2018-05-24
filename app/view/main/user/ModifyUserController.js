@@ -29,7 +29,7 @@
         userInfo.CreateDate = userModel.CreateDate;
         userInfo.ModifyBy = userModel.ModifyBy;
         userInfo.ModifyDate = userModel.ModifyDate;
-        //console.log(userInfo);
+        //console.log(JSON.stringify(userInfo));
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/Account/AddAccount',

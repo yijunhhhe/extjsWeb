@@ -19,9 +19,9 @@
 
     },
 
-    detailOrder: function(){
+    orderDetail: function(){
         var detail = Ext.create({
-            xtype: 'detailorder'
+            xtype: 'orderdetail'
         });
         var select = this.getView().getSelectionModel().getSelected().items[0].data;
         var selectId = select.Id;

@@ -4,7 +4,7 @@
     requires: [
         'WebAppClassic.store.OrderStore',
         'WebAppClassic.view.main.purchaseorder.ModifyOrderController',
-       // 'WebAppClassic.view.main.purchaseorder.DetailOrder',
+       // 'WebAppClassic.view.main.purchaseorder.OrderDetail',
     ],
     controller: 'modifyOrderController',
     //viewController: '',
@@ -30,7 +30,7 @@
             xtype: 'button',
             text: 'Detail',
             listeners: {
-                click:'detailOrder'
+                click:'orderDetail'
             }
         }, {
             xtype: 'button',
