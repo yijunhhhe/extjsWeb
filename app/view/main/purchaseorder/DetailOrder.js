@@ -1,6 +1,7 @@
 ﻿Ext.define('WebAppClassic.view.main.purchaseorder.DetailOrder', {
     extend: 'Ext.window.Window',
     xtype: 'detailorder',
+    id:'orderDetailId',
     requires: [
         'WebAppClassic.view.main.purchaseorder.ModifyOrderDetailController',
     ],
@@ -10,7 +11,7 @@
     closable: true,
     controller: 'modifyOrderDetailController',
     items: {
-        itemId:'orderDetailId',
+        itemId:'orderDetailItemId',
         xtype: 'form',
         defaultType: 'displayfield',
         padding:10,
