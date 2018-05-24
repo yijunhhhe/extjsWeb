@@ -3,14 +3,17 @@
     xtype:'order',
     requires: [
         'WebAppClassic.store.OrderStore',
+        'WebAppClassic.view.main.purchaseorder.ModifyOrderController',
+       // 'WebAppClassic.view.main.purchaseorder.DetailOrder',
     ],
-    //Controller: '',
+    controller: 'modifyOrderController',
     //viewController: '',
     store: {
         type: 'orderStore'
     },
     tbar: [
         {
+            itemId: 'searchName',
             xtype: 'textfield', 
             name: 'orderno',
             fieldLabel: 'Search by OrderNo',
@@ -18,16 +21,16 @@
         }, {
             xtype: 'button',
             text: 'Search',
-            listners: {
-                //click:''
+            listeners: {
+                click: 'searchOrder'
             }
         }, {
             xtype:'tbfill'
         }, {
             xtype: 'button',
-            text: 'Add',
+            text: 'Detail',
             listeners: {
-                //click:''
+                click:'detailOrder'
             }
         }, {
             xtype: 'button',

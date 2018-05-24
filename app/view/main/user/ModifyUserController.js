@@ -61,7 +61,6 @@
         var userModel = searchUserView.getViewModel();
         var account = userModel.data.AccountNo;
 
-
         mystore.filter('AccountNo', account);
         
     },
