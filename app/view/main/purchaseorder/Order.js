@@ -1,6 +1,7 @@
 ﻿Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
     extend: "Ext.grid.Panel",
-    xtype:'order',
+    xtype: 'order',
+    id:'orderId',
     requires: [
         'WebAppClassic.store.OrderStore',
         'WebAppClassic.view.main.purchaseorder.ModifyOrderController',
@@ -48,8 +49,8 @@
     ],
     columns: [
         { text: 'OrderNo', dataIndex: 'OrderNo' },
-        { text: 'BrandId', dataIndex: 'BrandId', flex: 1, },
-        { text: 'FactoryId', dataIndex: 'FactoryId', flex: 1 },
+        { text: 'FactoryId', dataIndex: 'FactoryId', flex: 1, },
+        { text: 'IsDeleted', dataIndex: 'IsDeleted', flex: 1 },
         { text: 'DcId', dataIndex:'DcId', flex: 1}
     ]
 });

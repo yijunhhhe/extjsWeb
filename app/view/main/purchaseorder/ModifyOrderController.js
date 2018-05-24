@@ -33,9 +33,9 @@
             dataType: 'json',
             success: function (Result) {
                 var data = Ext.decode(Result.responseText);
-                console.log(data);
+                //console.log(data);
                 if (data.IsSuccess == true) {
-                    console.log("success");
+                    //console.log("success");
                     detail.down('form').getForm().setValues(data.Data);
                 } else {
                     alert(data.ErrorMessage);

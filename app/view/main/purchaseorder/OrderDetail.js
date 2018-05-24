@@ -31,7 +31,7 @@
             fieldLabel: 'OrderQty',
             name: 'OrderQty'
         }, {
-            fieldLabel: 'IdDeleted',
+            fieldLabel: 'IsDeleted',
             name: 'IsDeleted'
         }, {
             fieldLabel: 'CreateBy',
@@ -50,6 +50,12 @@
             text: 'Edit',
             listeners: {
                 click:'editOrderDetail'
+            }
+        }, {
+            xtype: 'button',
+            text: 'Delete',
+            listeners: {
+                click:'deleteOrderDetail'
             }
         }
         ],
