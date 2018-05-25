@@ -890,6 +890,7 @@ $include-webappclassic-view-login-loginviewmodel: dynamic(true);;
 $include-webappclassic-view-main-list: dynamic(true);;
 $include-webappclassic-view-main-main: dynamic(true);;
 $include-webappclassic-view-main-maincontroller: dynamic(true);;
+$include-webappclassic-view-main-purchaseorder-editorder: dynamic(true);;
 $include-webappclassic-view-main-purchaseorder-editorderdetail: dynamic(true);;
 $include-webappclassic-view-main-purchaseorder-modifyordercontroller: dynamic(true);;
 $include-webappclassic-view-main-purchaseorder-modifyorderdetailcontroller: dynamic(true);;

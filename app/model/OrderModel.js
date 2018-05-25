@@ -2,6 +2,7 @@
     extend: 'Ext.data.Model',
 
     fields: [
+        { name: 'Id', type:'string'},
         { name: 'OrderNo', type: 'string' },
         { name: 'BrandId', type: 'string' },
         { name: 'FactoryId', type: 'string' },

@@ -37,7 +37,7 @@
             xtype: 'button',
             text: 'Edit',
             listeners: {
-                //click:''
+                click:'editOrder'
             }
         }, {
             xtype: 'button',
@@ -49,8 +49,8 @@
     ],
     columns: [
         { text: 'OrderNo', dataIndex: 'OrderNo' },
-        { text: 'FactoryId', dataIndex: 'FactoryId', flex: 1, },
-        { text: 'IsDeleted', dataIndex: 'IsDeleted', flex: 1 },
-        { text: 'DcId', dataIndex:'DcId', flex: 1}
+        { text: 'DeliveryAddress', dataIndex: 'DeliveryAddress', flex: 1, },
+        { text: 'PayMethod', dataIndex: 'PayMethod', flex: 1 },
+        { text: 'Status', dataIndex: 'Status', flex: 1 }
     ]
 });
