@@ -29,6 +29,12 @@
             xtype:'tbfill'
         }, {
             xtype: 'button',
+            text: 'Add',
+            listeners: {
+                click: 'addOrder'
+            }
+        }, {
+            xtype: 'button',
             text: 'Detail',
             listeners: {
                 click:'orderDetail'

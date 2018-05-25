@@ -46,7 +46,52 @@
     },
     
     addOrder:function () {
-        
+        var add = Ext.create({
+            xtype: 'addorder'
+        });
+        addOrderValue = Ext.getCmp('addOrderId').down('#orderItemId').getForm();
+        //console.log(addOrderValue);
+    },
+
+    actualAddOrder: function(){
+        var orderValue = this.getView().down('#orderItemId').getForm().getValues();
+        var orderDetailValue = this.getView().down('#orderDetailItemId').getForm().getValues();
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '/Api/PurchaseOrder/AddOrder',
+            headers: { 'Content-Type': 'application/json' },
+            params: JSON.stringify(orderValue),
+            dataType: 'json',
+            success: function (Result) {
+                var data = Ext.decode(Result.responseText);
+                console.log(Result);
+                if (data.IsSuccess == true) {
+                    console.log("success");
+                    Ext.getCmp('orderId').getStore().reload();
+                    thisView.destroy();
+                } else {
+                    alert(data.ErrorMessage);
+                }
+            }
+        });
+        //Ext.Ajax.request({
+        //    method: 'POST',
+        //    url: '/Api/PurchaseOrderDetail/AddOrder',
+        //    headers: { 'Content-Type': 'application/json' },
+        //    params: JSON.stringify(orderDetailValue),
+        //    dataType: 'json',
+        //    success: function (Result) {
+        //        var data = Ext.decode(Result.responseText);
+        //        console.log(Result);
+        //        if (data.IsSuccess == true) {
+        //            console.log("success");
+        //            Ext.getCmp('orderId').getStore().reload();
+        //            thisView.destroy();
+        //        } else {
+        //            alert(data.ErrorMessage);
+        //        }
+        //    }
+        //})
     },
 
     editOrder: function () {
