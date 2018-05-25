@@ -2,6 +2,40 @@
     extend: 'Ext.app.ViewController',
     alias: 'controller.modifyOrderController',
 
+    deleteOrder: function () {
+        var select = this.getView().getSelectionModel().getSelected().items[0].data;
+        delete select.id;
+        select.IsDeleted = true;
+        
+        Ext.MessageBox.confirm('delete', 'yes?', function (btn, text) {
+            if (btn == "yes") {     
+                Ext.Ajax.request({
+                    method: 'POST',
+                    url: '/Api/PurchaseOrder/DeletePurchaseWithDetail?purchaseId=' + select.Id,
+                    headers: { 'Content-Type': 'application/json' },
+                    dataType: 'json',
+                    success: function (Result) {
+                        var data = Ext.decode(Result.responseText);
+                        //console.log(data);
+                        if (data.IsSuccess == true) {
+                            console.log("success");
+                            Ext.getCmp('orderId').getStore().reload();
+                            thisView.destroy();
+                        } else {
+                            alert(data.ErrorMessage);
+                        }
+                    },
+                    failure: function (Result) {
+
+                    }
+                });
+            } else {
+
+            }
+        });
+
+        
+    },
     searchOrder: function () {
         var userView = this.getView();
         var searchName = userView.down('#searchName').getValue();
@@ -40,14 +74,14 @@
         console.log(order);
         Ext.Ajax.request({
             method: 'POST',
-            url: '/api/PurchaseOrder/EditOrder',
+            url: '/Api/PurchaseOrder/EditOrder',
             headers: { 'Content-Type': 'application/json' },
             params: JSON.stringify(order),
             dataType: 'json',
             success: function (Result) {
                 var data = Ext.decode(Result.responseText);
-                //console.log(data);
-                if (data.IsSuccess !== true) {
+                console.log(Result);
+                if (data.IsSuccess == true) {
                     console.log("success");
                     Ext.getCmp('orderId').getStore().reload();
                     thisView.destroy();   

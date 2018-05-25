@@ -43,7 +43,7 @@
             xtype: 'button',
             text: 'Delete',
             listeners: {
-                //click:''
+                click:'deleteOrder'
             }
         }
     ],
@@ -51,6 +51,7 @@
         { text: 'OrderNo', dataIndex: 'OrderNo' },
         { text: 'DeliveryAddress', dataIndex: 'DeliveryAddress', flex: 1, },
         { text: 'PayMethod', dataIndex: 'PayMethod', flex: 1 },
-        { text: 'Status', dataIndex: 'Status', flex: 1 }
+        { text: 'Status', dataIndex: 'Status', flex: 1 },
+        { text: 'IsDeleted', dataIndex: 'IsDeleted', flex: 1 },
     ]
 });
