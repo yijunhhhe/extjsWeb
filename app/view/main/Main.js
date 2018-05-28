@@ -94,6 +94,7 @@ Ext.define('WebAppClassic.view.main.Main', {
 		}],
 	},{
 	    title: 'Orders',
+        iconCls:'fa-book',
 	    items: [{
             xtype:'order'
 	    }],

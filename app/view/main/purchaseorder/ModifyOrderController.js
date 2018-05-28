@@ -104,18 +104,22 @@
         });
         var select = this.getView().getSelectionModel().getSelected().items[0].data;
         var form = Ext.getCmp("editOrderId").down('form').getForm().setValues(select);
-        //console.log(this.getView().getSelectionModel().getSelected());
+        console.log(this.getView().getSelectionModel().getSelected().items[0].data);
     },
 
     actualEditOrder: function () {
         var thisView = this.getView();
         var order = Ext.getCmp("orderId").getSelectionModel().getSelected().items[0].data;
         var newOrder = this.getView().down('form').getForm().getFieldValues();
+        //console.log(newOrder);
+        //console.log(order);
         delete order.id;
         order.BrandId = newOrder.BrandId;
         order.FactoryId = newOrder.FactoryId;
         order.DcId = newOrder.DcId;
-        order.DeliveryDate = newOrder.DeliveryDate;
+        if (newOrder.DeliveryDate != null) {
+            order.DeliveryDate = newOrder.DeliveryDate;
+        }
         order.DeliveryAddress = newOrder.DeliveryAddress;
         order.PayMethod = newOrder.PayMethod;
         order.Status = newOrder.Status;

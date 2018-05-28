@@ -1,4 +1,4 @@
-﻿var typeCombo = Ext.create('Ext.data.Store', {
+﻿var typeCombo = Ext.create('Ext.data.Store' ,{
     fields: ['Type'],
     data: [
         { "Type": "通用", },
