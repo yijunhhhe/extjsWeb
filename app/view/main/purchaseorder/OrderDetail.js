@@ -5,16 +5,19 @@
     requires: [
         'WebAppClassic.view.main.purchaseorder.ModifyOrderDetailController',
     ],
-    width: 500,
-    height:600,
+    width: 1010,
+    height:650,
     autoShow:true,
     closable: true,
     controller: 'modifyOrderDetailController',
-    items: {
-        itemId:'orderDetailItemId',
+    layout:'column',
+    items: [{
+        width: 250,
+        itemId: 'orderDetailItemId',
+        title:'OrderDetail',
         xtype: 'form',
         defaultType: 'displayfield',
-        padding:10,
+        bodyPadding: 10,
         items: [{
             fieldLabel: 'Id',
             name: 'Id'
@@ -45,7 +48,8 @@
         }, {
             fieldLabel: 'ModifyDate',
             name: 'ModifyDate'
-        }, {
+        },
+        {
             xtype: 'button',
             text: 'Edit',
             listeners: {
@@ -58,9 +62,166 @@
                 click:'deleteOrderDetail'
             }
         }
+        ], 
+    }, {
+        width: 250,
+        xtype: 'form',
+        itemId: 'factoryItemId',
+        defaultType: 'displayfield',
+        title:'Factory',
+        bodyPadding: 10,
+        items: [{
+            fieldLabel: 'Id',
+            name: 'Id'
+        }, {
+            fieldLabel: 'Name',
+            name: 'Name'
+        }, {
+            fieldLabel: 'EnName',
+            name: 'EnName'
+        }, {
+            fieldLabel: 'Location',
+            name: 'Location'
+        }, {
+            fieldLabel: 'Type',
+            name: 'Type'
+        }, {
+            fieldLabel: 'Code',
+            name: 'Code'
+        }, {
+            fieldLabel: 'IsDeleted',
+            name: 'IsDeleted'
+        }, {
+            fieldLabel: 'Remark',
+            name: 'Remark'
+        }, {
+            fieldLabel: 'CreateBy',
+            name: 'CreateBy'
+        }, {
+            fieldLabel: 'CreateDate',
+            name: 'CreateDate'
+        },
+        //{
+        //    xtype: 'button',
+        //    text: 'Edit',
+        //    listeners: {
+        //        //click: 'editOrderDetail'
+        //    }
+        //}, {
+        //    xtype: 'button',
+        //    text: 'Delete',
+        //    listeners: {
+        //        //click: 'deleteOrderDetail'
+        //    }
+        //}
         ],
 
-       
-    }
+    }, {
+        width: 250,
+        xtype: 'form',
+        defaultType: 'displayfield',
+        itemId: 'dcItemId',
+        title: 'Dc',
+        bodyPadding: 10,
+        items: [{
+            fieldLabel: 'Id',
+            name: 'Id'
+        }, {
+            fieldLabel: 'Name',
+            name: 'Name'
+        }, {
+            fieldLabel: 'EnName',
+            name: 'EnName'
+        }, {
+            fieldLabel: 'Location',
+            name: 'Location'
+        }, {
+            fieldLabel: 'Type',
+            name: 'Type'
+        }, {
+            fieldLabel: 'Code',
+            name: 'Code'
+        }, {
+            fieldLabel: 'IsDeleted',
+            name: 'IsDeleted'
+        }, {
+            fieldLabel: 'Remark',
+            name: 'Remark'
+        }, {
+            fieldLabel: 'CreateBy',
+            name: 'CreateBy'
+        }, {
+            fieldLabel: 'CreateDate',
+            name: 'CreateDate'
+        },
+        //{
+        //    xtype: 'button',
+        //    text: 'Edit',
+        //    listeners: {
+        //        //click: 'editOrderDetail'
+        //    }
+        //}, {
+        //    xtype: 'button',
+        //    text: 'Delete',
+        //    listeners: {
+        //        click: 'deleteOrderDetail'
+        //    }
+        //}
+        ],
+
+    }, {
+        width: 250,
+        xtype: 'form',
+        defaultType: 'displayfield',
+        itemId: 'brandItemId',
+        title: 'Brand',
+        bodyPadding: 10,
+        items: [{
+            fieldLabel: 'Id',
+            name: 'Id'
+        }, {
+            fieldLabel: 'Name',
+            name: 'Name'
+        }, {
+            fieldLabel: 'EnName',
+            name: 'EnName'
+        }, {
+            fieldLabel: 'Location',
+            name: 'Location'
+        }, {
+            fieldLabel: 'Type',
+            name: 'Type'
+        }, {
+            fieldLabel: 'Code',
+            name: 'Code'
+        }, {
+            fieldLabel: 'IsDeleted',
+            name: 'IsDeleted'
+        }, {
+            fieldLabel: 'Remark',
+            name: 'Remark'
+        }, {
+            fieldLabel: 'CreateBy',
+            name: 'CreateBy'
+        }, {
+            fieldLabel: 'CreateDate',
+            name: 'CreateDate'
+        },
+        //{
+        //    xtype: 'button',
+        //    text: 'Edit',
+        //    listeners: {
+        //        //click: 'editOrderDetail'
+        //    }
+        //}, {
+        //    xtype: 'button',
+        //    text: 'Delete',
+        //    listeners: {
+        //        click: 'deleteOrderDetail'
+        //    }
+        //}
+        ],
+
+    }]
 
 });

@@ -56,6 +56,9 @@
     actualAddOrder: function(){
         var orderValue = this.getView().down('#orderItemId').getForm().getValues();
         var orderDetailValue = this.getView().down('#orderDetailItemId').getForm().getValues();
+        orderDetailValue.PurchaseOrderNo = orderValue.OrderNo;
+        //console.log(orderValue);
+        //console.log(orderDetailValue);
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/PurchaseOrder/AddOrder',
@@ -68,30 +71,31 @@
                 if (data.IsSuccess == true) {
                     console.log("success");
                     Ext.getCmp('orderId').getStore().reload();
-                    thisView.destroy();
+                    orderDetailValue.PurchaseOrderId = data.Data
+                    Ext.Ajax.request({
+                        method: 'POST',
+                        url: '/Api/PurchaseOrderDetail/AddOrderDetail',
+                        headers: { 'Content-Type': 'application/json' },
+                        params: JSON.stringify(orderDetailValue),
+                        dataType: 'json',
+                        success: function (Result) {
+                            var data = Ext.decode(Result.responseText);
+                            console.log(Result);
+                            if (data.IsSuccess == true) {
+                                console.log("success");
+                                Ext.getCmp('orderId').getStore().reload();
+                                //thisView.destroy();
+                            } else {
+                                alert(data.ErrorMessage);
+                            }
+                        }
+                    })
                 } else {
                     alert(data.ErrorMessage);
                 }
             }
         });
-        //Ext.Ajax.request({
-        //    method: 'POST',
-        //    url: '/Api/PurchaseOrderDetail/AddOrder',
-        //    headers: { 'Content-Type': 'application/json' },
-        //    params: JSON.stringify(orderDetailValue),
-        //    dataType: 'json',
-        //    success: function (Result) {
-        //        var data = Ext.decode(Result.responseText);
-        //        console.log(Result);
-        //        if (data.IsSuccess == true) {
-        //            console.log("success");
-        //            Ext.getCmp('orderId').getStore().reload();
-        //            thisView.destroy();
-        //        } else {
-        //            alert(data.ErrorMessage);
-        //        }
-        //    }
-        //})
+        
     },
 
     editOrder: function () {
@@ -137,30 +141,86 @@
         });
     },
 
-    orderDetail: function(){
-        var detail = Ext.create({
-            xtype: 'orderdetail'
-        });
-        var select = this.getView().getSelectionModel().getSelected().items[0].data;
-        console.log(select);
-        var selectId = select.Id;
-       // console.log(selectId);
-        Ext.Ajax.request({
-            method: 'GET',
-            url: '/api/PurchaseOrderDetail/GetSingleOrderDetail?Id=' + selectId,
-            headers: { 'Content-Type': 'application/json' },
-            dataType: 'json',
-            success: function (Result) {
-                var data = Ext.decode(Result.responseText);
-                //console.log(data);
-                if (data.IsSuccess == true) {
-                    //console.log("success");
-                    detail.down('form').getForm().setValues(data.Data);
-                } else {
-                    alert(data.ErrorMessage);
+    orderDetail: function () {
+        if (this.getView().getSelectionModel().getSelected() == undefined) {
+            alert("please select something");
+        } else {
+            var detail = Ext.create({
+                xtype: 'orderdetail'
+            });
+            var select = this.getView().getSelectionModel().getSelected().items[0].data;
+            console.log(select);
+            var selectId = select.Id;
+            // console.log(selectId);
+            Ext.Ajax.request({
+                method: 'GET',
+                url: '/api/PurchaseOrderDetail/GetSingleOrderDetail?Id=' + selectId,
+                headers: { 'Content-Type': 'application/json' },
+                dataType: 'json',
+                success: function (Result) {
+                    var data = Ext.decode(Result.responseText);
+                    //console.log(data);
+                    if (data.IsSuccess == true) {
+                        //console.log("success");
+                        detail.down('form').getForm().setValues(data.Data);
+                    } else {
+                        alert(data.ErrorMessage);
+                    }
                 }
-            }
-        });
+            });
+
+            Ext.Ajax.request({
+                method: 'GET',
+                url: '/api/Organization/GetSingleOrganization?organizationId=' + select.FactoryId,
+                headers: { 'Content-Type': 'application/json' },
+                dataType: 'json',
+                success: function (Result) {
+                    var data = Ext.decode(Result.responseText);
+                    //console.log(data);
+                    if (data.IsSuccess == true) {
+                        //console.log("success");
+                        detail.down('#factoryItemId').getForm().setValues(data.Data);
+                    } else {
+                        alert(data.ErrorMessage);
+                    }
+                }
+            });
+            Ext.Ajax.request({
+                method: 'GET',
+                url: '/api/Organization/GetSingleOrganization?organizationId=' + select.DcId,
+                headers: { 'Content-Type': 'application/json' },
+                dataType: 'json',
+                success: function (Result) {
+                    var data = Ext.decode(Result.responseText);
+                    //console.log(data);
+                    if (data.IsSuccess == true) {
+                        //console.log("success");
+                        detail.down('#dcItemId').getForm().setValues(data.Data);
+                    } else {
+                        alert(data.ErrorMessage);
+                    }
+                }
+            });
+            Ext.Ajax.request({
+                method: 'GET',
+                url: '/api/Organization/GetSingleOrganization?organizationId=' + select.BrandId,
+                headers: { 'Content-Type': 'application/json' },
+                dataType: 'json',
+                success: function (Result) {
+                    var data = Ext.decode(Result.responseText);
+                    //console.log(data);
+                    if (data.IsSuccess == true) {
+                        //console.log("success");
+                        detail.down('#brandItemId').getForm().setValues(data.Data);
+                    } else {
+                        alert(data.ErrorMessage);
+                    }
+                }
+            });
+        }
+        
+
+        
         //console.log(detail.down('form').getForm().setValues({PurchaseOrderId:'3',PurchaseOrderNo:'4'}));
     }
 })
