@@ -85,7 +85,7 @@
 
     modifyUser: function () {
         var edit = this.getView();
-       
+        var select = Ext.getCmp('searchUserId').getSelectionModel().getSelected().items[0].data;
         //get new value from the form
         var userValue = edit.getValues();
         if (userValue.Role != undefined) {
@@ -94,12 +94,22 @@
             userValue.Role = "";
         }
         
-        console.log(userValue);
+        delete select.id;
+        select.AccountNo = userValue.AccountNo;
+        select.Password = userValue.Password;
+        select.EpcCode = userValue.EpcCode;
+        select.Name = userValue.Name;
+        select.EnName = userValue.EnName;
+        select.Type = userValue.Type;
+        select.Role = userValue.Role;
+        select.IsDisabled = userValue.IsDisabled;
+        select.Remark = select.Remark;
+        
         Ext.Ajax.request({
             method: 'POST',
             url: '/api/Account/EditAccount',
             headers: { 'Content-Type': 'application/json' },
-            params: JSON.stringify(userValue),
+            params: JSON.stringify(select),
             dataType: 'json',
             success: function (Result) {
                 var data = Ext.decode(Result.responseText);
