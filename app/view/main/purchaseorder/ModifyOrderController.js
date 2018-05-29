@@ -52,7 +52,7 @@
         model[model.length] = detail;
         this.getView().getViewModel().data.detail = model;
         this.getView().down('grid').getStore().setData(model);
-        console.log(model);
+        //console.log(model);
 
     },
     
@@ -67,13 +67,19 @@
 
     actualAddOrder: function(){
         var orderValue = this.getView().down('#orderItemId').getForm().getValues();
-        var orderDetailValue = this.getView().down('#orderDetailItemId').getForm().getValues();
-        orderDetailValue.PurchaseOrderNo = orderValue.OrderNo;
-        //console.log(orderValue);
+        var orderDetailValue = this.getView().getViewModel().data.detail;
+        orderDetailValue.forEach(function (element) {
+            element.PurchaseOrderNo = orderValue.OrderNo;
+            //console.log(element);
+            delete id;
+        });
+        orderValue.PurchaseOrderDetails = orderDetailValue;
+        
+        console.log(orderValue);
         //console.log(orderDetailValue);
         Ext.Ajax.request({
             method: 'POST',
-            url: '/Api/PurchaseOrder/AddOrder',
+            url: '/Api/PurchaseOrder/AddPurchaseOrder',
             headers: { 'Content-Type': 'application/json' },
             params: JSON.stringify(orderValue),
             dataType: 'json',
@@ -82,7 +88,7 @@
                 console.log(Result);
                 if (data.IsSuccess == true) {
                     console.log("success");
-                    Ext.getCmp('orderId').getStore().reload();
+                    Ext.getCmp('orderId').down('grid').getStore().reload();
                     orderDetailValue.PurchaseOrderId = data.Data
                     Ext.Ajax.request({
                         method: 'POST',
@@ -92,6 +98,7 @@
                         dataType: 'json',
                         success: function (Result) {
                             var data = Ext.decode(Result.responseText);
+                            this.getView().getViewModel().data.detail = [];
                             console.log(Result);
                             if (data.IsSuccess == true) {
                                 console.log("success");
@@ -114,9 +121,18 @@
         var edit = Ext.create({
             xtype: 'editorder',
         });
-        var select = this.getView().getSelectionModel().getSelected().items[0].data;
+        var select = this.getView().down('grid').getSelectionModel().getSelected().items[0].data;
         var form = Ext.getCmp("editOrderId").down('form').getForm().setValues(select);
-        console.log(this.getView().getSelectionModel().getSelected().items[0].data);
+        var detailStore = this.getView().down('#orderDetailGrid').getStore().getData().items;
+        var detailArray = [];
+        detailStore.forEach(function (element) {
+            detailArray[detailArray.length] = element.data
+        });
+        console.log(detailArray);
+        //var a = [{ ProductId: "f5465602-d09e-44ff-901a-9bf422998865", OrderQty: "2", Remark: "" }];
+        console.log(Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().setData(detailArray));
+        //console.log(detailStore.items);
+        //console.log(this.getView().getSelectionModel().getSelected().items[0].data);
     },
 
     actualEditOrder: function () {

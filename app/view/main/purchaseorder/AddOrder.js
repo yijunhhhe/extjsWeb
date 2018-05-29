@@ -11,6 +11,7 @@ var brand = Ext.create('Ext.data.Store', {
     fields: [
         { name: 'Id', type: 'string' },
         { name: 'Type', type: 'string' },
+        { name: 'Name', type: 'string' },
     ],
    
     filters: [{
@@ -31,6 +32,7 @@ var dc = Ext.create('Ext.data.Store', {
     fields: [
         { name: 'Id', type: 'string' },
         { name: 'Type', type: 'string' },
+        { name: 'Name', type: 'string' },
     ],
 
     filters: [{
@@ -52,6 +54,7 @@ var factory = Ext.create('Ext.data.Store', {
     fields: [
         { name: 'Id', type: 'string' },
         { name: 'Type', type: 'string' },
+        { name: 'Name', type: 'string' },
     ],
 
     filters: [{
@@ -73,7 +76,7 @@ var factory = Ext.create('Ext.data.Store', {
 var product = Ext.create('Ext.data.Store', {
     fields: [
         { name: 'Id', type: 'string' },
-        
+        { name: 'Name', type: 'string' },
     ],
 
     proxy: {
@@ -132,7 +135,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             name: 'BrandId',
             store: brand,
             queryMode: 'remote',
-            displayField: 'Id',
+            displayField: 'Name',
             valueField: 'Id',
             editable: false,
             queryParam: 'query',  
@@ -142,7 +145,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             name: 'FactoryId',
             store: factory,
             queryMode: 'remote',
-            displayField: 'Id',
+            displayField: 'Name',
             valueField: 'Id',
             editable: false,
             queryParam: 'query',
@@ -152,7 +155,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             name: 'DcId',
             store: dc,
             queryMode: 'remote',
-            displayField: 'Id',
+            displayField: 'Name',
             valueField: 'Id',
             editable: false,
             queryParam: 'query',
@@ -192,11 +195,11 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
         items: [{
             xtype: 'combo',
             fieldLabel: 'ProductId',
+            store:product,
             name: 'ProductId',
             queryMode: 'remote',
-            displayField: 'Id',
+            displayField: 'Name',
             valueField: 'Id',
-            
             queryParam: 'query',
         }, {
             fieldLabel: 'OrderQty',
