@@ -1,4 +1,13 @@
-﻿var brand = Ext.create('Ext.data.Store', {
+﻿var orderDetail = Ext.create('Ext.data.Store', {
+    fields: [
+        { name: 'ProductId', type: 'string' },
+        { name: 'OrderQty', type: 'string' },
+        { name: 'Remark', type: 'string' },
+    ],
+
+})
+
+var brand = Ext.create('Ext.data.Store', {
     fields: [
         { name: 'Id', type: 'string' },
         { name: 'Type', type: 'string' },
@@ -94,9 +103,13 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
     xtype: 'addorder',
     id:'addOrderId',
     requires: [
-        'WebAppClassic.view.main.purchaseorder.ModifyOrderController'
+        'WebAppClassic.view.main.purchaseorder.ModifyOrderController',
+        'WebAppClassic.view.main.purchaseorder.OrderDetailViewModel',
     ],
     controller: 'modifyOrderController',
+    viewModel:{
+        type:"orderDetailViewModel"
+    },
     autoShow: true,
     closable: true,
     layout: 'border',
@@ -133,7 +146,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             valueField: 'Id',
             editable: false,
             queryParam: 'query',
-
         }, {
             xtype: 'combo',
             fieldLabel: 'DcId',
@@ -169,7 +181,8 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             name: 'Remark'
         }, ]
     }, {
-        itemId:'orderDetailItemId',
+        itemId: 'orderDetailItemId',
+        store: orderDetail,     
         xtype: 'form',
         region: 'east',
         bodyPadding:10,
@@ -180,20 +193,35 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             xtype: 'combo',
             fieldLabel: 'ProductId',
             name: 'ProductId',
-            store: product,
             queryMode: 'remote',
             displayField: 'Id',
             valueField: 'Id',
-            editable: false,
+            
             queryParam: 'query',
-
         }, {
             fieldLabel: 'OrderQty',
             name: 'OrderQty'
         }, {
             fieldLabel: 'Remark',
             name: 'Remark'
-        }, ]
+        }, {
+            xtype: 'button',
+            text: 'Add',
+            listeners: {
+                click:'addOrderDetail'
+            }
+        },{
+            xtype: 'grid',
+            store: orderDetail,
+            columns: [
+                 { text: 'ProductId', dataIndex: 'ProductId' },
+                { text: 'OrderQty', dataIndex: 'OrderQty', flex: 1, },
+                { text: 'Remark', dataIndex: 'Remark', flex: 1 },
+            ]
+    
+    }],
+
+
 
     }, {
         xtype: 'button',

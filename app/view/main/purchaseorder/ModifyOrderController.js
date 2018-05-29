@@ -1,12 +1,11 @@
 ﻿Ext.define('WebAppClassic.view.main.purchaseorder.ModifyOrderController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.modifyOrderController',
-
+    
     deleteOrder: function () {
         var select = this.getView().getSelectionModel().getSelected().items[0].data;
         delete select.id;
         select.IsDeleted = true;
-        
         Ext.MessageBox.confirm('delete', 'yes?', function (btn, text) {
             if (btn == "yes") {     
                 Ext.Ajax.request({
@@ -36,6 +35,7 @@
 
         
     },
+
     searchOrder: function () {
         var userView = this.getView();
         var searchName = userView.down('#searchName').getValue();
@@ -45,7 +45,19 @@
         store.filter('OrderNo', searchName);
     },
     
-    addOrder:function () {
+    addOrderDetail: function(){
+        
+        var detail = this.getView().down('#orderDetailItemId').getForm().getValues();
+        var model = this.getView().getViewModel().data.detail;
+        model[model.length] = detail;
+        this.getView().getViewModel().data.detail = model;
+        this.getView().down('grid').getStore().setData(model);
+        console.log(model);
+
+    },
+    
+    addOrder: function () {
+
         var add = Ext.create({
             xtype: 'addorder'
         });

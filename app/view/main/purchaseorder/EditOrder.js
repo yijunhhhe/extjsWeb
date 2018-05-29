@@ -11,7 +11,6 @@ var statusCombo = Ext.create('Ext.data.Store', {
     data: [
         { "Status": "CREATE", },
         { "Status": "PROCESS", },
-
     ]
 });
 
