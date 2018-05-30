@@ -62,12 +62,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
             }
         }, {
             xtype: 'button',
-            text: 'Detail',
-            listeners: {
-                click: 'orderDetail'
-            }
-        }, {
-            xtype: 'button',
             text: 'Edit',
             listeners: {
                 click: 'editOrder'
