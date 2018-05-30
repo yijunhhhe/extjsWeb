@@ -3,22 +3,23 @@
     alias: 'controller.modifyOrderController',
     
     deleteOrder: function () {
-        var select = this.getView().getSelectionModel().getSelected().items[0].data;
+        var select = this.getView().down('grid').getSelectionModel().getSelected().items[0].data;
         delete select.id;
         select.IsDeleted = true;
         Ext.MessageBox.confirm('delete', 'yes?', function (btn, text) {
             if (btn == "yes") {     
                 Ext.Ajax.request({
                     method: 'POST',
-                    url: '/Api/PurchaseOrder/DeletePurchaseWithDetail?purchaseId=' + select.Id,
+                    url: '/Api/PurchaseOrder/DeletePurchaseWithDetail',
                     headers: { 'Content-Type': 'application/json' },
+                    params: JSON.stringify(select),
                     dataType: 'json',
                     success: function (Result) {
                         var data = Ext.decode(Result.responseText);
                         //console.log(data);
                         if (data.IsSuccess == true) {
                             console.log("success");
-                            Ext.getCmp('orderId').getStore().reload();
+                            Ext.getCmp('orderId').down('grid').getStore().reload();
                             thisView.destroy();
                         } else {
                             alert(data.ErrorMessage);
@@ -39,10 +40,11 @@
     searchOrder: function () {
         var userView = this.getView();
         var searchName = userView.down('#searchName').getValue();
-        var store = userView.getStore();
+        var searchType = userView.down('combo').getValue();
+        var store = userView.down('grid').getStore();
         console.log(searchName);
-        console.log(store);
-        store.filter('OrderNo', searchName);
+        console.log(store.getData());
+        store.filter(searchType, searchName);
     },
     
     addOrderDetail: function(){
@@ -89,26 +91,9 @@
                 if (data.IsSuccess == true) {
                     console.log("success");
                     Ext.getCmp('orderId').down('grid').getStore().reload();
-                    orderDetailValue.PurchaseOrderId = data.Data
-                    Ext.Ajax.request({
-                        method: 'POST',
-                        url: '/Api/PurchaseOrderDetail/AddOrderDetail',
-                        headers: { 'Content-Type': 'application/json' },
-                        params: JSON.stringify(orderDetailValue),
-                        dataType: 'json',
-                        success: function (Result) {
-                            var data = Ext.decode(Result.responseText);
-                            this.getView().getViewModel().data.detail = [];
-                            console.log(Result);
-                            if (data.IsSuccess == true) {
-                                console.log("success");
-                                Ext.getCmp('orderId').getStore().reload();
-                                //thisView.destroy();
-                            } else {
-                                alert(data.ErrorMessage);
-                            }
-                        }
-                    })
+                    Ext.getCmp('addOrderId').down('grid').getStore().removeAll();
+                    Ext.getCmp('addOrderId').destroy();
+                    
                 } else {
                     alert(data.ErrorMessage);
                 }
@@ -121,26 +106,31 @@
         var edit = Ext.create({
             xtype: 'editorder',
         });
+        //set values of order form
         var select = this.getView().down('grid').getSelectionModel().getSelected().items[0].data;
+        select.DeliveryDate = select.DeliveryDate.replace("T", " ");
         var form = Ext.getCmp("editOrderId").down('form').getForm().setValues(select);
+        //Ext.getCmp("editOrderId").down('form').down('#dateItemId').setValue(select.DeliveryDate);
+        //console.log(date);
+        //console.log(Ext.getCmp("editOrderId").down('form').getForm().getValues());
+
+        //set data in orderdetail's grid
         var detailStore = this.getView().down('#orderDetailGrid').getStore().getData().items;
         var detailArray = [];
         detailStore.forEach(function (element) {
             detailArray[detailArray.length] = element.data
         });
-        console.log(detailArray);
-        //var a = [{ ProductId: "f5465602-d09e-44ff-901a-9bf422998865", OrderQty: "2", Remark: "" }];
-        console.log(Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().setData(detailArray));
+        Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().setData(detailArray);
         //console.log(detailStore.items);
         //console.log(this.getView().getSelectionModel().getSelected().items[0].data);
     },
 
     actualEditOrder: function () {
         var thisView = this.getView();
-        var order = Ext.getCmp("orderId").getSelectionModel().getSelected().items[0].data;
+
+        //get the order 
+        var order = Ext.getCmp("orderId").down('grid').getSelectionModel().getSelected().items[0].data;
         var newOrder = this.getView().down('form').getForm().getFieldValues();
-        //console.log(newOrder);
-        //console.log(order);
         delete order.id;
         order.BrandId = newOrder.BrandId;
         order.FactoryId = newOrder.FactoryId;
@@ -150,12 +140,22 @@
         }
         order.DeliveryAddress = newOrder.DeliveryAddress;
         order.PayMethod = newOrder.PayMethod;
-        order.Status = newOrder.Status;
         order.Remark = newOrder.Remark;
+
+        //get the detail
+        var detailArray = [];
+        var store = this.getView().down('#orderDetailGrid').getStore().getData().getRange();
+        //console.log(store);
+        store.forEach(function (element) {
+            delete element.data.id
+            detailArray[detailArray.length] = element.data;
+            //console.log(element);   
+        });
+        order.PurchaseOrderDetails = detailArray;
         console.log(order);
         Ext.Ajax.request({
             method: 'POST',
-            url: '/Api/PurchaseOrder/EditOrder',
+            url: '/Api/PurchaseOrder/EditPurchaseWithDetail',
             headers: { 'Content-Type': 'application/json' },
             params: JSON.stringify(order),
             dataType: 'json',
@@ -164,7 +164,7 @@
                 console.log(Result);
                 if (data.IsSuccess == true) {
                     console.log("success");
-                    Ext.getCmp('orderId').getStore().reload();
+                    Ext.getCmp('orderId').down('grid').getStore().reload();
                     thisView.destroy();   
                 } else {
                     alert(data.ErrorMessage);

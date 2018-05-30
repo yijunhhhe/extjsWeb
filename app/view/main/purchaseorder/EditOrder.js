@@ -3,6 +3,14 @@
         { name: 'ProductId', type: 'string' },
         { name: 'OrderQty', type: 'string' },
         { name: 'Remark', type: 'string' },
+        { name: 'CreateBy', type: 'string' },
+        { name: 'CreateDate', type: 'string' },
+        { name: 'Id', type: 'string' },
+        { name: 'IsDeleted', type: 'string' },
+        { name: 'ModifyBy', type: 'string' },
+        { name: 'ModifyDate', type: 'string' },
+        { name: 'PurchaseOrderId', type: 'string' },
+        { name: 'PurchaseOrderNo', type: 'string' },
     ],
 })
 
@@ -21,6 +29,90 @@ var statusCombo = Ext.create('Ext.data.Store', {
         { "Status": "PROCESS", },
     ]
 });
+
+var brand = Ext.create('Ext.data.Store', {
+    fields: [
+        { name: 'Id', type: 'string' },
+        { name: 'Type', type: 'string' },
+        { name: 'Name', type: 'string' },
+    ],
+
+    filters: [{
+        property: 'Type',
+        value: 'Brand'
+    }],
+    proxy: {
+        type: 'ajax',
+        url: '/Api/Organization/GetAllOrganization',
+        actionMethod: 'Get',
+        reader: {
+            type: 'json',
+            rootProperty: 'Data'
+        }
+    },
+})
+
+var dc = Ext.create('Ext.data.Store', {
+    fields: [
+        { name: 'Id', type: 'string' },
+        { name: 'Type', type: 'string' },
+        { name: 'Name', type: 'string' },
+    ],
+
+    filters: [{
+        property: 'Type',
+        value: 'Store'
+    }],
+
+    proxy: {
+        type: 'ajax',
+        url: '/Api/Organization/GetAllOrganization',
+        actionMethod: 'Get',
+        reader: {
+            type: 'json',
+            rootProperty: 'Data'
+        }
+    },
+})
+var factory = Ext.create('Ext.data.Store', {
+    fields: [
+        { name: 'Id', type: 'string' },
+        { name: 'Type', type: 'string' },
+        { name: 'Name', type: 'string' },
+    ],
+
+    filters: [{
+        property: 'Type',
+        value: 'Factory'
+    }],
+
+    proxy: {
+        type: 'ajax',
+        url: '/Api/Organization/GetAllOrganization',
+        actionMethod: 'Get',
+        reader: {
+            type: 'json',
+            rootProperty: 'Data'
+        }
+    },
+})
+
+var product = Ext.create('Ext.data.Store', {
+    fields: [
+        { name: 'Id', type: 'string' },
+        { name: 'Name', type: 'string' },
+    ],
+
+    proxy: {
+        type: 'ajax',
+        url: '/Api/Product/GetProductAll',
+        actionMethod: 'Get',
+        reader: {
+            type: 'json',
+            rootProperty: 'Data'
+        }
+    },
+})
 
 Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
     extend: 'Ext.window.Window',
@@ -43,20 +135,41 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
         width:350,
         defaultType: 'textfield',
         items: [{
+            itemId:'BrandItemId',
+            xtype: 'combo',
             fieldLabel: 'BrandId',
-            name: 'BrandId'
+            name: 'BrandId',
+            store: brand,
+            queryMode: 'remote',
+            displayField: 'Id',
+            valueField: 'Id',
+            editable: false,
         }, {
+            xtype: 'combo',
             fieldLabel: 'FactoryId',
-            name: 'FactoryId'
+            name: 'FactoryId',
+            store: factory,
+            queryMode: 'remote',
+            displayField: 'Id',
+            valueField: 'Id',
+            editable: false,
+            queryParam: 'query',
         }, {
+            xtype: 'combo',
             fieldLabel: 'DcId',
-            name: 'DcId'
+            name: 'DcId',
+            store: dc,
+            queryMode: 'remote',
+            displayField: 'Id',
+            valueField: 'Id',
+            editable: false,
+            queryParam: 'query',
         }, {
             xtype: 'datefield',
             fieldLabel: 'DeliveryDate',
             name: 'DeliveryDate',
-            anchor: '100%',
-            value: new Date()
+            format: 'Y-m-d H:i:s',
+            
         }, {
             fieldLabel: 'DeliveryAddress',
             name: 'DeliveryAddress'
@@ -68,14 +181,6 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             queryMode: 'local',
             displayField: 'PayMethod',
             valueField: 'PayMethod',      
-        }, {
-            xtype: 'combo',
-            fieldLabel: 'Status',
-            name: 'Status',
-            store: statusCombo,
-            queryMode: 'local',
-            displayField: 'Status',
-            valueField: 'Status',      
         },  {
             fieldLabel: 'Remark',
             name: 'Remark'
@@ -108,11 +213,13 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             { 
                 xtype: 'combo',
                 fieldLabel: 'ProductId',
+                store: product,
                 name: 'ProductId',
-                //store: ,
-                queryMode: 'local',
-                //displayField: 'Status',
-                //valueField: 'Status',      
+                queryMode: 'remote',
+                displayField: 'Id',
+                valueField: 'Id',
+                editable: false,
+                queryParam: 'query',
             }, {
                 xtype: 'textfield',
                 fieldLabel: 'OrderQty',
@@ -129,7 +236,43 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                     { text: 'ProductId', dataIndex: 'ProductId' },
                     { text: 'OrderQty', dataIndex: 'OrderQty', flex: 1, },
                     { text: 'Remark', dataIndex: 'Remark', flex: 1 },
-                ]
+                ],
+                listeners: {
+                    rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
+                        //fill out the form
+                        var orderDetail = this.getView().getSelectionModel().getSelected().items[0].data;
+                        //console.log(orderDetail);
+                        this.getView().up('form').getForm().setValues(orderDetail);
+
+                        
+
+                    },
+                },
+                buttons: [{
+                    text:'Edit',
+                    listeners: {
+                        click: function () {
+                            //get the index of the store
+                            var index = this.up('grid').getView().getStore().indexOf(this.up('grid').getView().getSelectionModel().getSelection()[0]);
+                            //console.log(this.up('grid').getView().getSelectionModel().getSelection()[0])
+                            var orderDetail = this.up('grid').getView().getSelectionModel().getSelected().items[0].data;
+
+                            //get the form value(object)
+                            var formValue = this.up('grid').getView().up('form').getForm().getValues();
+                            orderDetail.ProductId = formValue.ProductId;
+                            orderDetail.OrderQty = formValue.OrderQty;
+                            orderDetail.Remark = formValue.Remark;
+
+                            //update the data in store
+                            this.up('grid').getView().getStore().removeAt(index);
+                            this.up('grid').getView().getStore().insert(index, orderDetail);
+
+                            //clear the form 
+                            this.up('grid').getView().up('form').getForm().reset();
+                            //all the data now are stored in orderDetailStore
+                        }
+                    }
+                }],
             }
         ]
     },
@@ -139,7 +282,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
         region: 'south',
         text: 'submit',
         listeners: {
-            click: 'actualAddOrder'
+            click: 'actualEditOrder'
         }
     }
     ]

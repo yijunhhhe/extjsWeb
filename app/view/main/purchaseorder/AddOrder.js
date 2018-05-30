@@ -164,7 +164,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             xtype:'datefield',
             fieldLabel: 'DeliveryDate',
             name: 'DeliveryDate',
-            anchor: '100%',
+            format: 'Y-m-d H:i:s',
             value: new Date()
         }, {
             fieldLabel: 'DeliveryAddress',
