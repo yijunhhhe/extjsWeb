@@ -4,5 +4,6 @@
   
     data: {
         detail: [],
+        searchFilter:{}
     }
 })

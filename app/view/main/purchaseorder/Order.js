@@ -18,9 +18,11 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
     requires: [
              'WebAppClassic.store.OrderStore',
              'WebAppClassic.view.main.purchaseorder.ModifyOrderController',
+             'WebAppClassic.view.main.purchaseorder.OrderDetailViewModel'
     ],
     xtype: 'order',
-    id:'orderId',
+    id: 'orderId',
+    viewModel:'orderDetailViewModel',
     controller: 'modifyOrderController',
     scrollable:true,
     layout:'border',
@@ -42,16 +44,26 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
         }, {
             xtype: 'combo',
             name: 'Search',
+            width:120,
             store: search,
             queryMode: 'local',
             displayField: 'Type',
             valueField: 'Type',
         }, {
             xtype: 'button',
+            text: 'AddFilter',
+            listeners: {
+                click: 'searchOrderAddFilter'
+            }
+        }, {
+            xtype: 'button',
             text: 'Search',
             listeners: {
                 click: 'searchOrder'
             }
+        }, {
+            xtype: 'displayfield',
+            name: 'filterTip'
         }, {
             xtype: 'tbfill'
         }, {

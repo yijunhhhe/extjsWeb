@@ -37,14 +37,89 @@
         
     },
 
-    searchOrder: function () {
+    searchOrderAddFilter: function () {
         var userView = this.getView();
         var searchName = userView.down('#searchName').getValue();
         var searchType = userView.down('combo').getValue();
         var store = userView.down('grid').getStore();
-        console.log(searchName);
-        console.log(store.getData());
-        store.filter(searchType, searchName);
+        var search = userView.getViewModel().data.searchFilter;
+        search[searchType] = searchName;
+        userView.getViewModel().data.searchFilter = search
+        userView.down('displayfield').setValue(searchType+" Filter have been added");
+        
+
+
+        //console.log(searchName);
+        //console.log(store.getData());
+        //store.filter(searchType, searchName);
+    },
+
+    searchOrder: function () {
+        var view = this.getView();
+        var filterObject = this.getView().getViewModel().data.searchFilter;
+        
+        if (!Object.keys(filterObject).length) {
+            var searchName = view.down('#searchName').getValue();
+            var searchType = view.down('combo').getValue();
+            if (searchType == null) {
+                alert('Please select an filter');
+                return 
+            }
+            var object = {}
+            debugger
+            object[searchType] = searchName;
+            filterObject = object;
+        }
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
+            headers: { 'Content-Type': 'application/json' },
+            params: JSON.stringify(filterObject),
+            dataType: 'json',
+            success: function (Result) {
+                var data = Ext.decode(Result.responseText);
+                if (data.IsSuccess == true) {
+                    console.log("success");
+                    console.log(data.Data);
+                    view.down('grid').getStore().setData(data.Data);
+                    view.getViewModel().data.searchFilter = {}
+                    console.log(view.down('grid').getStore());
+                   // addOrderView.down('#orderDetailItemId').down('combo').getStore().setData(data.Data);
+
+                    //console.log(addOrderView.down('#orderDetailItemId').down('combo').getStore());
+
+                } else {
+                    alert(data.ErrorMessage);
+                }
+            }
+        });
+    },
+    
+    addFilter: function () {
+        var addOrderView = this.getView();
+        var filter = this.getView().down('form').getForm().getValues();
+        console.log(filter);
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '/Api/Product/SearchProductByDto',
+            headers: { 'Content-Type': 'application/json' },
+            params: JSON.stringify(filter),
+            dataType: 'json',
+            success: function (Result) {
+                var data = Ext.decode(Result.responseText);
+                
+                if (data.IsSuccess == true) {
+                    console.log("success");
+                    console.log(data.Data);
+                    addOrderView.down('#orderDetailItemId').down('combo').getStore().setData(data.Data);
+                    
+                    console.log(addOrderView.down('#orderDetailItemId').down('combo').getStore());
+
+                } else {
+                    alert(data.ErrorMessage);
+                }
+            }
+        });
     },
     
     addOrderDetail: function(){
@@ -109,11 +184,7 @@
         var select = this.getView().down('grid').getSelectionModel().getSelected().items[0].data;
         select.DeliveryDate = select.DeliveryDate.replace("T", " ");
         var form = Ext.getCmp("editOrderId").down('form').getForm().setValues(select);
-        //Ext.getCmp("editOrderId").down('form').down('#dateItemId').setValue(select.DeliveryDate);
-        //console.log(date);
-        //console.log(Ext.getCmp("editOrderId").down('form').getForm().getValues());
 
-        //set data in orderdetail's grid
         var detailStore = this.getView().down('#orderDetailGrid').getStore().getData().items;
         var detailArray = [];
         detailStore.forEach(function (element) {

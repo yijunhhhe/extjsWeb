@@ -79,15 +79,16 @@ var product = Ext.create('Ext.data.Store', {
         { name: 'Name', type: 'string' },
     ],
 
-    proxy: {
-        type: 'ajax',
-        url: '/Api/Product/GetProductAll',
-        actionMethod: 'Get',
-        reader: {
-            type: 'json',
-            rootProperty: 'Data'
-        }
-    },
+    //proxy: {
+    //    type: 'ajax',
+    //    url: '/Api/Product/GetProductAll',
+    //    actionMethod: 'Get',
+    //    reader: {
+    //        type: 'json',
+    //        rootProperty: 'Data'
+    //    }
+    //},
+
 })
 
 var payment = Ext.create('Ext.data.Store', {
@@ -117,11 +118,47 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
     closable: true,
     layout: 'border',
     height: 600,
-    width:700,
+    labelWidth:'auto',
+    width:900,
     items: [{
+        xtype: 'form',
+        region: 'east',
+        width: 250,
+        bodyPadding: 10,
+        title:'Filter',
+        defaultType: 'textfield',
+        defaults:{
+           // width: 200,
+            anchor:'100%',
+        },
+        collapsible: true,
+        items: [{
+            fieldLabel: 'Bacode',
+            name: 'Bacode',
+        }, {
+            fieldLabel: 'Code',
+            name:'Code',
+        }, {
+            fieldLabel: 'Name',
+            name: 'Name',
+        }, {
+            fieldLabel: 'Color',
+            name: 'Color',
+        }, {
+            fieldLabel: 'Size',
+            name: 'Size',
+        },{
+            xtype: 'button',
+            text: 'Filter',
+            listeners: {
+                click: 'addFilter'
+            }
+        }],
+    },
+        {
         itemId:'orderItemId',
         xtype: 'form',
-        width: 350,
+        width: 300,
         bodyPadding:10,
         region:'west',
         title:'Order',
@@ -187,9 +224,9 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
         itemId: 'orderDetailItemId',
         store: orderDetail,     
         xtype: 'form',
-        region: 'east',
+        region: 'center',
         bodyPadding:10,
-        width:350,
+        
         title:'Order Detail',
         defaultType: 'textfield',
         items: [{
@@ -197,10 +234,9 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             fieldLabel: 'ProductId',
             store:product,
             name: 'ProductId',
-            queryMode: 'remote',
+            queryMode: 'local',
             displayField: 'Name',
             valueField: 'Id',
-            queryParam: 'query',
         }, {
             fieldLabel: 'OrderQty',
             name: 'OrderQty'

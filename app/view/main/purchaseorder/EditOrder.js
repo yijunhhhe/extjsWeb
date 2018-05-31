@@ -103,15 +103,6 @@ var product = Ext.create('Ext.data.Store', {
         { name: 'Name', type: 'string' },
     ],
 
-    proxy: {
-        type: 'ajax',
-        url: '/Api/Product/GetProductAll',
-        actionMethod: 'Get',
-        reader: {
-            type: 'json',
-            rootProperty: 'Data'
-        }
-    },
 })
 
 Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
@@ -125,14 +116,50 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
     autoShow: true,
     layout: 'border',
     height: 600,
-    width:700,
+    width:900,
     title: 'Edit Order',
     items: [{
+        xtype: 'form',
+        region: 'east',
+        width: 250,
+        bodyPadding: 10,
+        title: 'Filter',
+        defaultType: 'textfield',
+        defaults: {
+            // width: 200,
+            anchor: '100%',
+        },
+        collapsible: true,
+        items: [{
+            fieldLabel: 'Bacode',
+            name: 'Bacode',
+        }, {
+            fieldLabel: 'Code',
+            name: 'Code',
+        }, {
+            fieldLabel: 'Name',
+            name: 'Name',
+        }, {
+            fieldLabel: 'Color',
+            name: 'Color',
+        }, {
+            fieldLabel: 'Size',
+            name: 'Size',
+        }, {
+            xtype: 'button',
+            text: 'Filter',
+            listeners: {
+                click: 'addFilter'
+            }
+        }],
+    },
+
+        {
         region:'west',
         xtype: 'form',
         title:'Order',
         bodyPadding: 10,
-        width:350,
+        width:300,
         defaultType: 'textfield',
         items: [{
             itemId:'BrandItemId',
@@ -141,8 +168,8 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             name: 'BrandId',
             store: brand,
             queryMode: 'remote',
-            displayField: 'Id',
-            valueField: 'Id',
+            displayField: 'Name',
+            valueField: 'Name',
             editable: false,
         }, {
             xtype: 'combo',
@@ -150,7 +177,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             name: 'FactoryId',
             store: factory,
             queryMode: 'remote',
-            displayField: 'Id',
+            displayField: 'Name',
             valueField: 'Id',
             editable: false,
             queryParam: 'query',
@@ -160,7 +187,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             name: 'DcId',
             store: dc,
             queryMode: 'remote',
-            displayField: 'Id',
+            displayField: 'Name',
             valueField: 'Id',
             editable: false,
             queryParam: 'query',
@@ -184,14 +211,13 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
         },  {
             fieldLabel: 'Remark',
             name: 'Remark'
-        },
+        }, 
         ]
-    }, {
-       
+    }, {       
         xtype: 'form',
-        region: 'east',
+        region: 'center',
+        itemId:'orderDetailItemId',
         title: 'Order Detail',
-        width:350,
         bodyPadding:10,
         items: [
             { 
@@ -199,11 +225,11 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                 fieldLabel: 'ProductId',
                 store: product,
                 name: 'ProductId',
-                queryMode: 'remote',
+                queryMode: 'local',
                 displayField: 'Id',
                 valueField: 'Id',
                 editable: false,
-                queryParam: 'query',
+               // queryParam: 'query',
             }, {
                 xtype: 'textfield',
                 fieldLabel: 'OrderQty',
