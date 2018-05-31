@@ -213,8 +213,23 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             listeners: {
                 click:'addOrderDetail'
             }
-        },{
+        }, {
+            xtype: 'button',
+            text: 'Delete',
+            listeners: {
+                click: function () {
+                    var store = this.up('form').down('grid').getStore();
+                    var index = store.indexOf(this.up('form').down('grid').getView().getSelectionModel().getSelection()[0]);
+                    if (index != -1) {
+                        this.up('form').down('grid').getView().getStore().removeAt(index);
+                        this.up('window').getViewModel().data.detail.splice(index, 1);
+                    }
+                }
+            }
+        }, {
             xtype: 'grid',
+            scrollable: true,
+            height: 300,
             store: orderDetail,
             columns: [
                  { text: 'ProductId', dataIndex: 'ProductId' },

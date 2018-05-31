@@ -84,6 +84,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
         listeners: {
             rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
                 //console.log(record.data);
+                this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().reload();
                 this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().setAutoLoad(true);
                 this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().filter([
                     { property: 'PurchaseOrderId', value: record.get('Id') },
@@ -95,7 +96,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
         },
     },
     {
-        height: 200,
+        height: 250,
         maxHeight:400,
         itemId:'orderDetailGrid',
         title:'orderDetail',

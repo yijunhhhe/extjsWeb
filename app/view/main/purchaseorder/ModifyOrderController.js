@@ -55,7 +55,6 @@
         this.getView().getViewModel().data.detail = model;
         this.getView().down('grid').getStore().setData(model);
         //console.log(model);
-
     },
     
     addOrder: function () {

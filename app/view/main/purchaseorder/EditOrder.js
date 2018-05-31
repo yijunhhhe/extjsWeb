@@ -185,22 +185,6 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             fieldLabel: 'Remark',
             name: 'Remark'
         },
-        //{
-        //    xtype: 'button',
-        //    text: "Edit",
-        //    listeners: {
-        //        click:'actualEditOrder',
-        //    }
-        //}, {
-        //    xtype: 'button',
-        //    text: "Cancel",
-        //    listeners: {
-        //        click: function () {
-        //            this.up('window').close();
-        //        },
-        //    }
-        //}
-
         ]
     }, {
        
@@ -231,6 +215,8 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             }, {
                 itemId: 'orderDetailGrid',
                 xtype: 'grid',
+                scrollable: true,
+                height:300,
                 store: orderDetail,
                 columns: [
                     { text: 'ProductId', dataIndex: 'ProductId' },
@@ -270,6 +256,17 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                             //clear the form 
                             this.up('grid').getView().up('form').getForm().reset();
                             //all the data now are stored in orderDetailStore
+                        }
+                    }
+                }, {
+                    text: "Delete",
+                    listeners: {
+                        click: function () {
+                            var store = this.up('form').down('grid').getStore();
+                            var index = store.indexOf(this.up('form').down('grid').getView().getSelectionModel().getSelection()[0]);
+                            if (index != -1) {
+                                this.up('form').down('grid').getView().getStore().removeAt(index);               
+                            }
                         }
                     }
                 }],
