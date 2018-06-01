@@ -236,6 +236,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                 displayField: 'Name',
                 valueField: 'Id',
                 editable: false,
+                allowBlank:false,
                // queryParam: 'query',
             }, {
                 xtype: 'textfield',
@@ -265,6 +266,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                 },
                 buttons: [{
                     text: 'Add',
+                    formBind: true,
                     listeners: {
                         click: function () {
                             var detail = this.up('grid').getView().up('form').getForm().getValues();

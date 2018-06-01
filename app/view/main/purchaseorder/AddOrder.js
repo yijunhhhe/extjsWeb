@@ -258,6 +258,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
         }, {
             xtype: 'button',
             text: 'Add',
+            formBind: true,
             listeners: {
                 click:'addOrderDetail'
             }
