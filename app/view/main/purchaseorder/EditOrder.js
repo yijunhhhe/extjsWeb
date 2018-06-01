@@ -50,6 +50,7 @@ var brand = Ext.create('Ext.data.Store', {
             rootProperty: 'Data'
         }
     },
+    autoLoad: true,
 })
 
 var dc = Ext.create('Ext.data.Store', {
@@ -157,6 +158,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
         {
         region:'west',
         xtype: 'form',
+        itemId: 'orderItemId',
         title:'Order',
         bodyPadding: 10,
         width:300,
@@ -169,10 +171,11 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             store: brand,
             queryMode: 'remote',
             displayField: 'Name',
-            valueField: 'Name',
+            valueField: 'Id',
             editable: false,
         }, {
             xtype: 'combo',
+            itemId: 'FactoryItemId',
             fieldLabel: 'FactoryId',
             name: 'FactoryId',
             store: factory,
@@ -183,6 +186,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             queryParam: 'query',
         }, {
             xtype: 'combo',
+            itemId: 'DcItemId',
             fieldLabel: 'DcId',
             name: 'DcId',
             store: dc,

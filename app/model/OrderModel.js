@@ -17,5 +17,6 @@
         { name: 'CreateDate', type: 'string' },
         { name: 'ModifyBy', type: 'string' },
         { name: 'ModifyDate', type: 'string' },
+        { name: 'Count', type: 'string'}
     ]
 })

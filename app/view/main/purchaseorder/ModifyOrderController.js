@@ -38,38 +38,39 @@
     },
 
     searchOrderAddFilter: function () {
-        var userView = this.getView();
-        var searchName = userView.down('#searchName').getValue();
-        var searchType = userView.down('combo').getValue();
-        var store = userView.down('grid').getStore();
-        var search = userView.getViewModel().data.searchFilter;
-        search[searchType] = searchName;
-        userView.getViewModel().data.searchFilter = search
-        userView.down('displayfield').setValue(searchType+" Filter have been added");
+        var searchFitler = Ext.create({
+            xtype: 'searchfilter'
+        });
+        searchFitler.show();
+
         
-
-
-        //console.log(searchName);
-        //console.log(store.getData());
-        //store.filter(searchType, searchName);
     },
 
     searchOrder: function () {
-        var view = this.getView();
-        var filterObject = this.getView().getViewModel().data.searchFilter;
+        var filterObject = {};
+        if (Ext.getCmp('searchFilterId') != undefined) {
+            var filterValue = Ext.getCmp('searchFilterId').down('form').getForm().getValues();
+            var filterObject = filterValue;
+                debugger
+            }
+        
+        
+        var orderView = Ext.getCmp('orderId');
+        //var filterObject = this.getView().getViewModel().data.searchFilter;
         
         if (!Object.keys(filterObject).length) {
-            var searchName = view.down('#searchName').getValue();
-            var searchType = view.down('combo').getValue();
+            var searchName = orderView.down('#searchName').getValue();
+            var searchType = orderView.down('combo').getValue();
             if (searchType == null) {
                 alert('Please select an filter');
                 return 
             }
             var object = {}
-            debugger
+            
             object[searchType] = searchName;
             filterObject = object;
         }
+        
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/PurchaseOrder/SearchPurchaseByDto',
@@ -81,13 +82,11 @@
                 if (data.IsSuccess == true) {
                     console.log("success");
                     console.log(data.Data);
-                    view.down('grid').getStore().setData(data.Data);
-                    view.getViewModel().data.searchFilter = {}
-                    console.log(view.down('grid').getStore());
-                   // addOrderView.down('#orderDetailItemId').down('combo').getStore().setData(data.Data);
-
-                    //console.log(addOrderView.down('#orderDetailItemId').down('combo').getStore());
-
+                    if (Ext.getCmp('searchFilterId') != undefined) {
+                        Ext.getCmp('searchFilterId').close();
+                    }
+                    Ext.getCmp('orderId').down('grid').getStore().setData(data.Data);                
+                    //console.log(orderView.down('grid').getStore());
                 } else {
                     alert(data.ErrorMessage);
                 }
@@ -180,10 +179,15 @@
         var edit = Ext.create({
             xtype: 'editorder',
         });
+        Ext.getCmp('editOrderId').down('#BrandItemId').getStore().load();
+        Ext.getCmp('editOrderId').down('#FactoryItemId').getStore().load();
+        Ext.getCmp('editOrderId').down('#DcItemId').getStore().load();
+
         //set values of order form
         var select = this.getView().down('grid').getSelectionModel().getSelected().items[0].data;
         select.DeliveryDate = select.DeliveryDate.replace("T", " ");
-        var form = Ext.getCmp("editOrderId").down('form').getForm().setValues(select);
+        var form = Ext.getCmp("editOrderId").down('#orderItemId').getForm().setValues(select);
+        
 
         var detailStore = this.getView().down('#orderDetailGrid').getStore().getData().items;
         var detailArray = [];
@@ -191,6 +195,7 @@
             detailArray[detailArray.length] = element.data
         });
         Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().setData(detailArray);
+        // debugger
         //console.log(detailStore.items);
         //console.log(this.getView().getSelectionModel().getSelected().items[0].data);
     },

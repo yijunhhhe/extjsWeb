@@ -5,24 +5,24 @@ Ext.define('WebAppClassic.view.main.List', {
     extend: 'Ext.grid.Panel',
     xtype: 'mainlist',
 
-    requires: [
-        'WebAppClassic.store.Personnel'
-    ],
+    //requires: [
+    //  //  'WebAppClassic.store.Personnel'
+    //],
 
-    title: 'Personnel',
+    //title: 'Personnel',
 
-    store: {
-        type: 'personnel'
-    },
+    //store: {
+    //    type: 'personnel'
+    //},
 
-    columns: [
-        { text: 'Name',  dataIndex: 'name' },
-        { text: 'Email', dataIndex: 'email', flex: 1 },
-        { text: 'Phone', dataIndex: 'phone', flex: 1 },
-		{ text: 'Lastname', dataIndex: 'lastname', flex: 1}
-    ],
+    //columns: [
+    //    { text: 'Name',  dataIndex: 'name' },
+    //    { text: 'Email', dataIndex: 'email', flex: 1 },
+    //    { text: 'Phone', dataIndex: 'phone', flex: 1 },
+	//	{ text: 'Lastname', dataIndex: 'lastname', flex: 1}
+    //],
 
-    listeners: {
-        select: 'onItemSelected'
-    }
+    //listeners: {
+    //    select: 'onItemSelected'
+    //}
 });

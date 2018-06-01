@@ -7,8 +7,6 @@
     data: [
          { "Type": "OrderNo", },
          { "Type": "DeliveryAddress", },
-         { "Type": "DeliveryDate", },
-
     ]
     
 })
@@ -51,15 +49,15 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
             valueField: 'Type',
         }, {
             xtype: 'button',
-            text: 'AddFilter',
-            listeners: {
-                click: 'searchOrderAddFilter'
-            }
-        }, {
-            xtype: 'button',
             text: 'Search',
             listeners: {
                 click: 'searchOrder'
+            }
+        }, {
+            xtype: 'button',
+            text: 'AddFilter',
+            listeners: {
+                click: 'searchOrderAddFilter'
             }
         }, {
             xtype: 'displayfield',
@@ -91,18 +89,43 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
             { text: 'DeliveryAddress', dataIndex: 'DeliveryAddress', flex: 1, },
             { text: 'DeliveryDate', dataIndex: 'DeliveryDate', flex: 1 },
             { text: 'Status', dataIndex: 'Status', flex: 1 },
-            { text: 'PayMethod', dataIndex: 'PayMethod', flex: 1 },
+            { text: 'Count', dataIndex: 'Remark', flex: 1 },
+            
         ],
         listeners: {
             rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
                 //console.log(record.data);
-                this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().reload();
-                this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().setAutoLoad(true);
-                this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().filter([
-                    { property: 'PurchaseOrderId', value: record.get('Id') },
-                    { property:'IsDeleted', value:'false' }]);
+                //this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().reload();
+                //this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().setAutoLoad(true);
+                //this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().filter([
+                //    { property: 'PurchaseOrderId', value: record.get('Id') },
+                //    { property:'IsDeleted', value:'false' }]);
                 //set up order detail store 
                 //filter the store here
+                var viewData = this.getView().getSelectionModel().getSelected().items[0].data;
+                var thisView = this.getView();
+                
+                Ext.Ajax.request({
+                    method: 'GET',
+                    url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id='+ viewData.Id+'&code=a',
+                    headers: { 'Content-Type': 'application/json' },
+                   // params: JSON.stringify(order),
+                    dataType: 'json',
+                    success: function (Result) {
+                        var data = Ext.decode(Result.responseText);
+                        //console.log(Result);
+                        if (data.IsSuccess == true) {
+                            //console.log(data.Data);
+                            Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
+                            
+                            //Ext.getCmp('orderId').down('grid').getStore().reload();
+                            //thisView.destroy();
+                        } else {
+                            alert(data.ErrorMessage);
+                        }
+                    }
+                });
+
 
             },
         },
