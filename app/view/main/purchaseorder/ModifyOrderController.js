@@ -51,7 +51,7 @@
         if (Ext.getCmp('searchFilterId') != undefined) {
             var filterValue = Ext.getCmp('searchFilterId').down('form').getForm().getValues();
             var filterObject = filterValue;
-                debugger
+                
             }
         
         
@@ -124,11 +124,13 @@
     addOrderDetail: function(){
         
         var detail = this.getView().down('#orderDetailItemId').getForm().getValues();
+        if (detail.ProductId == "" && detail.OrderQty == "" && detail.Remark == "" || detail.ProductId == "") {
+            return
+        }
         var model = this.getView().getViewModel().data.detail;
         model[model.length] = detail;
         this.getView().getViewModel().data.detail = model;
         this.getView().down('grid').getStore().setData(model);
-        //console.log(model);
     },
     
     addOrder: function () {
@@ -165,8 +167,7 @@
                     console.log("success");
                     Ext.getCmp('orderId').down('grid').getStore().reload();
                     Ext.getCmp('addOrderId').down('grid').getStore().removeAll();
-                    Ext.getCmp('addOrderId').destroy();
-                    
+                    Ext.getCmp('addOrderId').destroy();   
                 } else {
                     alert(data.ErrorMessage);
                 }
@@ -179,12 +180,13 @@
         var edit = Ext.create({
             xtype: 'editorder',
         });
+        Ext.getCmp('editOrderId').down('#DcItemId').getStore().load();
         Ext.getCmp('editOrderId').down('#BrandItemId').getStore().load();
         Ext.getCmp('editOrderId').down('#FactoryItemId').getStore().load();
-        Ext.getCmp('editOrderId').down('#DcItemId').getStore().load();
 
         //set values of order form
         var select = this.getView().down('grid').getSelectionModel().getSelected().items[0].data;
+        
         select.DeliveryDate = select.DeliveryDate.replace("T", " ");
         var form = Ext.getCmp("editOrderId").down('#orderItemId').getForm().setValues(select);
         

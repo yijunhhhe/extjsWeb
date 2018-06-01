@@ -1,11 +1,22 @@
 ﻿var orderDetail = Ext.create('Ext.data.Store', {
     fields: [
+        { name: 'Id', type: 'string' },
+        { name: 'PurchaseOrderId', type: 'string' },
+        { name: 'PurchaseOrderNo', type: 'string' },
         { name: 'ProductId', type: 'string' },
         { name: 'OrderQty', type: 'string' },
+        { name: 'IsDeleted', type: 'string' },
         { name: 'Remark', type: 'string' },
+        { name: 'CreateBy', type: 'string' },
+        { name: 'ModifyBy', type: 'string' },
+        { name: 'ModifyDate', type: 'string' },
+        { name: 'Bacode', type: 'string' },
+        { name: 'Name', type: 'string' },
+        { name: 'Size', type: 'string' },
+        { name: 'Color', type: 'string' },
     ],
-
 })
+
 
 var brand = Ext.create('Ext.data.Store', {
     fields: [
@@ -125,7 +136,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
         region: 'east',
         width: 250,
         bodyPadding: 10,
-        title:'Filter',
+        title:'Product Filter',
         defaultType: 'textfield',
         defaults:{
            // width: 200,
@@ -237,6 +248,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             queryMode: 'local',
             displayField: 'Name',
             valueField: 'Id',
+            allowBlank:false
         }, {
             fieldLabel: 'OrderQty',
             name: 'OrderQty'
@@ -250,6 +262,33 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
                 click:'addOrderDetail'
             }
         }, {
+            xtype: 'button',
+            text: 'Edit',
+            listeners: {
+                        click: function () {
+                            //get the index of the store
+                            var index = this.up('form').down('grid').getView().getStore().indexOf(this.up('form').down('grid').getView().getSelectionModel().getSelection()[0]);
+                            //console.log(this.up('grid').getView().getSelectionModel().getSelection()[0])
+                            var orderDetail = this.up('form').down('grid').getView().getSelectionModel().getSelected().items[0].data;
+                            var model = this.up('window').getViewModel().data.detail
+                            //get the form value(object)
+                            var formValue = this.up('form').getForm().getValues();
+                            orderDetail.ProductId = formValue.ProductId;
+                            orderDetail.OrderQty = formValue.OrderQty;
+                            orderDetail.Remark = formValue.Remark;
+
+                            //update the data in store
+                            this.up('form').down('grid').getView().getStore().removeAt(index);
+                            this.up('form').down('grid').getView().getStore().insert(index, orderDetail);
+                            model[index] = orderDetail;
+                            this.up('window').getViewModel().data.detail = model
+                            //clear the form 
+                            this.up('form').down('grid').getView().up('form').getForm().reset();
+                            //all the data now are stored in orderDetailStore
+                        }
+                    }
+        },
+        {
             xtype: 'button',
             text: 'Delete',
             listeners: {
@@ -268,10 +307,20 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             height: 300,
             store: orderDetail,
             columns: [
-                 { text: 'ProductId', dataIndex: 'ProductId' },
-                { text: 'OrderQty', dataIndex: 'OrderQty', flex: 1, },
-                { text: 'Remark', dataIndex: 'Remark', flex: 1 },
-            ]
+                 { text: 'ProductId', dataIndex: 'ProductId',flex: 1 },
+                { text: 'OrderQty', dataIndex: 'OrderQty', flex: 0, },
+            ],
+            listeners: {
+                rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
+                    //fill out the form
+                    var orderDetail = this.getView().getSelectionModel().getSelected().items[0].data;
+                    //console.log(orderDetail);
+                    this.getView().up('form').getForm().setValues(orderDetail);
+
+
+
+                },
+            },
     
     }],
 

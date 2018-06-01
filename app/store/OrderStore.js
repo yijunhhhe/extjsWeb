@@ -38,18 +38,13 @@ Ext.define('WebAppClassic.store.OrderDetailStore', {
         { name: 'CreateBy', type: 'string' },
         { name: 'ModifyBy', type: 'string' },
         { name: 'ModifyDate', type: 'string' },
-        { name: 'CreateDate', type: 'string' },
+        { name: 'Bacode', type: 'string' },
+        { name: 'Name', type: 'string' },
+        { name: 'Size', type: 'string' },
+        { name: 'Color', type: 'string' },
     ],
 
-    proxy: {
-        type: 'ajax',
-        url: '/api/PurchaseOrderDetail/GetAllOrderDetail',
-        actionMethod: 'Get',
-        reader: {
-            type: 'json',
-            rootProperty: 'Data'
-        }
-    },
+    
 
 
 });

@@ -1,16 +1,19 @@
 ﻿var orderDetail = Ext.create('Ext.data.Store', {
     fields: [
-        { name: 'ProductId', type: 'string' },
-        { name: 'OrderQty', type: 'string' },
-        { name: 'Remark', type: 'string' },
-        { name: 'CreateBy', type: 'string' },
-        { name: 'CreateDate', type: 'string' },
         { name: 'Id', type: 'string' },
-        { name: 'IsDeleted', type: 'string' },
-        { name: 'ModifyBy', type: 'string' },
-        { name: 'ModifyDate', type: 'string' },
         { name: 'PurchaseOrderId', type: 'string' },
         { name: 'PurchaseOrderNo', type: 'string' },
+        { name: 'ProductId', type: 'string' },
+        { name: 'OrderQty', type: 'string' },
+        { name: 'IsDeleted', type: 'string' },
+        { name: 'Remark', type: 'string' },
+        { name: 'CreateBy', type: 'string' },
+        { name: 'ModifyBy', type: 'string' },
+        { name: 'ModifyDate', type: 'string' },
+        { name: 'Bacode', type: 'string' },
+        { name: 'Name', type: 'string' },
+        { name: 'Size', type: 'string' },
+        { name: 'Color', type: 'string' },
     ],
 })
 
@@ -124,7 +127,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
         region: 'east',
         width: 250,
         bodyPadding: 10,
-        title: 'Filter',
+        title: 'Product Filter',
         defaultType: 'textfield',
         defaults: {
             // width: 200,
@@ -230,7 +233,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                 store: product,
                 name: 'ProductId',
                 queryMode: 'local',
-                displayField: 'Id',
+                displayField: 'Name',
                 valueField: 'Id',
                 editable: false,
                // queryParam: 'query',
@@ -239,19 +242,15 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                 fieldLabel: 'OrderQty',
                 name:'OrderQty',
             }, {
-                xtype: 'textfield',
-                fieldLabel: 'Remark',
-                name:'Remark',
-            }, {
                 itemId: 'orderDetailGrid',
                 xtype: 'grid',
                 scrollable: true,
                 height:300,
                 store: orderDetail,
                 columns: [
-                    { text: 'ProductId', dataIndex: 'ProductId' },
-                    { text: 'OrderQty', dataIndex: 'OrderQty', flex: 1, },
-                    { text: 'Remark', dataIndex: 'Remark', flex: 1 },
+                    { text: 'ProductId', dataIndex: 'ProductId', flex: 1 },
+                    { text: 'Name', dataIndex: 'Name', flex: 1 },
+                    { text: 'OrderQty', dataIndex: 'OrderQty', flex: 1 },
                 ],
                 listeners: {
                     rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
@@ -265,6 +264,19 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                     },
                 },
                 buttons: [{
+                    text: 'Add',
+                    listeners: {
+                        click: function () {
+                            var detail = this.up('grid').getView().up('form').getForm().getValues();
+                            if (detail.ProductId == "" && detail.OrderQty == "" && detail.Remark == "" || detail.ProductId == "") {
+                                return
+                            }
+                            this.up('grid').getView().getStore().add(detail);
+                            this.up('grid').getView().up('form').getForm().reset();
+                        }
+                    }
+                },
+                    {
                     text:'Edit',
                     listeners: {
                         click: function () {

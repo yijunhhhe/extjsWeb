@@ -86,22 +86,16 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
         ],
         columns: [
             { text: 'OrderNo', dataIndex: 'OrderNo' },
+            { text: 'Count', dataIndex: 'Remark', flex: 1 },
             { text: 'DeliveryAddress', dataIndex: 'DeliveryAddress', flex: 1, },
             { text: 'DeliveryDate', dataIndex: 'DeliveryDate', flex: 1 },
             { text: 'Status', dataIndex: 'Status', flex: 1 },
-            { text: 'Count', dataIndex: 'Remark', flex: 1 },
+            
             
         ],
         listeners: {
             rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
-                //console.log(record.data);
-                //this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().reload();
-                //this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().setAutoLoad(true);
-                //this.getView().up('panel').up('panel').down('#orderDetailGrid').getStore().filter([
-                //    { property: 'PurchaseOrderId', value: record.get('Id') },
-                //    { property:'IsDeleted', value:'false' }]);
-                //set up order detail store 
-                //filter the store here
+                
                 var viewData = this.getView().getSelectionModel().getSelected().items[0].data;
                 var thisView = this.getView();
                 
@@ -142,9 +136,10 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
             type: 'orderDetailStore'
         },
         columns:[
-            { text: 'PurchaseOrderId', dataIndex: 'PurchaseOrderId' },
-            { text: 'PurchaseOrderNo', dataIndex: 'PurchaseOrderNo', flex: 1, },
             { text: 'ProductId', dataIndex: 'ProductId', flex: 1 },
+            { text: 'Bacode', dataIndex: 'Bacode', flex: 1 },
+            { text: 'Name', dataIndex: 'Name', flex: 1 },
+            { text: 'Size', dataIndex: 'Size', flex: 1 },
             { text: 'OrderQty', dataIndex: 'OrderQty', flex: 1 },
         ],
     }]
