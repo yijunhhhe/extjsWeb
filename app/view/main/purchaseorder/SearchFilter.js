@@ -52,7 +52,8 @@ Ext.define('WebAppClassic.view.main.purchaseorder.SearchFilter', {
             id: 'startdt',
             vtype: 'daterange',
             format: 'Y-m-d H:i:s',
-            endDateField: 'enddt' // id of the end date field
+            endDateField: 'enddt', // id of the end date field
+            
         },
         {
             xtype: 'datefield',
@@ -61,7 +62,8 @@ Ext.define('WebAppClassic.view.main.purchaseorder.SearchFilter', {
             id: 'enddt',
             vtype: 'daterange',
             format: 'Y-m-d H:i:s',
-            startDateField: 'startdt' // id of the start date field
+            startDateField: 'startdt', // id of the start date field
+            
         }, {
             xtype: 'button',
             text: 'submit',

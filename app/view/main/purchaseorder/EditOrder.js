@@ -258,8 +258,10 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                         //fill out the form
                         var orderDetail = this.getView().getSelectionModel().getSelected().items[0].data;
                         //console.log(orderDetail);
+                        
                         this.getView().up('form').getForm().setValues(orderDetail);
-
+                        
+                        
                         
 
                     },

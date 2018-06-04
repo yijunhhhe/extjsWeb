@@ -176,7 +176,8 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
         defaultType: 'textfield',
         items: [{
             fieldLabel: 'OrderNo',
-            name:'OrderNo'
+            name: 'OrderNo',
+            value: 'BPDK170'
         }, {
             xtype: 'combo',
             fieldLabel: 'BrandId',
@@ -213,7 +214,8 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             fieldLabel: 'DeliveryDate',
             name: 'DeliveryDate',
             format: 'Y-m-d H:i:s',
-            value: new Date()
+            value: new Date(),
+            minValue: new Date()
         }, {
             fieldLabel: 'DeliveryAddress',
             name: 'DeliveryAddress'

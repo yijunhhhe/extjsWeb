@@ -95,9 +95,9 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
         ],
         listeners: {
             rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
-                
+                var orderView = this.getView();
                 var viewData = this.getView().getSelectionModel().getSelected().items[0].data;
-                var thisView = this.getView();
+                //var thisView = this.getView();
                 
                 Ext.Ajax.request({
                     method: 'GET',
@@ -111,7 +111,9 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                         if (data.IsSuccess == true) {
                             //console.log(data.Data);
                             Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
+                            var count = orderView.getSelectionModel().getSelected().items[0].data.Remark;
                             
+                            Ext.getCmp('orderId').down('#titleCount').setValue(count)
                             //Ext.getCmp('orderId').down('grid').getStore().reload();
                             //thisView.destroy();
                         } else {
@@ -119,8 +121,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                         }
                     }
                 });
-
-
             },
         },
     },
@@ -128,7 +128,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
         height: 250,
         maxHeight:400,
         itemId:'orderDetailGrid',
-        title:'orderDetail',
+      
         region:'south',
         xtype:'grid',
 
@@ -142,6 +142,15 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
             { text: 'Size', dataIndex: 'Size', flex: 1 },
             { text: 'OrderQty', dataIndex: 'OrderQty', flex: 1 },
         ],
+        tbar: [
+       {
+           itemId:'titleCount',
+           xtype: 'displayfield',
+           name: 'orderno',
+           fieldLabel: 'OrderDetail',
+           //bind: '{OrderNo}',
+       }
+       ],
     }]
     
 });

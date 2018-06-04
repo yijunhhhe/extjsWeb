@@ -42,6 +42,7 @@ Ext.define('WebAppClassic.store.OrderDetailStore', {
         { name: 'Name', type: 'string' },
         { name: 'Size', type: 'string' },
         { name: 'Color', type: 'string' },
+        { name: 'Count', type: 'string'}
     ],
 
     
