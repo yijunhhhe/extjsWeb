@@ -14,6 +14,7 @@
         { name: 'Name', type: 'string' },
         { name: 'Size', type: 'string' },
         { name: 'Color', type: 'string' },
+        { name: 'Code', type: 'string'}
     ],
 })
 
@@ -122,47 +123,16 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
     height: 600,
     width:900,
     title: 'Edit Order',
-    items: [{
-        xtype: 'form',
-        region: 'east',
-        width: 250,
-        bodyPadding: 10,
-        title: 'Product Filter',
-        defaultType: 'textfield',
-        defaults: {
-            // width: 200,
-            anchor: '100%',
-        },
-        collapsible: true,
-        items: [{
-            fieldLabel: 'Bacode',
-            name: 'Bacode',
-        }, {
-            fieldLabel: 'Code',
-            name: 'Code',
-        }, {
-            fieldLabel: 'Name',
-            name: 'Name',
-        }, {
-            fieldLabel: 'Color',
-            name: 'Color',
-        }, {
-            fieldLabel: 'Size',
-            name: 'Size',
-        }, {
-            xtype: 'button',
-            text: 'Filter',
-            listeners: {
-                click: 'addFilter'
-            }
-        }],
-    },
-
+    items: [
         {
-        region:'west',
+        region:'north',
         xtype: 'form',
         itemId: 'orderItemId',
-        title:'Order',
+        title: 'Order',
+        layout: 'column',
+        defaults:{
+            padding: 5
+        },
         bodyPadding: 10,
         width:300,
         defaultType: 'textfield',
@@ -227,43 +197,40 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
         title: 'Order Detail',
         bodyPadding:10,
         items: [
-            { 
-                xtype: 'combo',
-                fieldLabel: 'ProductId',
-                store: product,
-                name: 'ProductId',
-                queryMode: 'local',
-                displayField: 'Name',
-                valueField: 'Id',
-                editable: false,
-                allowBlank:false,
-               // queryParam: 'query',
-            }, {
-                xtype: 'textfield',
-                fieldLabel: 'OrderQty',
-                name:'OrderQty',
-            }, {
+            //{ 
+            //    xtype: 'combo',
+            //    fieldLabel: 'ProductId',
+            //    store: product,
+            //    name: 'ProductId',
+            //    queryMode: 'local',
+            //    displayField: 'Name',
+            //    valueField: 'Id',
+            //    editable: false,
+            //    allowBlank:false,
+            //   // queryParam: 'query',
+            //}, {
+            //    xtype: 'textfield',
+            //    fieldLabel: 'OrderQty',
+            //    name:'OrderQty',
+            //},
+            {
                 itemId: 'orderDetailGrid',
                 xtype: 'grid',
                 scrollable: true,
-                height:300,
+                height:270,
                 store: orderDetail,
                 columns: [
-                    { text: 'ProductId', dataIndex: 'ProductId', flex: 1 },
-                    { text: 'Name', dataIndex: 'Name', flex: 1 },
+                     { text: 'ProductId', dataIndex: 'Id', flex: 1 },
+                     { text: 'Bacode', dataIndex: 'Bacode', flex: 1, },
+                    { text: 'Name', dataIndex: 'Name', flex: 1, },
                     { text: 'OrderQty', dataIndex: 'OrderQty', flex: 1 },
                 ],
                 listeners: {
                     rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
                         //fill out the form
                         var orderDetail = this.getView().getSelectionModel().getSelected().items[0].data;
-                        //console.log(orderDetail);
-                        
+                        //console.log(orderDetail);         
                         this.getView().up('form').getForm().setValues(orderDetail);
-                        
-                        
-                        
-
                     },
                 },
                 buttons: [{
@@ -271,40 +238,13 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                     formBind: true,
                     listeners: {
                         click: function () {
-                            var detail = this.up('grid').getView().up('form').getForm().getValues();
-                            if (detail.ProductId == "" && detail.OrderQty == "" && detail.Remark == "" || detail.ProductId == "") {
-                                return
-                            }
-                            this.up('grid').getView().getStore().add(detail);
-                            this.up('grid').getView().up('form').getForm().reset();
+                            var filter = Ext.create({
+                                xtype: 'productfilter'
+                            });
                         }
                     }
                 },
-                    {
-                    text:'Edit',
-                    listeners: {
-                        click: function () {
-                            //get the index of the store
-                            var index = this.up('grid').getView().getStore().indexOf(this.up('grid').getView().getSelectionModel().getSelection()[0]);
-                            //console.log(this.up('grid').getView().getSelectionModel().getSelection()[0])
-                            var orderDetail = this.up('grid').getView().getSelectionModel().getSelected().items[0].data;
-
-                            //get the form value(object)
-                            var formValue = this.up('grid').getView().up('form').getForm().getValues();
-                            orderDetail.ProductId = formValue.ProductId;
-                            orderDetail.OrderQty = formValue.OrderQty;
-                            orderDetail.Remark = formValue.Remark;
-
-                            //update the data in store
-                            this.up('grid').getView().getStore().removeAt(index);
-                            this.up('grid').getView().getStore().insert(index, orderDetail);
-
-                            //clear the form 
-                            this.up('grid').getView().up('form').getForm().reset();
-                            //all the data now are stored in orderDetailStore
-                        }
-                    }
-                }, {
+                {
                     text: "Delete",
                     listeners: {
                         click: function () {
@@ -331,3 +271,66 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
     ]
 
 });
+
+
+//{
+//    xtype: 'form',
+//    region: 'east',
+//    width: 250,
+//    bodyPadding: 10,
+//    title: 'Product Filter',
+//    defaultType: 'textfield',
+//    defaults: {
+//        // width: 200,
+//        anchor: '100%',
+//    },
+//    collapsible: true,
+//    items: [{
+//        fieldLabel: 'Bacode',
+//        name: 'Bacode',
+//    }, {
+//        fieldLabel: 'Code',
+//        name: 'Code',
+//    }, {
+//        fieldLabel: 'Name',
+//        name: 'Name',
+//    }, {
+//        fieldLabel: 'Color',
+//        name: 'Color',
+//    }, {
+//        fieldLabel: 'Size',
+//        name: 'Size',
+//    }, {
+//        xtype: 'button',
+//        text: 'Filter',
+//        listeners: {
+//            click: 'addFilter'
+//        }
+//    }],
+//},
+
+//{
+//    text:'Edit',
+//    listeners: {
+//        click: function () {
+//            //get the index of the store
+//            var index = this.up('grid').getView().getStore().indexOf(this.up('grid').getView().getSelectionModel().getSelection()[0]);
+//            //console.log(this.up('grid').getView().getSelectionModel().getSelection()[0])
+//            var orderDetail = this.up('grid').getView().getSelectionModel().getSelected().items[0].data;
+
+//            //get the form value(object)
+//            var formValue = this.up('grid').getView().up('form').getForm().getValues();
+//            orderDetail.ProductId = formValue.ProductId;
+//            orderDetail.OrderQty = formValue.OrderQty;
+//            orderDetail.Remark = formValue.Remark;
+
+//            //update the data in store
+//            this.up('grid').getView().getStore().removeAt(index);
+//            this.up('grid').getView().getStore().insert(index, orderDetail);
+
+//            //clear the form 
+//            this.up('grid').getView().up('form').getForm().reset();
+//            //all the data now are stored in orderDetailStore
+//        }
+//    }
+//},

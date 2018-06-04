@@ -70,7 +70,6 @@
             object[searchType] = searchName;
             filterObject = object;
         }
-        debugger
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/PurchaseOrder/SearchPurchaseByDto',
@@ -101,7 +100,6 @@
             alert("Please enter something");
             return;
         }
-        debugger
         console.log(filter);
         Ext.Ajax.request({
             method: 'POST',
@@ -128,14 +126,18 @@
     
     addOrderDetail: function(){
         
-        var detail = this.getView().down('#orderDetailItemId').getForm().getValues();
-        if (detail.ProductId == "" && detail.OrderQty == "" && detail.Remark == "" || detail.ProductId == "") {
-            return
-        }
-        var model = this.getView().getViewModel().data.detail;
-        model[model.length] = detail;
-        this.getView().getViewModel().data.detail = model;
-        this.getView().down('grid').getStore().setData(model);
+        var filter = Ext.create({
+            xtype: 'productfilter'
+        });
+
+        //var detail = this.getView().down('#orderDetailItemId').getForm().getValues();
+        //if (detail.ProductId == "" && detail.OrderQty == "" && detail.Remark == "" || detail.ProductId == "") {
+        //    return
+        //}
+        //var model = this.getView().getViewModel().data.detail;
+        //model[model.length] = detail;
+        //this.getView().getViewModel().data.detail = model;
+        //this.getView().down('grid').getStore().setData(model);
     },
     
     addOrder: function () {
@@ -149,13 +151,23 @@
 
     actualAddOrder: function(){
         var orderValue = this.getView().down('#orderItemId').getForm().getValues();
-        var orderDetailValue = this.getView().getViewModel().data.detail;
+        var orderDetailValue = this.getView().down('#orderDetailItemId').down('grid').getStore().getData().items;
+        //var detailStore = this.getView().down('#orderDetailGrid').getStore().getData().items;
+        var detailArray = [];
+        var newDetailArray = []
+        var orderNo = orderValue.OrderNo;
+        
         orderDetailValue.forEach(function (element) {
-            element.PurchaseOrderNo = orderValue.OrderNo;
-            //console.log(element);
-            delete id;
+            detailArray[detailArray.length] = element.data;
         });
-        orderValue.PurchaseOrderDetails = orderDetailValue;
+        
+        for(var i = 0; i < detailArray.length; i++) {
+            var a = { PurchaseOrderNo: orderNo, ProductId: detailArray[i].Id, OrderQty: detailArray[i].OrderQty }
+            console.log(orderNo);
+            newDetailArray[newDetailArray.length] = a       
+        };
+        
+        orderValue.PurchaseOrderDetails = newDetailArray;
         
         console.log(orderValue);
         //console.log(orderDetailValue);
@@ -181,6 +193,40 @@
         
     },
 
+    productFilter: function(){
+    
+        var filter = this.getView().down('form').getForm().getValues();
+        if (filter.Bacode == "" && filter.Code == "" && filter.Color == "" && filter.Name == "" && filter.Size == "") {
+            alert("Please enter something");
+            return;
+        }
+
+        var filterview = Ext.create({
+            xtype: 'filterdetail'
+        });
+
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '/Api/Product/SearchProductByDto',
+            headers: { 'Content-Type': 'application/json' },
+            params: JSON.stringify(filter),
+            dataType: 'json',
+            success: function (Result) {
+                var data = Ext.decode(Result.responseText);
+
+                if (data.IsSuccess == true) {
+                    console.log("success");
+                    //console.log(data.Data);
+                    filterview.down('grid').getStore().setData(data.Data);
+                    //console.log(addOrderView.down('#orderDetailItemId').down('combo').getStore());
+
+                } else {
+                    alert(data.ErrorMessage);
+                }
+            }
+        });
+    },
+
     editOrder: function () {
         var edit = Ext.create({
             xtype: 'editorder',
@@ -200,7 +246,7 @@
                 if (data.IsSuccess == true) {
                     console.log("success");
                     console.log(data.Data);
-                    Ext.getCmp('editOrderId').down('#orderDetailItemId').down('combo').getStore().setData(data.Data);
+                    //Ext.getCmp('editOrderId').down('#orderDetailItemId').down('combo').getStore().setData(data.Data);
 
                     //console.log(addOrderView.down('#orderDetailItemId').down('combo').getStore());
 
@@ -222,7 +268,6 @@
             detailArray[detailArray.length] = element.data
         });
         Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().setData(detailArray);
-        // debugger
         //console.log(detailStore.items);
         //console.log(this.getView().getSelectionModel().getSelected().items[0].data);
     },
@@ -253,6 +298,7 @@
             detailArray[detailArray.length] = element.data;
             //console.log(element);   
         });
+        
         order.PurchaseOrderDetails = detailArray;
         console.log(order);
         Ext.Ajax.request({
