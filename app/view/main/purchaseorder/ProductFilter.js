@@ -77,7 +77,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.ProductFilter', {
                 { text: 'Size', dataIndex: 'Size', flex: 1, },
             ],
             buttons: [{
-                text: 'Add',
+                text: 'Confirm',
                 listeners: {
                     click: function () {
                         var count = Ext.create('Ext.form.Panel', {
@@ -102,16 +102,32 @@ Ext.define('WebAppClassic.view.main.purchaseorder.ProductFilter', {
                                 formBind: true,
                                 listeners: {
                                     click: function () {
+                                        //orderQty
                                         var text = Ext.getCmp('productFilterCount').down('numberfield').getValue();
-                                        //var object = Ext.getCmp('filterDetailId').down('grid').getSelectionModel().getSelected().items[0].data;
+                                        //get the selected data in product filter and add orderQty in it
                                         var store = Ext.getCmp('productFilterId').down('grid').getStore();
-                                        debugger
+                                        
                                         var index = store.indexOf(Ext.getCmp('productFilterId').down('grid').getView().getSelectionModel().getSelection()[0]);
                                         var object = store.getAt(index);
                                         object.data.OrderQty = text
                                         object.data.ProductId = object.data.Id;
-                                        delete object.data.Id;
-                                        var a = Ext.getCmp('addOrderId');
+                                        
+                                        if (Ext.getCmp('addOrderId') == undefined) {
+                                            var store = Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore();
+                                            var detailStore = store.getData().items;
+                                        } else if (Ext.getCmp('editOrderId') == undefined) {
+                                            var store = Ext.getCmp('addOrderId').down('#orderDetailItemId').down('grid').getStore();
+                                            var detailStore = store.getData().items;
+                                        }
+                                        detailStore.forEach(function (element) {
+                                            if (element.data.ProductId == object.data.ProductId) {
+                                                var qty = element.data.OrderQty + object.data.OrderQty
+                                                object.data.OrderQty = qty;
+                                                var index = store.indexOfId(element.data.id);
+                                                store.removeAt(index);
+                                                debugger
+                                            }
+                                        });
 
                                         if (Ext.getCmp('addOrderId') == undefined) {
                                             Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().add(object)
@@ -126,7 +142,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.ProductFilter', {
                         });
 
                         Ext.getCmp('productFilterId').insert(1, count);
-                    
+                        
                     }
                 }
             }]

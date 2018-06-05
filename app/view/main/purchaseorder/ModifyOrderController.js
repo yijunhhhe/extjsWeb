@@ -148,7 +148,18 @@
         //console.log(addOrderValue);
     },
 
-    actualAddOrder: function(){
+    actualAddOrder: function () {
+
+        if (!this.getView().down('#orderItemId').getForm().isValid()) {
+            alert('Please fill out the required field');
+            return;
+        }
+        var orderDetailLength = this.getView().down('#orderDetailItemId').down('grid').getStore().getData().items.length;
+        if (orderDetailLength == 0) {
+            alert('Please add at least one order detail');
+            return;
+        }
+
         var orderValue = this.getView().down('#orderItemId').getForm().getValues();
         var orderDetailValue = this.getView().down('#orderDetailItemId').down('grid').getStore().getData().items;
         //var detailStore = this.getView().down('#orderDetailGrid').getStore().getData().items;
@@ -167,7 +178,7 @@
         };
         
         orderValue.PurchaseOrderDetails = newDetailArray;
-        debugger;
+      
         console.log(orderValue);
         //console.log(orderDetailValue);
         Ext.Ajax.request({
@@ -195,14 +206,6 @@
     productFilter: function(){
     
         var filter = this.getView().down('form').getForm().getValues();
-        //if (filter.Bacode == "" && filter.Code == "" && filter.Color == "" && filter.Name == "" && filter.Size == "") {
-        //    alert("Please enter something");
-        //    return;
-        //}
-
-        //var filterview = Ext.create({
-        //    xtype: 'filterdetail'
-        //});
 
         Ext.Ajax.request({
             method: 'POST',
