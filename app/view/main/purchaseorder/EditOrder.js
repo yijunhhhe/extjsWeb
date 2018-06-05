@@ -113,6 +113,7 @@ var product = Ext.create('Ext.data.Store', {
 Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
     extend: 'Ext.window.Window',
     xtype: 'editorder',
+    title:'Edit Order',
     requires: [
         'WebAppClassic.view.main.purchaseorder.ModifyOrderController',
     ],
@@ -185,10 +186,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             queryMode: 'local',
             displayField: 'PayMethod',
             valueField: 'PayMethod',      
-        },  {
-            fieldLabel: 'Remark',
-            name: 'Remark'
-        }, 
+        },   
         ]
     }, {       
         xtype: 'form',

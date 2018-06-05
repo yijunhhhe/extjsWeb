@@ -65,7 +65,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.FilterDetail', {
                                 object.data.ProductId = object.data.Id;
                                 delete object.data.Id;
                                 var a = Ext.getCmp('addOrderId');
-                                debugger
+                                
                                 if (Ext.getCmp('addOrderId') == undefined) {
                                     Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().add(object)
                                 } else if (Ext.getCmp('editOrderId') == undefined) {

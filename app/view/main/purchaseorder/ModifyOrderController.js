@@ -47,29 +47,28 @@
     },
 
     searchOrder: function () {
-        var filterObject = {};
-        if (Ext.getCmp('searchFilterId') != undefined) {
-            var filterValue = Ext.getCmp('searchFilterId').down('form').getForm().getValues();
-            var filterObject = filterValue;
-                
-            }
-        
+        //var filterObject = {};
+        //if (Ext.getCmp('searchFilterId') != undefined) {
+        //    var filterValue = Ext.getCmp('searchFilterId').down('form').getForm().getValues();
+        //    var filterObject = filterValue;         
+        //    }
+        var filterObject = Ext.getCmp('orderId').down('#searchForm').getForm().getValues();
         
         var orderView = Ext.getCmp('orderId');
         //var filterObject = this.getView().getViewModel().data.searchFilter;
         
-        if (!Object.keys(filterObject).length) {
-            var searchName = orderView.down('#searchName').getValue();
-            var searchType = orderView.down('combo').getValue();
-            if (searchType == null) {
-                alert('Please select an filter');
-                return 
-            }
-            var object = {}
+        //if (!Object.keys(filterObject).length) {
+        //    var searchName = orderView.down('#searchName').getValue();
+        //    var searchType = orderView.down('combo').getValue();
+        //    if (searchType == null) {
+        //        alert('Please select an filter');
+        //        return 
+        //    }
+        //    var object = {}
             
-            object[searchType] = searchName;
-            filterObject = object;
-        }
+        //    object[searchType] = searchName;
+        //    filterObject = object;
+        //}
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/PurchaseOrder/SearchPurchaseByDto',
@@ -162,7 +161,7 @@
         });
         
         for(var i = 0; i < detailArray.length; i++) {
-            var a = { PurchaseOrderNo: orderNo, ProductId: detailArray[i].Id, OrderQty: detailArray[i].OrderQty }
+            var a = { PurchaseOrderNo: orderNo, ProductId: detailArray[i].ProductId, OrderQty: detailArray[i].OrderQty }
             console.log(orderNo);
             newDetailArray[newDetailArray.length] = a       
         };
@@ -196,14 +195,14 @@
     productFilter: function(){
     
         var filter = this.getView().down('form').getForm().getValues();
-        if (filter.Bacode == "" && filter.Code == "" && filter.Color == "" && filter.Name == "" && filter.Size == "") {
-            alert("Please enter something");
-            return;
-        }
+        //if (filter.Bacode == "" && filter.Code == "" && filter.Color == "" && filter.Name == "" && filter.Size == "") {
+        //    alert("Please enter something");
+        //    return;
+        //}
 
-        var filterview = Ext.create({
-            xtype: 'filterdetail'
-        });
+        //var filterview = Ext.create({
+        //    xtype: 'filterdetail'
+        //});
 
         Ext.Ajax.request({
             method: 'POST',
@@ -217,7 +216,7 @@
                 if (data.IsSuccess == true) {
                     console.log("success");
                     //console.log(data.Data);
-                    filterview.down('grid').getStore().setData(data.Data);
+                    Ext.getCmp('productFilterId').down('grid').getStore().setData(data.Data);
                     //console.log(addOrderView.down('#orderDetailItemId').down('combo').getStore());
 
                 } else {
@@ -257,7 +256,6 @@
         });
         //set values of order form
         var select = this.getView().down('grid').getSelectionModel().getSelected().items[0].data;
-        
         select.DeliveryDate = select.DeliveryDate.replace("T", " ");
         var form = Ext.getCmp("editOrderId").down('#orderItemId').getForm().setValues(select);
         
@@ -280,6 +278,15 @@
         //get the order 
         var order = Ext.getCmp("orderId").down('grid').getSelectionModel().getSelected().items[0].data;   
         delete order.id;
+        var newOrder = Ext.getCmp("editOrderId").down('#orderItemId').getForm().getValues();
+        order.BrandId = newOrder.BrandId;
+        order.FactoryId = newOrder.FactoryId;
+        order.DcId = newOrder.DcId;
+        order.DeliveryDate = newOrder.DeliveryDate;
+        order.DeliveryAddress = newOrder.DeliveryAddress;
+        order.PayMethod = newOrder.PayMethod;
+        order.Remark = newOrder.Remark;
+        debugger
 
         //get the detail     
         var orderDetailValue = this.getView().down('#orderDetailGrid').getStore().getData().items;

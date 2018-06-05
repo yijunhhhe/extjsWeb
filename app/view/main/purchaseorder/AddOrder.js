@@ -105,7 +105,8 @@ var payment = Ext.create('Ext.data.Store', {
 Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
     extend: 'Ext.window.Window',
     xtype: 'addorder',
-    id:'addOrderId',
+    id: 'addOrderId',
+    title:'Add Order',
     requires: [
         'WebAppClassic.view.main.purchaseorder.ModifyOrderController',
         'WebAppClassic.view.main.purchaseorder.OrderDetailViewModel',
@@ -188,9 +189,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             valueField: 'Type',
             editable: false,
 
-        }, {
-            fieldLabel: 'Remark',
-            name: 'Remark'
         }, ]
     }, {
         itemId: 'orderDetailItemId',
@@ -209,7 +207,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             height: 250,
             store: orderDetail,
             columns: [
-                 { text: 'ProductId', dataIndex: 'Id',flex: 1 },
+                 { text: 'ProductId', dataIndex: 'ProductId', flex: 1 },
                  { text: 'Bacode', dataIndex: 'Bacode', flex: 1, },
                 { text: 'Code', dataIndex: 'Code', flex: 1, },
                 { text: 'Name', dataIndex: 'Name', flex: 1, },
