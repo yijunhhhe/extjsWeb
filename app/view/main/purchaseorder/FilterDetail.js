@@ -46,6 +46,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.FilterDetail', {
                 text: 'Add',
                 listeners: {
                     click: function () {
+                        //Ext.getCmp('filterDetailId').down('grid').getView().getSelectionModel().getSelected().items[0].data.ProductId;
                         Ext.Msg.prompt('Qty', 'Please enter the qty :', function (btn, text) {
                             if (Ext.getCmp('filterDetailId').down('grid').getSelectionModel().getSelected().items[0] == undefined) {
                                 alert('Please select an order');
@@ -61,8 +62,10 @@ Ext.define('WebAppClassic.view.main.purchaseorder.FilterDetail', {
                                 var index = store.indexOf(Ext.getCmp('filterDetailId').down('grid').getView().getSelectionModel().getSelection()[0]);
                                 var object = store.getAt(index);
                                 object.data.OrderQty = text
-                                
+                                object.data.ProductId = object.data.Id;
+                                delete object.data.Id;
                                 var a = Ext.getCmp('addOrderId');
+                                debugger
                                 if (Ext.getCmp('addOrderId') == undefined) {
                                     Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().add(object)
                                 } else if (Ext.getCmp('editOrderId') == undefined) {

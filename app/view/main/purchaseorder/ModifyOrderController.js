@@ -168,7 +168,7 @@
         };
         
         orderValue.PurchaseOrderDetails = newDetailArray;
-        
+        debugger;
         console.log(orderValue);
         //console.log(orderDetailValue);
         Ext.Ajax.request({
@@ -244,8 +244,8 @@
                 var data = Ext.decode(Result.responseText);
 
                 if (data.IsSuccess == true) {
-                    console.log("success");
-                    console.log(data.Data);
+                    //console.log("success");
+                    //console.log(data.Data);
                     //Ext.getCmp('editOrderId').down('#orderDetailItemId').down('combo').getStore().setData(data.Data);
 
                     //console.log(addOrderView.down('#orderDetailItemId').down('combo').getStore());
@@ -262,45 +262,44 @@
         var form = Ext.getCmp("editOrderId").down('#orderItemId').getForm().setValues(select);
         
 
-        var detailStore = this.getView().down('#orderDetailGrid').getStore().getData().items;
+        var detailStore = Ext.getCmp('orderId').down('#orderDetailGrid').getStore().getData().items;
         var detailArray = [];
         detailStore.forEach(function (element) {
             detailArray[detailArray.length] = element.data
         });
+        
         Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().setData(detailArray);
         //console.log(detailStore.items);
         //console.log(this.getView().getSelectionModel().getSelected().items[0].data);
     },
 
     actualEditOrder: function () {
+
         var thisView = this.getView();
 
         //get the order 
-        var order = Ext.getCmp("orderId").down('grid').getSelectionModel().getSelected().items[0].data;
-        var newOrder = this.getView().down('form').getForm().getFieldValues();
+        var order = Ext.getCmp("orderId").down('grid').getSelectionModel().getSelected().items[0].data;   
         delete order.id;
-        order.BrandId = newOrder.BrandId;
-        order.FactoryId = newOrder.FactoryId;
-        order.DcId = newOrder.DcId;
-        if (newOrder.DeliveryDate != null) {
-            order.DeliveryDate = newOrder.DeliveryDate;
-        }
-        order.DeliveryAddress = newOrder.DeliveryAddress;
-        order.PayMethod = newOrder.PayMethod;
-        order.Remark = newOrder.Remark;
 
-        //get the detail
+        //get the detail     
+        var orderDetailValue = this.getView().down('#orderDetailGrid').getStore().getData().items;
         var detailArray = [];
-        var store = this.getView().down('#orderDetailGrid').getStore().getData().getRange();
+        var newDetailArray = [];
         //console.log(store);
-        store.forEach(function (element) {
-            delete element.data.id
-            detailArray[detailArray.length] = element.data;
-            //console.log(element);   
+        orderDetailValue.forEach(function (element) { 
+            detailArray[detailArray.length] = element.data;         
         });
         
-        order.PurchaseOrderDetails = detailArray;
+        for (var i = 0; i < detailArray.length; i++) {
+            var a = { PurchaseOrderNo: order.OrderNo, ProductId: detailArray[i].ProductId, OrderQty: detailArray[i].OrderQty }
+            //console.log(orderNo);
+            newDetailArray[newDetailArray.length] = a
+        };
+        
+        order.PurchaseOrderDetails = newDetailArray;
         console.log(order);
+        
+
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/PurchaseOrder/EditPurchaseWithDetail',

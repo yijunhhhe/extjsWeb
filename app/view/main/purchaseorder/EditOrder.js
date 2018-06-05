@@ -220,7 +220,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                 height:270,
                 store: orderDetail,
                 columns: [
-                     { text: 'ProductId', dataIndex: 'Id', flex: 1 },
+                     { text: 'ProductId', dataIndex: 'ProductId', flex: 1 },
                      { text: 'Bacode', dataIndex: 'Bacode', flex: 1, },
                     { text: 'Name', dataIndex: 'Name', flex: 1, },
                     { text: 'OrderQty', dataIndex: 'OrderQty', flex: 1 },
