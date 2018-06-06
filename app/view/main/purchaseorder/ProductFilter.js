@@ -127,7 +127,8 @@ Ext.define('WebAppClassic.view.main.purchaseorder.ProductFilter', {
                                             if (detailStore.length == 0) {
                                                 var newOrderDetail = {
                                                     PurchaseOrderNo: order.PurchaseOrderNo, ProductId: selected.Id, OrderQty: text, Bacode: selected.Bacode,
-                                                Size:selected.Size, Name:selected.Name, Color:selected.Color}
+                                                    Size: selected.Size, Name: selected.Name, Color: selected.Color, Code: selected.Code
+                                                }
                                             }
                                             for (var i = 0; i < detailStore.length; i++) {
                                                 if (detailStore[i].data.ProductId == selected.Id) {
@@ -137,9 +138,14 @@ Ext.define('WebAppClassic.view.main.purchaseorder.ProductFilter', {
                                                     newOrderDetail.OrderQty = qty;
                                                     var index = editStore.indexOfId(detailStore[i].data.id);
                                                     editStore.removeAt(index);
-                                                    
+                                                } else {
+                                                    var newOrderDetail = {
+                                                        PurchaseOrderNo: order.PurchaseOrderNo, ProductId: selected.Id, OrderQty: text, Bacode: selected.Bacode,
+                                                        Size: selected.Size, Name: selected.Name, Color: selected.Color, Code: selected.Code
+                                                    }
                                                 }
                                             }
+                                            
                                         } else if (Ext.getCmp('editOrderId') == undefined) {
                                             var order = Ext.getCmp('addOrderId').down('#orderItemId').getForm().getValues();
                                             var addStore = Ext.getCmp('addOrderId').down('#orderDetailItemId').down('grid').getStore();
@@ -158,18 +164,23 @@ Ext.define('WebAppClassic.view.main.purchaseorder.ProductFilter', {
                                                     newOrderDetail.OrderQty = qty;
                                                     var index = addStore.indexOfId(detailStore[i].data.id);
                                                     addStore.removeAt(index);
+                                                    
+                                                } else {
+                                                    var newOrderDetail = {
+                                                        PurchaseOrderNo: order.PurchaseOrderNo, ProductId: selected.Id, OrderQty: text, Bacode: selected.Bacode,
+                                                        Size: selected.Size, Name: selected.Name, Color: selected.Color, Code: selected.Code
+                                                    }
                                                 }
                                             }
+                                            
                                         }
                                       
                                         
                                         if (Ext.getCmp('addOrderId') == undefined) {
                                             Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().add(newOrderDetail)
-                                            console.log(Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore())
                                             Ext.getCmp('productFilterId').destroy();
                                         } else if (Ext.getCmp('editOrderId') == undefined) {
                                             Ext.getCmp('addOrderId').down('#orderDetailItemId').down('grid').getStore().add(newOrderDetail);
-                                            console.log(Ext.getCmp('addOrderId').down('#orderDetailItemId').down('grid').getStore())
                                             Ext.getCmp('productFilterId').destroy();
                                         }
                                     }

@@ -128,15 +128,7 @@
         var filter = Ext.create({
             xtype: 'productfilter'
         });
-
-        //var detail = this.getView().down('#orderDetailItemId').getForm().getValues();
-        //if (detail.ProductId == "" && detail.OrderQty == "" && detail.Remark == "" || detail.ProductId == "") {
-        //    return
-        //}
-        //var model = this.getView().getViewModel().data.detail;
-        //model[model.length] = detail;
-        //this.getView().getViewModel().data.detail = model;
-        //this.getView().down('grid').getStore().setData(model);
+      
     },
     
     addOrder: function () {
@@ -154,6 +146,12 @@
             alert('Please fill out the required field');
             return;
         }
+
+        if (this.getView().down('grid').getStore().getData().items.length == 0) {
+            alert('Please add at least one order Detail');
+            return;
+        }
+
         var orderDetailLength = this.getView().down('#orderDetailItemId').down('grid').getStore().getData().items.length;
         if (orderDetailLength == 0) {
             alert('Please add at least one order detail');
@@ -173,13 +171,13 @@
         
         for(var i = 0; i < detailArray.length; i++) {
             var a = { PurchaseOrderNo: orderNo, ProductId: detailArray[i].ProductId, OrderQty: detailArray[i].OrderQty }
-            console.log(orderNo);
+            //console.log(orderNo);
             newDetailArray[newDetailArray.length] = a       
         };
         
         orderValue.PurchaseOrderDetails = newDetailArray;
       
-        console.log(orderValue);
+        //console.log(orderValue);
         //console.log(orderDetailValue);
         Ext.Ajax.request({
             method: 'POST',
@@ -296,7 +294,7 @@
         order.DeliveryAddress = newOrder.DeliveryAddress;
         order.PayMethod = newOrder.PayMethod;
         order.Remark = newOrder.Remark;
-        debugger
+        
 
         //get the detail     
         var orderDetailValue = this.getView().down('#orderDetailGrid').getStore().getData().items;
