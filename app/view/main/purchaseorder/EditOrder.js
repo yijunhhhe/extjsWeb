@@ -147,6 +147,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             displayField: 'Name',
             valueField: 'Id',
             editable: false,
+            allowBlank:false,
         }, {
             xtype: 'combo',
             itemId: 'FactoryItemId',
@@ -158,6 +159,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             valueField: 'Id',
             editable: false,
             queryParam: 'query',
+            allowBlank: false,
         }, {
             xtype: 'combo',
             itemId: 'DcItemId',
@@ -169,15 +171,18 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             valueField: 'Id',
             editable: false,
             queryParam: 'query',
+            allowBlank: false,
         }, {
             xtype: 'datefield',
             fieldLabel: 'DeliveryDate',
             name: 'DeliveryDate',
             format: 'Y-m-d H:i:s',
-            
+            allowBlank: false,
+            editable: false,
         }, {
             fieldLabel: 'DeliveryAddress',
-            name: 'DeliveryAddress'
+            name: 'DeliveryAddress',
+            allowBlank: false,
         }, {
             xtype: 'combo',
             fieldLabel: 'PayMethod',
@@ -185,7 +190,8 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
             store: payMethodCombo,
             queryMode: 'local',
             displayField: 'PayMethod',
-            valueField: 'PayMethod',      
+            valueField: 'PayMethod',
+            //allowBlank: false,
         },   
         ]
     }, {       
@@ -195,27 +201,11 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
         title: 'Order Detail',
         bodyPadding:10,
         items: [
-            //{ 
-            //    xtype: 'combo',
-            //    fieldLabel: 'ProductId',
-            //    store: product,
-            //    name: 'ProductId',
-            //    queryMode: 'local',
-            //    displayField: 'Name',
-            //    valueField: 'Id',
-            //    editable: false,
-            //    allowBlank:false,
-            //   // queryParam: 'query',
-            //}, {
-            //    xtype: 'textfield',
-            //    fieldLabel: 'OrderQty',
-            //    name:'OrderQty',
-            //},
             {
                 itemId: 'orderDetailGrid',
                 xtype: 'grid',
                 scrollable: true,
-                height:270,
+                height:300,
                 store: orderDetail,
                 columns: [
                      { text: 'ProductId', dataIndex: 'ProductId', flex: 1 },

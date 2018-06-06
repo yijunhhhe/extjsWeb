@@ -88,7 +88,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                     vtype: 'daterange',
                     format: 'Y-m-d H:i:s',
                     endDateField: 'enddt', // id of the end date field
-                    minValue: new Date(),
                     editable: false
                 }, {
                     xtype: 'datefield',
@@ -98,7 +97,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                     vtype: 'daterange',
                     format: 'Y-m-d H:i:s',
                     startDateField: 'startdt', // id of the start date field
-                    minValue: new Date(),
                     editable: false
                 }, {
                     width: 80,
@@ -106,6 +104,16 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                     text: 'Search',
                     listeners: {
                         click: 'searchOrder'
+                    }
+                }, {
+                    width: 60,
+                    xtype: 'button',
+                    text: 'Clear',
+                    listeners: {
+                        click: function () {
+                            this.up('form').getForm().reset();
+                            
+                        }
                     }
                 }, ]
         },
@@ -183,7 +191,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
             type: 'orderDetailStore'
         },
         columns: [
-            { text: 'ProductId', dataIndex: 'ProductId', flex: 1 },
+            //{ text: 'ProductId', dataIndex: 'ProductId', flex: 1 },
             { text: 'Bacode', dataIndex: 'Bacode', flex: 1 },
             { text: 'Name', dataIndex: 'Name', flex: 1 },
             { text: 'Size', dataIndex: 'Size', flex: 1 },

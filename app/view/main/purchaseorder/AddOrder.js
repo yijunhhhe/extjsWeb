@@ -14,6 +14,7 @@
         { name: 'Name', type: 'string' },
         { name: 'Size', type: 'string' },
         { name: 'Color', type: 'string' },
+        { name: 'Code', type: 'string' },
     ],
 })
 

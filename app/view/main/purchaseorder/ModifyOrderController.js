@@ -230,6 +230,10 @@
     },
 
     editOrder: function () {
+        if (Ext.getCmp('orderId').down('grid').getSelectionModel().getSelected().items.length == 0) {
+            alert("Please select a record")
+            return
+        }
         var edit = Ext.create({
             xtype: 'editorder',
         });
@@ -277,7 +281,10 @@
     actualEditOrder: function () {
 
         var thisView = this.getView();
-
+        if (!this.getView().down('#orderItemId').getForm().isValid()) {
+            alert('Please fill out the required field');
+            return;
+        }
         //get the order 
         var order = Ext.getCmp("orderId").down('grid').getSelectionModel().getSelected().items[0].data;   
         delete order.id;
