@@ -33,42 +33,12 @@
 
             }
         });
-
-        
-    },
-
-    searchOrderAddFilter: function () {
-        var searchFitler = Ext.create({
-            xtype: 'searchfilter'
-        });
-        searchFitler.show();
-
-        
     },
 
     searchOrder: function () {
-        //var filterObject = {};
-        //if (Ext.getCmp('searchFilterId') != undefined) {
-        //    var filterValue = Ext.getCmp('searchFilterId').down('form').getForm().getValues();
-        //    var filterObject = filterValue;         
-        //    }
         var filterObject = Ext.getCmp('orderId').down('#searchForm').getForm().getValues();
-        
         var orderView = Ext.getCmp('orderId');
-        //var filterObject = this.getView().getViewModel().data.searchFilter;
         
-        //if (!Object.keys(filterObject).length) {
-        //    var searchName = orderView.down('#searchName').getValue();
-        //    var searchType = orderView.down('combo').getValue();
-        //    if (searchType == null) {
-        //        alert('Please select an filter');
-        //        return 
-        //    }
-        //    var object = {}
-            
-        //    object[searchType] = searchName;
-        //    filterObject = object;
-        //}
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/PurchaseOrder/SearchPurchaseByDto',
@@ -92,37 +62,6 @@
         });
     },
     
-    addFilter: function () {
-        var addOrderView = this.getView();
-        var filter = this.getView().down('form').getForm().getValues();
-        if (filter.Bacode == "" && filter.Code == "" && filter.Color == "" && filter.Name == "" && filter.Size == "") {
-            alert("Please enter something");
-            return;
-        }
-        console.log(filter);
-        Ext.Ajax.request({
-            method: 'POST',
-            url: '/Api/Product/SearchProductByDto',
-            headers: { 'Content-Type': 'application/json' },
-            params: JSON.stringify(filter),
-            dataType: 'json',
-            success: function (Result) {
-                var data = Ext.decode(Result.responseText);
-                
-                if (data.IsSuccess == true) {
-                    console.log("success");
-                    console.log(data.Data);
-                    addOrderView.down('#orderDetailItemId').down('combo').getStore().setData(data.Data);
-                    
-                    console.log(addOrderView.down('#orderDetailItemId').down('combo').getStore());
-
-                } else {
-                    alert(data.ErrorMessage);
-                }
-            }
-        });
-    },
-    
     addOrderDetail: function(){
         
         var filter = Ext.create({
@@ -136,8 +75,7 @@
         var add = Ext.create({
             xtype: 'addorder'
         });
-        addOrderValue = Ext.getCmp('addOrderId').down('#orderItemId').getForm();
-        //console.log(addOrderValue);
+        addOrderValue = Ext.getCmp('addOrderId').down('#orderItemId').getForm();   
     },
 
     actualAddOrder: function () {
@@ -160,9 +98,8 @@
 
         var orderValue = this.getView().down('#orderItemId').getForm().getValues();
         var orderDetailValue = this.getView().down('#orderDetailItemId').down('grid').getStore().getData().items;
-        //var detailStore = this.getView().down('#orderDetailGrid').getStore().getData().items;
         var detailArray = [];
-        var newDetailArray = []
+        var newDetailArray = [];
         var orderNo = orderValue.OrderNo;
         
         orderDetailValue.forEach(function (element) {
@@ -171,18 +108,13 @@
         
         for(var i = 0; i < detailArray.length; i++) {
             var a = { PurchaseOrderNo: orderNo, ProductId: detailArray[i].ProductId, OrderQty: detailArray[i].OrderQty }
-            //console.log(orderNo);
             newDetailArray[newDetailArray.length] = a       
         };
-        console.log(JSON.stringify(orderValue))
-        console.log(JSON.stringify(newDetailArray))
-        //orderValue.PurchaseOrderDetails = newDetailArray;
+
         orderDetail = {}
         orderDetail.purchaseOrder = orderValue;
         orderDetail.purchaseOrderDetails = newDetailArray;
-        debugger;
-        //console.log(orderValue);
-        //console.log(orderDetailValue);
+        
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/PurchaseOrder/AddPurchaseOrder',
@@ -204,7 +136,6 @@
                 }
             }
         });
-        
     },
 
     productFilter: function(){
@@ -219,13 +150,9 @@
             dataType: 'json',
             success: function (Result) {
                 var data = Ext.decode(Result.responseText);
-
                 if (data.IsSuccess == true) {
                     console.log("success");
-                    //console.log(data.Data);
                     Ext.getCmp('productFilterId').down('grid').getStore().setData(data.Data);
-                    //console.log(addOrderView.down('#orderDetailItemId').down('combo').getStore());
-
                 } else {
                     alert(data.ErrorMessage);
                 }
@@ -244,33 +171,12 @@
         Ext.getCmp('editOrderId').down('#DcItemId').getStore().load();
         Ext.getCmp('editOrderId').down('#BrandItemId').getStore().load();
         Ext.getCmp('editOrderId').down('#FactoryItemId').getStore().load();
-        Ext.Ajax.request({
-            method: 'POST',
-            url: '/Api/Product/SearchProductByDto',
-            headers: { 'Content-Type': 'application/json' },
-            params: JSON.stringify({}),
-            dataType: 'json',
-            success: function (Result) {
-                var data = Ext.decode(Result.responseText);
-
-                if (data.IsSuccess == true) {
-                    //console.log("success");
-                    //console.log(data.Data);
-                    //Ext.getCmp('editOrderId').down('#orderDetailItemId').down('combo').getStore().setData(data.Data);
-
-                    //console.log(addOrderView.down('#orderDetailItemId').down('combo').getStore());
-
-                } else {
-                    alert(data.ErrorMessage);
-                }
-            }
-        });
+        
         //set values of order form
         var select = this.getView().down('grid').getSelectionModel().getSelected().items[0].data;
         select.DeliveryDate = select.DeliveryDate.replace("T", " ");
         var form = Ext.getCmp("editOrderId").down('#orderItemId').getForm().setValues(select);
         
-
         var detailStore = Ext.getCmp('orderId').down('#orderDetailGrid').getStore().getData().items;
         var detailArray = [];
         detailStore.forEach(function (element) {
@@ -278,8 +184,6 @@
         });
         
         Ext.getCmp('editOrderId').down('#orderDetailGrid').getStore().setData(detailArray);
-        //console.log(detailStore.items);
-        //console.log(this.getView().getSelectionModel().getSelected().items[0].data);
     },
 
     actualEditOrder: function () {
@@ -299,26 +203,20 @@
         order.DeliveryDate = newOrder.DeliveryDate;
         order.DeliveryAddress = newOrder.DeliveryAddress;
         order.PayMethod = newOrder.PayMethod;
-        order.Remark = newOrder.Remark;
         
-
         //get the detail     
         var orderDetailValue = this.getView().down('#orderDetailGrid').getStore().getData().items;
         var detailArray = [];
         var newDetailArray = [];
-        //console.log(store);
         orderDetailValue.forEach(function (element) { 
             detailArray[detailArray.length] = element.data;         
         });
         
         for (var i = 0; i < detailArray.length; i++) {
             var a = { PurchaseOrderNo: order.OrderNo, ProductId: detailArray[i].ProductId, OrderQty: detailArray[i].OrderQty }
-            //console.log(orderNo);
             newDetailArray[newDetailArray.length] = a
         };
         
-        //order.PurchaseOrderDetails = newDetailArray;
-        //console.log(order);
         orderDetail = {}
         orderDetail.purchaseOrder = order;
         orderDetail.purchaseOrderDetails = newDetailArray;
