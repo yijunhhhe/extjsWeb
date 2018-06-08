@@ -174,16 +174,22 @@
             //console.log(orderNo);
             newDetailArray[newDetailArray.length] = a       
         };
-        
-        orderValue.PurchaseOrderDetails = newDetailArray;
-      
+        console.log(JSON.stringify(orderValue))
+        console.log(JSON.stringify(newDetailArray))
+        //orderValue.PurchaseOrderDetails = newDetailArray;
+        orderDetail = {}
+        orderDetail.purchaseOrder = orderValue;
+        orderDetail.purchaseOrderDetails = newDetailArray;
+        debugger;
         //console.log(orderValue);
         //console.log(orderDetailValue);
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/PurchaseOrder/AddPurchaseOrder',
             headers: { 'Content-Type': 'application/json' },
-            params: JSON.stringify(orderValue),
+            params: [
+               JSON.stringify(orderDetail),
+            ],
             dataType: 'json',
             success: function (Result) {
                 var data = Ext.decode(Result.responseText);
@@ -311,15 +317,17 @@
             newDetailArray[newDetailArray.length] = a
         };
         
-        order.PurchaseOrderDetails = newDetailArray;
-        console.log(order);
-        
+        //order.PurchaseOrderDetails = newDetailArray;
+        //console.log(order);
+        orderDetail = {}
+        orderDetail.purchaseOrder = order;
+        orderDetail.purchaseOrderDetails = newDetailArray;
 
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/PurchaseOrder/EditPurchaseWithDetail',
             headers: { 'Content-Type': 'application/json' },
-            params: JSON.stringify(order),
+            params: JSON.stringify(orderDetail),
             dataType: 'json',
             success: function (Result) {
                 var data = Ext.decode(Result.responseText);
