@@ -68,18 +68,26 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                 listeners: {
                     click: function () {
                         var pageNum = Ext.getCmp("orderId").down("#pageBar").down("displayfield").getValue();
-                        pageNum = pageNum - 1;
+                        if (parseInt(pageNum) > 1) {
+                            pageNum = pageNum - 1;
+                        }
+                        debugger;
+
+                        var filter = Ext.getCmp("orderId").down('#searchForm').getForm().getValues();
+                        filter.PageNum = pageNum;
                         Ext.Ajax.request({
-                            method: 'GET',
-                            url: '/Api/PurchaseOrder/GetPageOrder?page=' + pageNum,
+                            method: 'POST',
+                            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
                             headers: { 'Content-Type': 'application/json' },
+                            params: JSON.stringify(filter),
+                            dataType: 'json',
                             success: function (Result) {
                                 var data = Ext.decode(Result.responseText);
                                 if (data.IsSuccess == true) {
                                     console.log("success");
                                     console.log(data.Data);
                                     Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
-                                    Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
+                                    //Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
                                     Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
                                     //console.log(orderView.down('grid').getStore());
                                 } else {
@@ -100,17 +108,21 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                     click: function () {
                         var pageNum = Ext.getCmp("orderId").down("#pageBar").down("displayfield").getValue();
                         pageNum = parseInt(pageNum) + 1;
+                        var filter = Ext.getCmp("orderId").down('#searchForm').getForm().getValues();
+                        filter.PageNum = pageNum
                         Ext.Ajax.request({
-                            method: 'GET',
-                            url: '/Api/PurchaseOrder/GetPageOrder?page=' + pageNum,
+                            method: 'POST',
+                            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
                             headers: { 'Content-Type': 'application/json' },
+                            params: JSON.stringify(filter),
+                            dataType: 'json',
                             success: function (Result) {
                                 var data = Ext.decode(Result.responseText);
                                 if (data.IsSuccess == true) {
                                     console.log("success");
                                     console.log(data.Data);
                                     Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
-                                    Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
+                                    //Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
                                     Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
                                     //console.log(orderView.down('grid').getStore());
                                 } else {
@@ -131,10 +143,14 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                 listeners: {
                     click: function () {
                         var pageNum = Ext.getCmp("orderId").down("#pageBar").down("textfield").getValue();
+                        var filter = Ext.getCmp("orderId").down('#searchForm').getForm().getValues();
+                        filter.PageNum = pageNum
                         Ext.Ajax.request({
-                            method: 'GET',
-                            url: '/Api/PurchaseOrder/GetPageOrder?page=' + pageNum,
+                            method: 'POST',
+                            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
                             headers: { 'Content-Type': 'application/json' },
+                            params: JSON.stringify(filter),
+                            dataType: 'json',
                             success: function (Result) {
                                 var data = Ext.decode(Result.responseText);
                                 if (data.IsSuccess == true) {

@@ -42,17 +42,6 @@
         var form = Ext.getCmp('orderId').down('#searchForm').submit({
             params: JSON.stringify(filterObject)
         });
-        //Ext.Ajax.request({
-        //    method: 'POST',
-        //    url: '/Api/PurchaseOrder/getExcel?dto=' + JSON.stringify(filterObject),
-        //    headers: { 'Content-Type': 'application/json' },
-        //    //params: JSON.stringify(filterObject),
-        //    //dataType: 'json',
-        //    success: function (Result) {
-        //       console.log(Result); 
-        //    }
-        //});
-
     },
 
     searchOrder: function () {
@@ -74,6 +63,8 @@
                         Ext.getCmp('searchFilterId').close();
                     }
                     Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
+                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(1);
+
                     //console.log(orderView.down('grid').getStore());
                 } else {
                     alert(data.ErrorMessage);
