@@ -255,12 +255,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
                 ]
 
             },
-
-
-
             ],
-
-
 
         }, {
             xtype: 'button',

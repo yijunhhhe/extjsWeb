@@ -9,7 +9,7 @@
 
     proxy: {
         type: 'ajax',
-        url: '/Api/PurchaseOrder/GetAllOrder',
+        url: '/Api/PurchaseOrder/InitialGetPageOrder?page=1',
         actionMethod: 'Get',
         reader: {
             type: 'json',

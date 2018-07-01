@@ -3,6 +3,14 @@
  * needed for your application, but these edits will have to be merged by
  * Sencha Cmd when upgrading.
  */
+Ext.Loader.setConfig({
+    enabled: true,
+    paths: {
+        'Ext.ux': '' //Should be the path to the ux folder.
+    }
+});
+
+
 Ext.application({
     name: 'WebAppClassic',
 

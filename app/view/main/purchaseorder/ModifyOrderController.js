@@ -3,7 +3,7 @@
     alias: 'controller.modifyOrderController',
     
     deleteOrder: function () {
-        var select = this.getView().down('grid').getSelectionModel().getSelected().items[0].data;
+        var select = this.getView().down('exportablegrid').getSelectionModel().getSelected().items[0].data;
         delete select.id;
         select.IsDeleted = true;
         Ext.MessageBox.confirm('delete', 'yes?', function (btn, text) {
@@ -19,7 +19,7 @@
                         //console.log(data);
                         if (data.IsSuccess == true) {
                             console.log("success");
-                            Ext.getCmp('orderId').down('grid').getStore().reload();
+                            Ext.getCmp('orderId').down('exportablegrid').getStore().reload();
                             thisView.destroy();
                         } else {
                             alert(data.ErrorMessage);
@@ -33,6 +33,26 @@
 
             }
         });
+    },
+    getExcel: function(){
+        var filterObject = Ext.getCmp('orderId').down('#searchForm').getForm().getValues();
+        var orderView = Ext.getCmp('orderId');
+        //url = '/Api/PurchaseOrder/getExcel?dto=' + JSON.stringify(filterObject);
+        //window.open(url);
+        var form = Ext.getCmp('orderId').down('#searchForm').submit({
+            params: JSON.stringify(filterObject)
+        });
+        //Ext.Ajax.request({
+        //    method: 'POST',
+        //    url: '/Api/PurchaseOrder/getExcel?dto=' + JSON.stringify(filterObject),
+        //    headers: { 'Content-Type': 'application/json' },
+        //    //params: JSON.stringify(filterObject),
+        //    //dataType: 'json',
+        //    success: function (Result) {
+        //       console.log(Result); 
+        //    }
+        //});
+
     },
 
     searchOrder: function () {
@@ -53,7 +73,7 @@
                     if (Ext.getCmp('searchFilterId') != undefined) {
                         Ext.getCmp('searchFilterId').close();
                     }
-                    Ext.getCmp('orderId').down('grid').getStore().setData(data.Data);                
+                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
                     //console.log(orderView.down('grid').getStore());
                 } else {
                     alert(data.ErrorMessage);
@@ -128,7 +148,7 @@
                 console.log(Result);
                 if (data.IsSuccess == true) {
                     console.log("success");
-                    Ext.getCmp('orderId').down('grid').getStore().reload();
+                    Ext.getCmp('orderId').down('exportablegrid').getStore().reload();
                     Ext.getCmp('addOrderId').down('grid').getStore().removeAll();
                     Ext.getCmp('addOrderId').destroy();   
                 } else {
@@ -161,7 +181,7 @@
     },
 
     editOrder: function () {
-        if (Ext.getCmp('orderId').down('grid').getSelectionModel().getSelected().items.length == 0) {
+        if (Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items.length == 0) {
             alert("Please select a record")
             return
         }
@@ -173,7 +193,7 @@
         Ext.getCmp('editOrderId').down('#FactoryItemId').getStore().load();
         
         //set values of order form
-        var select = this.getView().down('grid').getSelectionModel().getSelected().items[0].data;
+        var select = this.getView().down('exportablegrid').getSelectionModel().getSelected().items[0].data;
         select.DeliveryDate = select.DeliveryDate.replace("T", " ");
         var form = Ext.getCmp("editOrderId").down('#orderItemId').getForm().setValues(select);
         
@@ -194,7 +214,7 @@
             return;
         }
         //get the order 
-        var order = Ext.getCmp("orderId").down('grid').getSelectionModel().getSelected().items[0].data;   
+        var order = Ext.getCmp("orderId").down('exportablegrid').getSelectionModel().getSelected().items[0].data;
         delete order.id;
         var newOrder = Ext.getCmp("editOrderId").down('#orderItemId').getForm().getValues();
         order.BrandId = newOrder.BrandId;
@@ -232,7 +252,7 @@
                 console.log(Result);
                 if (data.IsSuccess == true) {
                     console.log("success");
-                    Ext.getCmp('orderId').down('grid').getStore().reload();
+                    Ext.getCmp('orderId').down('exportablegrid').getStore().reload();
                     thisView.destroy();   
                 } else {
                     alert(data.ErrorMessage);

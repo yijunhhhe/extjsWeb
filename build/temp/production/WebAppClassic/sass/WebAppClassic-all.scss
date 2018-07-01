@@ -1,6 +1,6 @@
 $app-name:  dynamic( 'WebAppClassic' );
 $image-search-path: 'D:/NewTranning/Exhibit（用户管理、设备管理功能的实现）/Baoshen.RfidShowRoom/Baoshen.RfidShowRoom.WebHost/WebAppClassic/build/production/WebAppClassic/resources';
-$theme-name:  dynamic( 'theme-spotifext' );
+$theme-name:  dynamic( 'theme-triton' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;
 $include-ext-abstractmanager: dynamic(false);;
@@ -530,7 +530,7 @@ $include-ext-layout-anchorlayout: dynamic(true);;
 $include-ext-layout-borderlayout: dynamic(true);;
 $include-ext-layout-boxlayout: dynamic(true);;
 $include-ext-layout-cardlayout: dynamic(true);;
-$include-ext-layout-columnlayout: dynamic(false);;
+$include-ext-layout-columnlayout: dynamic(true);;
 $include-ext-layout-containerlayout: dynamic(true);;
 $include-ext-layout-context: dynamic(true);;
 $include-ext-layout-contextitem: dynamic(true);;
@@ -563,7 +563,7 @@ $include-ext-layout-container-box: dynamic(true);;
 $include-ext-layout-container-card: dynamic(true);;
 $include-ext-layout-container-center: dynamic(false);;
 $include-ext-layout-container-checkboxgroup: dynamic(true);;
-$include-ext-layout-container-column: dynamic(false);;
+$include-ext-layout-container-column: dynamic(true);;
 $include-ext-layout-container-columnsplitter: dynamic(false);;
 $include-ext-layout-container-columnsplittertracker: dynamic(false);;
 $include-ext-layout-container-container: dynamic(true);;
@@ -878,24 +878,37 @@ $include-webappclassic-application: dynamic(true);;
 $include-webappclassic-model-mainmodel: dynamic(false);;
 $include-webappclassic-model-ordermodel: dynamic(true);;
 $include-webappclassic-model-usermodel: dynamic(true);;
+$include-webappclassic-model-users: dynamic(false);;
 $include-webappclassic-store-orderdetailstore: dynamic(true);;
 $include-webappclassic-store-orderstore: dynamic(true);;
+$include-webappclassic-store-personnel: dynamic(false);;
 $include-webappclassic-store-userstore: dynamic(true);;
+$include-webappclassic-store-users: dynamic(false);;
 $include-webappclassic-view-login-login: dynamic(true);;
 $include-webappclassic-view-login-logincontroller: dynamic(true);;
 $include-webappclassic-view-login-loginviewmodel: dynamic(true);;
+$include-webappclassic-view-main-adduser: dynamic(false);;
+$include-webappclassic-view-main-edituser: dynamic(false);;
 $include-webappclassic-view-main-list: dynamic(false);;
 $include-webappclassic-view-main-main: dynamic(true);;
 $include-webappclassic-view-main-maincontroller: dynamic(true);;
+$include-webappclassic-view-main-mainmodel: dynamic(false);;
+$include-webappclassic-view-main-modifyusercontroller: dynamic(false);;
+$include-webappclassic-view-main-searchuser: dynamic(false);;
+$include-webappclassic-view-main-user: dynamic(false);;
+$include-webappclassic-view-main-userfield: dynamic(false);;
+$include-webappclassic-view-main-userviewmodel: dynamic(false);;
 $include-webappclassic-view-main-purchaseorder-addorder: dynamic(true);;
 $include-webappclassic-view-main-purchaseorder-editorder: dynamic(true);;
 $include-webappclassic-view-main-purchaseorder-editorderdetail: dynamic(false);;
+$include-webappclassic-view-main-purchaseorder-filterdetail: dynamic(false);;
 $include-webappclassic-view-main-purchaseorder-modifyordercontroller: dynamic(true);;
 $include-webappclassic-view-main-purchaseorder-modifyorderdetailcontroller: dynamic(false);;
 $include-webappclassic-view-main-purchaseorder-order: dynamic(true);;
 $include-webappclassic-view-main-purchaseorder-orderdetail: dynamic(false);;
 $include-webappclassic-view-main-purchaseorder-orderdetailviewmodel: dynamic(true);;
-$include-webappclassic-view-main-purchaseorder-searchfilter: dynamic(true);;
+$include-webappclassic-view-main-purchaseorder-productfilter: dynamic(true);;
+$include-webappclassic-view-main-purchaseorder-searchfilter: dynamic(false);;
 $include-webappclassic-view-main-user-adduser: dynamic(true);;
 $include-webappclassic-view-main-user-edituser: dynamic(true);;
 $include-webappclassic-view-main-user-modifyusercontroller: dynamic(true);;
@@ -970,14 +983,6 @@ $current-package: 'theme-triton';
 $current-resource-root: $theme-triton-resource-root;
 $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/classic/theme-triton/sass/etc/all';
-
-/* including package theme-spotifext */
-$theme-spotifext-resource-root: '' !default;
-$theme-spotifext-resource-path: 'images' !default;
-$current-package: 'theme-spotifext';
-$current-resource-root: $theme-spotifext-resource-root;
-$relative-image-path-for-uis: $theme-spotifext-resource-path;
-@import '../../../../../packages/local/theme-spotifext/sass/etc/all';
 
 /* including package WebAppClassic */
 $WebAppClassic-resource-root: '' !default;
@@ -1160,18 +1165,6 @@ $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/classic/theme-triton/sass/var/tab/Bar';
 @import '../../../../../ext/classic/theme-triton/sass/var/tree/View';
 
-/* including package theme-spotifext */
-$theme-spotifext-resource-root: '' !default;
-$theme-spotifext-resource-path: 'images' !default;
-$current-package: 'theme-spotifext';
-$current-resource-root: $theme-spotifext-resource-root;
-$relative-image-path-for-uis: $theme-spotifext-resource-path;
-@import '../../../../../packages/local/theme-spotifext/sass/var/Component';
-@import '../../../../../packages/local/theme-spotifext/sass/var/button/Button';
-@import '../../../../../packages/local/theme-spotifext/sass/var/form/field/Base';
-@import '../../../../../packages/local/theme-spotifext/sass/var/grid/Panel';
-@import '../../../../../packages/local/theme-spotifext/sass/var/tab/Panel';
-
 /* including package WebAppClassic */
 $WebAppClassic-resource-root: '' !default;
 $WebAppClassic-resource-path: 'images' !default;
@@ -1218,6 +1211,7 @@ $relative-image-path-for-uis: $theme-base-resource-path;
 @import '../../../../../ext/classic/theme-base/sass/src/layout/component/Dock';
 @import '../../../../../ext/classic/theme-base/sass/src/panel/Panel';
 @import '../../../../../ext/classic/theme-base/sass/src/plugin/Viewport';
+@import '../../../../../ext/classic/theme-base/sass/src/layout/container/Column';
 @import '../../../../../ext/classic/theme-base/sass/src/resizer/SplitterTracker';
 @import '../../../../../ext/classic/theme-base/sass/src/window/Window';
 @import '../../../../../ext/classic/theme-base/sass/src/form/Labelable';
@@ -1307,15 +1301,6 @@ $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/classic/theme-triton/sass/src/Component';
 @import '../../../../../ext/classic/theme-triton/sass/src/menu/Menu';
 @import '../../../../../ext/classic/theme-triton/sass/src/tab/Tab';
-
-/* including package theme-spotifext */
-$theme-spotifext-resource-root: '' !default;
-$theme-spotifext-resource-path: 'images' !default;
-$current-package: 'theme-spotifext';
-$current-resource-root: $theme-spotifext-resource-root;
-$relative-image-path-for-uis: $theme-spotifext-resource-path;
-@import '../../../../../packages/local/theme-spotifext/sass/src/button/Button';
-@import '../../../../../packages/local/theme-spotifext/sass/src/tab/Panel';
 
 /* including package WebAppClassic */
 $WebAppClassic-resource-root: '' !default;

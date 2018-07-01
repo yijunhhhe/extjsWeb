@@ -40,7 +40,8 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
     requires: [
              'WebAppClassic.store.OrderStore',
              'WebAppClassic.view.main.purchaseorder.ModifyOrderController',
-             'WebAppClassic.view.main.purchaseorder.OrderDetailViewModel'
+             'WebAppClassic.view.main.purchaseorder.OrderDetailViewModel',
+             'Ext.ux.ExportableGrid',
     ],
     xtype: 'order',
     id: 'orderId',
@@ -55,10 +56,110 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
         store: {
             type: 'orderStore'
         },
-        xtype: 'grid',
-        tbar: [{
+        xtype: 'exportablegrid',
+        
+        bbar:[{
+            xtype:'form',
+            layout:'column',
+            itemId: 'pageBar',
+            items: [{
+                xtype: 'button',
+                text: 'last',
+                listeners: {
+                    click: function () {
+                        var pageNum = Ext.getCmp("orderId").down("#pageBar").down("displayfield").getValue();
+                        pageNum = pageNum - 1;
+                        Ext.Ajax.request({
+                            method: 'GET',
+                            url: '/Api/PurchaseOrder/GetPageOrder?page=' + pageNum,
+                            headers: { 'Content-Type': 'application/json' },
+                            success: function (Result) {
+                                var data = Ext.decode(Result.responseText);
+                                if (data.IsSuccess == true) {
+                                    console.log("success");
+                                    console.log(data.Data);
+                                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
+                                    Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
+                                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
+                                    //console.log(orderView.down('grid').getStore());
+                                } else {
+                                    alert(data.ErrorMessage);
+                                }
+                            }
+                        });
+                    }
+                }
+            },{
+                xtype: "displayfield",
+                value: "1",
+                margin:"0, 10",
+            }, {
+                xtype: 'button',
+                text: 'next',
+                listeners: {
+                    click: function () {
+                        var pageNum = Ext.getCmp("orderId").down("#pageBar").down("displayfield").getValue();
+                        pageNum = parseInt(pageNum) + 1;
+                        Ext.Ajax.request({
+                            method: 'GET',
+                            url: '/Api/PurchaseOrder/GetPageOrder?page=' + pageNum,
+                            headers: { 'Content-Type': 'application/json' },
+                            success: function (Result) {
+                                var data = Ext.decode(Result.responseText);
+                                if (data.IsSuccess == true) {
+                                    console.log("success");
+                                    console.log(data.Data);
+                                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
+                                    Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
+                                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
+                                    //console.log(orderView.down('grid').getStore());
+                                } else {
+                                    alert(data.ErrorMessage);
+                                }
+                            }
+                        });
+                    }
+                }
+            }, {
+                xtype: 'textfield',
+                name: 'page',
+                value: '1',
+                width: 50,
+            }, {
+                xtype: "button",
+                text: 'jump',
+                listeners: {
+                    click: function () {
+                        var pageNum = Ext.getCmp("orderId").down("#pageBar").down("textfield").getValue();
+                        Ext.Ajax.request({
+                            method: 'GET',
+                            url: '/Api/PurchaseOrder/GetPageOrder?page=' + pageNum,
+                            headers: { 'Content-Type': 'application/json' },
+                            success: function (Result) {
+                                var data = Ext.decode(Result.responseText);
+                                if (data.IsSuccess == true) {
+                                    console.log("success");
+                                    console.log(data.Data);
+                                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
+                                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
+                                    //console.log(orderView.down('grid').getStore());
+                                } else {
+                                    alert(data.ErrorMessage);
+                                }
+                            }
+                        });
+                    }
+                }
+            }, ]
+            
 
+
+        }],
+
+        tbar: [{
             xtype: 'form',
+            standardSubmit: true,
+            url:'/Api/PurchaseOrder/getExcel',
             layout: 'column',
             itemId: 'searchForm',
             defaults: {
@@ -72,14 +173,12 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                     xtype: 'textfield',
                     name: 'OrderNo',
                     fieldLabel: 'OrderNo',
-
                 }, {
                     labelWidth: 100,
                     itemId: 'deliveryAddress',
                     xtype: 'textfield',
                     name: 'DeliveryAddress',
                     fieldLabel: 'DeliveryAddress',
-
                 }, {
                     xtype: 'datefield',
                     fieldLabel: 'Start Date',
@@ -108,14 +207,12 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                 }, {
                     width: 60,
                     xtype: 'button',
-                    text: 'Clear',
+                    text: 'Export',
                     listeners: {
-                        click: function () {
-                            this.up('form').getForm().reset();
-                            
-                        }
+                        click: 'getExcel'
                     }
                 }, ]
+            
         },
         {
             xtype: 'tbfill'
