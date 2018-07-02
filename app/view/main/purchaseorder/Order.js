@@ -71,8 +71,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                         if (parseInt(pageNum) > 1) {
                             pageNum = pageNum - 1;
                         }
-                        debugger;
-
                         var filter = Ext.getCmp("orderId").down('#searchForm').getForm().getValues();
                         filter.PageNum = pageNum;
                         Ext.Ajax.request({
@@ -269,7 +267,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
 
                 Ext.Ajax.request({
                     method: 'GET',
-                    url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a',
+                    url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=1',
                     headers: { 'Content-Type': 'application/json' },
                     // params: JSON.stringify(order),
                     dataType: 'json',
@@ -319,6 +317,115 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
            //bind: '{OrderNo}',
        }
         ],
+        bbar: [{
+            xtype: 'form',
+            layout: 'column',
+            itemId: 'pageBar',
+            items: [{
+                xtype: 'button',
+                text: 'last',
+                listeners: {
+                    click: function () {
+                        var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
+                        var pageNum = Ext.getCmp("orderId").down("#detailDisplayField").getValue();
+                       
+                        if (parseInt(pageNum) > 1) {
+                            pageNum = pageNum - 1;
+                        }
+                        
+                        Ext.Ajax.request({
+                            method: 'GET',
+                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum,
+                            headers: { 'Content-Type': 'application/json' },
+                            success: function (Result) {
+                                var data = Ext.decode(Result.responseText);
+                                if (data.IsSuccess == true) {
+                                    console.log("success");
+                                    console.log(data.Data);
+                                    Ext.getCmp('orderId').down("#detailDisplayField").setValue(pageNum);
+                                    //Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
+                                    Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
+
+                                    //console.log(orderView.down('grid').getStore());
+                                } else {
+                                    alert(data.ErrorMessage);
+                                }
+                            }
+                        });
+                    }
+                }
+            }, {
+                xtype: "displayfield",
+                itemId:"detailDisplayField",
+                value: "1",
+                margin: "0, 10",
+            }, {
+                xtype: 'button',
+                text: 'next',
+                listeners: {
+                    click: function () {
+                        var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
+
+                        var pageNum = Ext.getCmp("orderId").down("#detailDisplayField").getValue(); pageNum = parseInt(pageNum) + 1;
+                        
+                        Ext.Ajax.request({
+                            method: 'GET',
+                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum,
+                            headers: { 'Content-Type': 'application/json' },
+                            success: function (Result) {
+                                var data = Ext.decode(Result.responseText);
+                                if (data.IsSuccess == true) {
+                                    console.log("success");
+                                    console.log(data.Data);
+                                    Ext.getCmp('orderId').down('#detailDisplayField').setValue(pageNum);
+                                    Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
+                                } else {
+                                    alert(data.ErrorMessage);
+                                }
+                            }
+                        });
+                    }
+                }
+            }, {
+                xtype: 'textfield',
+                name: 'page',
+                itemId: "detailTextField",
+                value: '1',
+                width: 50,
+            }, {
+                xtype: "button",
+                text: 'jump',
+                listeners: {
+                    click: function () {
+                        var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
+
+                        var pageNum = Ext.getCmp("orderId").down('#detailTextField').getValue();
+                      
+                        Ext.Ajax.request({
+                            method: 'GET',
+                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum,
+                            headers: { 'Content-Type': 'application/json' },
+                            success: function (Result) {
+                                var data = Ext.decode(Result.responseText);
+                                if (data.IsSuccess == true) {
+                                    console.log("success");
+                                    console.log(data.Data);
+                                    Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
+                                    Ext.getCmp("orderId").down('#detailDisplayField').setValue(pageNum);
+                                } else {
+                                    alert(data.ErrorMessage);
+                                }
+                            }
+                        });
+                    }
+                }
+            }, ]
+
+
+
+        }],
+
+
     }]
 
 });
