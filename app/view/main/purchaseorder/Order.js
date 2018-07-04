@@ -54,16 +54,31 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
     items: [{
         
         region: 'center',
-        scrollable: true,
+        //scrollable: true,
         store: {
             type: 'orderStore'
         },
         xtype: 'exportablegrid',
-        
+        viewConfig: {
+            listeners: {
+                viewready: function(view) {
+                    Ext.getCmp("orderId").down("exportablegrid").getStore().reload();
+                    //Ext.getCmp("orderId").down("exportablegrid").getStore().load({
+                    //    params: {
+                    //        // specify params for the first page load if using paging
+                    //        start: 0,
+                    //        limit: 12,
+
+                    //    }
+                    //});
+                }
+            }
+        },
         bbar: [{
             store: {
                 type: 'orderStore'
             },
+            pageSize: 8,
             xtype: 'pagingtoolbar',    
             displayInfo: true
         }],
@@ -244,7 +259,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                                     Ext.getCmp('orderId').down("#detailDisplayField").setValue(pageNum);
                                     //Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
                                     Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
-
                                     //console.log(orderView.down('grid').getStore());
                                 } else {
                                     alert(data.ErrorMessage);
@@ -378,14 +392,14 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
 //            //    console.log(options._start);
 //            //    console.log(options._start);
 //            //});
-//            //Ext.getCmp("orderId").down("exportablegrid").getStore().load({
-//            //    params: {
-//            //        // specify params for the first page load if using paging
-//            //        start: 0,
-//            //        limit: 12,
+            //Ext.getCmp("orderId").down("exportablegrid").getStore().load({
+            //    params: {
+            //        // specify params for the first page load if using paging
+            //        start: 0,
+            //        limit: 12,
 
-//            //    }
-//            //}); 
+            //    }
+            //}); 
 //            //var filterObject = Ext.getCmp('orderId').down('#searchForm').getForm().getValues();
 
 //            //Ext.getCmp("orderId").down("exportablegrid").getStore().on('beforeload', function (store, options) {

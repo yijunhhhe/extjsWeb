@@ -5,7 +5,7 @@
     ],
     alias: 'store.orderStore',
     pageSize: 8,
-    autoLoad: {start: 0, limit: 8},
+    //autoLoad: {start: 0, limit: 8},
     //autoLoad: false,
     model: 'WebAppClassic.model.OrderModel',
      //item per page
