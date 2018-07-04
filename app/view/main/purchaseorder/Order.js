@@ -8,9 +8,11 @@
          { "Type": "OrderNo", },
          { "Type": "DeliveryAddress", },
     ]
-
 });
 
+var orderStore = Ext.create('WebAppClassic.store.OrderStore');
+
+//debugger;
 Ext.apply(Ext.form.field.VTypes, {
     daterange: function (val, field) {
         var date = field.parseDate(val);
@@ -54,30 +56,10 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
     items: [{
         
         region: 'center',
-        //scrollable: true,
-        store: {
-            type: 'orderStore'
-        },
-        xtype: 'exportablegrid',
-        viewConfig: {
-            listeners: {
-                viewready: function(view) {
-                    Ext.getCmp("orderId").down("exportablegrid").getStore().reload();
-                    //Ext.getCmp("orderId").down("exportablegrid").getStore().load({
-                    //    params: {
-                    //        // specify params for the first page load if using paging
-                    //        start: 0,
-                    //        limit: 12,
-
-                    //    }
-                    //});
-                }
-            }
-        },
+        store: orderStore,
+        xtype: 'exportablegrid',       
         bbar: [{
-            store: {
-                type: 'orderStore'
-            },
+            store:orderStore,
             pageSize: 8,
             xtype: 'pagingtoolbar',    
             displayInfo: true

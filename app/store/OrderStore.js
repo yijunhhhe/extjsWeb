@@ -5,7 +5,14 @@
     ],
     alias: 'store.orderStore',
     pageSize: 8,
-    //autoLoad: {start: 0, limit: 8},
+    autoLoad: { start: 0, limit: 8 },
+    extraParams:{
+        OrderNo: "",
+        DeliveryAddress: "",
+        startDate: "",
+        endDate: "",
+    },
+    autoLoad: true,
     //autoLoad: false,
     model: 'WebAppClassic.model.OrderModel',
      //item per page
