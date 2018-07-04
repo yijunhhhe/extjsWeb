@@ -47,7 +47,9 @@
     searchOrder: function () {
         var filterObject = Ext.getCmp('orderId').down('#searchForm').getForm().getValues();
         var orderView = Ext.getCmp('orderId');
-        
+        filterObject.ItemNum = 8;
+        Ext.getCmp('orderId').getViewModel().data.searchFilter = filterObject;
+        //Ext.getCmp("orderId").down("exportablegrid").getStore().load(1); 
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/PurchaseOrder/SearchPurchaseByDto',
@@ -64,7 +66,7 @@
                     }
                     Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
                     Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(1);
-
+                    //Ext.getCmp("orderId").down("#totalNumberItem").setValue(data.Data.length);
                     //console.log(orderView.down('grid').getStore());
                 } else {
                     alert(data.ErrorMessage);
@@ -252,5 +254,99 @@
         });
     },
 
+    orderJump: function () {
+        var pageNum = Ext.getCmp("orderId").down("#pageBar").down("textfield").getValue();
+        //var filter = Ext.getCmp("orderId").down('#searchForm').getForm().getValues();
+        var filter = Ext.getCmp("orderId").getViewModel().data.searchFilter;
+        if (pageNum <= 0) {
+            alert(">0");
+        }
+        filter.PageNum = pageNum;
+        var itemNum = 8;
+        filter.ItemNum = itemNum;
+
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
+            headers: { 'Content-Type': 'application/json' },
+            params: JSON.stringify(filter),
+            dataType: 'json',
+            success: function (Result) {
+                var data = Ext.decode(Result.responseText);
+                if (data.IsSuccess == true) {
+                    console.log("success");
+                    console.log(data.Data);
+                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
+                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
+                    //Ext.getCmp("orderId").down("#totalNumberItem").setValue(data.Data.length);
+                    //console.log(orderView.down('grid').getStore());
+                } else {
+                    alert(data.ErrorMessage);
+                }
+            }
+        });
+    },
+
+    orderNext: function () {
+        var pageNum = Ext.getCmp("orderId").down("#pageBar").down("displayfield").getValue();
+        pageNum = parseInt(pageNum) + 1;
+        var filter = Ext.getCmp("orderId").getViewModel().data.searchFilter;
+        filter.PageNum = pageNum;
+        var itemNum = 8;
+        filter.ItemNum = itemNum;
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
+            headers: { 'Content-Type': 'application/json' },
+            params: JSON.stringify(filter),
+            dataType: 'json',
+            success: function (Result) {
+                var data = Ext.decode(Result.responseText);
+                if (data.IsSuccess == true) {
+                    console.log("success");
+                    console.log(data.Data);
+                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
+                    //Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
+                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
+                    //console.log(orderView.down('grid').getStore());
+                    //Ext.getCmp("orderId").down("#totalNumberItem").setValue(data.Data.length);
+                } else {
+                    alert(data.ErrorMessage);
+                }
+            }
+        });
+    },
+
+    orderLast: function () {
+        var pageNum = Ext.getCmp("orderId").down("#pageBar").down("displayfield").getValue();
+        if (parseInt(pageNum) > 1) {
+            pageNum = pageNum - 1;
+        }
+        var filter = Ext.getCmp("orderId").getViewModel().data.searchFilter;
+        filter.PageNum = pageNum;
+        var itemNum = 8;
+        filter.ItemNum = itemNum;
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
+            headers: { 'Content-Type': 'application/json' },
+            params: JSON.stringify(filter),
+            dataType: 'json',
+            success: function (Result) {
+                var data = Ext.decode(Result.responseText);
+                if (data.IsSuccess == true) {
+                    console.log("success");
+                    console.log(data.Data);
+                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
+                    //Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
+                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
+                    //console.log(orderView.down('grid').getStore());
+                    //Ext.getCmp("orderId").down("#totalNumberItem").setValue(data.Data.length);
+                } else {
+                    alert(data.ErrorMessage);
+                }
+            }
+        });
+    }
     
 })

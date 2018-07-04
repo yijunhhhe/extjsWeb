@@ -50,7 +50,9 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
     scrollable: true,
     layout: 'border',
     height: 650,
+    
     items: [{
+        
         region: 'center',
         scrollable: true,
         store: {
@@ -58,116 +60,12 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
         },
         xtype: 'exportablegrid',
         
-        bbar:[{
-            xtype:'form',
-            layout:'column',
-            itemId: 'pageBar',
-            items: [{
-                xtype: 'button',
-                text: 'last',
-                listeners: {
-                    click: function () {
-                        var pageNum = Ext.getCmp("orderId").down("#pageBar").down("displayfield").getValue();
-                        if (parseInt(pageNum) > 1) {
-                            pageNum = pageNum - 1;
-                        }
-                        var filter = Ext.getCmp("orderId").down('#searchForm').getForm().getValues();
-                        filter.PageNum = pageNum;
-                        Ext.Ajax.request({
-                            method: 'POST',
-                            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
-                            headers: { 'Content-Type': 'application/json' },
-                            params: JSON.stringify(filter),
-                            dataType: 'json',
-                            success: function (Result) {
-                                var data = Ext.decode(Result.responseText);
-                                if (data.IsSuccess == true) {
-                                    console.log("success");
-                                    console.log(data.Data);
-                                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
-                                    //Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
-                                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
-                                    //console.log(orderView.down('grid').getStore());
-                                } else {
-                                    alert(data.ErrorMessage);
-                                }
-                            }
-                        });
-                    }
-                }
-            },{
-                xtype: "displayfield",
-                value: "1",
-                margin:"0, 10",
-            }, {
-                xtype: 'button',
-                text: 'next',
-                listeners: {
-                    click: function () {
-                        var pageNum = Ext.getCmp("orderId").down("#pageBar").down("displayfield").getValue();
-                        pageNum = parseInt(pageNum) + 1;
-                        var filter = Ext.getCmp("orderId").down('#searchForm').getForm().getValues();
-                        filter.PageNum = pageNum
-                        Ext.Ajax.request({
-                            method: 'POST',
-                            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
-                            headers: { 'Content-Type': 'application/json' },
-                            params: JSON.stringify(filter),
-                            dataType: 'json',
-                            success: function (Result) {
-                                var data = Ext.decode(Result.responseText);
-                                if (data.IsSuccess == true) {
-                                    console.log("success");
-                                    console.log(data.Data);
-                                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
-                                    //Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
-                                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
-                                    //console.log(orderView.down('grid').getStore());
-                                } else {
-                                    alert(data.ErrorMessage);
-                                }
-                            }
-                        });
-                    }
-                }
-            }, {
-                xtype: 'textfield',
-                name: 'page',
-                value: '1',
-                width: 50,
-            }, {
-                xtype: "button",
-                text: 'jump',
-                listeners: {
-                    click: function () {
-                        var pageNum = Ext.getCmp("orderId").down("#pageBar").down("textfield").getValue();
-                        var filter = Ext.getCmp("orderId").down('#searchForm').getForm().getValues();
-                        filter.PageNum = pageNum
-                        Ext.Ajax.request({
-                            method: 'POST',
-                            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
-                            headers: { 'Content-Type': 'application/json' },
-                            params: JSON.stringify(filter),
-                            dataType: 'json',
-                            success: function (Result) {
-                                var data = Ext.decode(Result.responseText);
-                                if (data.IsSuccess == true) {
-                                    console.log("success");
-                                    console.log(data.Data);
-                                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
-                                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(pageNum);
-                                    //console.log(orderView.down('grid').getStore());
-                                } else {
-                                    alert(data.ErrorMessage);
-                                }
-                            }
-                        });
-                    }
-                }
-            }, ]
-            
-
-
+        bbar: [{
+            store: {
+                type: 'orderStore'
+            },
+            xtype: 'pagingtoolbar',    
+            displayInfo: true
         }],
 
         tbar: [{
@@ -267,7 +165,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
 
                 Ext.Ajax.request({
                     method: 'GET',
-                    url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=1',
+                    url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=1'+ '&itemNum=3',
                     headers: { 'Content-Type': 'application/json' },
                     // params: JSON.stringify(order),
                     dataType: 'json',
@@ -328,14 +226,15 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                     click: function () {
                         var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
                         var pageNum = Ext.getCmp("orderId").down("#detailDisplayField").getValue();
-                       
+                        var itemNum = "3";
+
                         if (parseInt(pageNum) > 1) {
                             pageNum = pageNum - 1;
                         }
                         
                         Ext.Ajax.request({
                             method: 'GET',
-                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum,
+                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum + '&itemNum=' + itemNum,
                             headers: { 'Content-Type': 'application/json' },
                             success: function (Result) {
                                 var data = Ext.decode(Result.responseText);
@@ -365,12 +264,11 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                 listeners: {
                     click: function () {
                         var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
-
                         var pageNum = Ext.getCmp("orderId").down("#detailDisplayField").getValue(); pageNum = parseInt(pageNum) + 1;
-                        
+                        var itemNum = "3";
                         Ext.Ajax.request({
                             method: 'GET',
-                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum,
+                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum + '&itemNum=' + itemNum,
                             headers: { 'Content-Type': 'application/json' },
                             success: function (Result) {
                                 var data = Ext.decode(Result.responseText);
@@ -400,10 +298,13 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                         var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
 
                         var pageNum = Ext.getCmp("orderId").down('#detailTextField').getValue();
-                      
+                        if (pageNum <= 0) {
+                            alert(">0")
+                        }
+                        var itemNum = "3";
                         Ext.Ajax.request({
                             method: 'GET',
-                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum,
+                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum + '&itemNum=' + itemNum,
                             headers: { 'Content-Type': 'application/json' },
                             success: function (Result) {
                                 var data = Ext.decode(Result.responseText);
@@ -429,3 +330,71 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
     }]
 
 });
+
+
+//    {
+//    xtype: 'button',
+//    text: 'last',
+//    listeners: {
+//        click: 'orderLast',
+//    }
+//},{
+//    xtype: "displayfield",
+//    value: "1",
+//    margin:"0, 10",
+//}, {
+//    xtype: 'button',
+//    text: 'next',
+//    listeners: {
+//        click: 'orderNext',
+//    }
+//}, {
+//    xtype: 'textfield',
+//    name: 'page',
+//    value: '1',
+//    width: 50,
+//}, {
+//    xtype: "button",
+//    text: 'jump',
+//    listeners: {
+//        click: 'orderJump',
+//    }
+//},
+
+//{
+//    xtype: "displayfield",
+//    itemId: 'totalNumberItem',
+//    fieldLabel: 'total',
+//    labelWidth: 40,
+//    text: '',
+//    margin: '0 10',
+//}
+
+//viewConfig: {
+//    listeners: {
+//        viewready: function (view) {
+//            //view.getStore().on('beforeload', function (store, options) {
+//            //    console.log(options._page);
+//            //    console.log(options._start);
+//            //    console.log(options._start);
+//            //});
+//            //Ext.getCmp("orderId").down("exportablegrid").getStore().load({
+//            //    params: {
+//            //        // specify params for the first page load if using paging
+//            //        start: 0,
+//            //        limit: 12,
+
+//            //    }
+//            //}); 
+//            //var filterObject = Ext.getCmp('orderId').down('#searchForm').getForm().getValues();
+
+//            //Ext.getCmp("orderId").down("exportablegrid").getStore().on('beforeload', function (store, options) {
+//            //    Ext.getCmp('orderId').getViewModel().data.searchFilter.page = options._page;
+//            //    Ext.getCmp('orderId').getViewModel().data.searchFilter.start = options._start;
+//            //    Ext.getCmp('orderId').getViewModel().data.searchFilter.limit = options._limit;
+//            //    Ext.apply(store.proxy.extraParams);
+//            //});
+
+//        }
+//    },
+//},

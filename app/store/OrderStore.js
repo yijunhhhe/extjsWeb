@@ -4,19 +4,24 @@
         'WebAppClassic.model.OrderModel'
     ],
     alias: 'store.orderStore',
-    autoLoad: true,
+    pageSize: 8,
+    autoLoad: {start: 0, limit: 8},
+    //autoLoad: false,
     model: 'WebAppClassic.model.OrderModel',
-
+     //item per page
     proxy: {
         type: 'ajax',
-        url: '/Api/PurchaseOrder/InitialGetPageOrder?page=1&&itemNum=8',
+        url: '/Api/PurchaseOrder/GetPageOrder',
         actionMethod: 'Get',
         reader: {
             type: 'json',
-            rootProperty:'data'
+            rootProperty: 'Data',
+            totalProperty:'Total',
         }
-    }
+    },
+    
 });
+
 
 Ext.define('WebAppClassic.store.OrderDetailStore', {
     extend: 'Ext.data.Store',
@@ -44,8 +49,13 @@ Ext.define('WebAppClassic.store.OrderDetailStore', {
         { name: 'Color', type: 'string' },
         { name: 'Count', type: 'string'}
     ],
-
-    
-
-
 });
+
+
+
+//store.load({
+//    params: {
+//        start: 0,
+//        limit: 8
+//    }
+//});
