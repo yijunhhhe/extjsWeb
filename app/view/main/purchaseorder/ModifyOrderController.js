@@ -60,29 +60,29 @@
         //Ext.getCmp('orderId').getViewModel().data.searchFilter = filterObject;
         //console.log(Ext.getCmp('orderId').down('exportablegrid').getStore());
         //Ext.getCmp("orderId").down("exportablegrid").getStore().load(1); 
-        //Ext.Ajax.request({
-        //    method: 'POST',
-        //    url: '/Api/PurchaseOrder/SearchPurchaseByDto',
-        //    headers: { 'Content-Type': 'application/json' },
-        //    params: JSON.stringify(filterObject),
-        //    dataType: 'json',
-        //    success: function (Result) {
-        //        var data = Ext.decode(Result.responseText);
-        //        if (data.IsSuccess == true) {
-        //            console.log("success");
-        //            console.log(data.Data);
-        //            if (Ext.getCmp('searchFilterId') != undefined) {
-        //                Ext.getCmp('searchFilterId').close();
-        //            }
-        //            Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
-        //            Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(1);
-        //            //Ext.getCmp("orderId").down("#totalNumberItem").setValue(data.Data.length);
-        //            //console.log(orderView.down('grid').getStore());
-        //        } else {
-        //            alert(data.ErrorMessage);
-        //        }
-        //    }
-        //});
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '/Api/PurchaseOrder/SearchPurchaseByDto',
+            headers: { 'Content-Type': 'application/json' },
+            params: JSON.stringify(filterObject),
+            dataType: 'json',
+            success: function (Result) {
+                var data = Ext.decode(Result.responseText);
+                if (data.IsSuccess == true) {
+                    console.log("success");
+                    console.log(data.Data);
+                    if (Ext.getCmp('searchFilterId') != undefined) {
+                        Ext.getCmp('searchFilterId').close();
+                    }
+                    Ext.getCmp('orderId').down('exportablegrid').getStore().setData(data.Data);
+                    Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(1);
+                    //Ext.getCmp("orderId").down("#totalNumberItem").setValue(data.Data.length);
+                    //console.log(orderView.down('grid').getStore());
+                } else {
+                    alert(data.ErrorMessage);
+                }
+            }
+        });
     },
     
     addOrderDetail: function(){

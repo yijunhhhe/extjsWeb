@@ -1,7 +1,9 @@
-﻿Ext.define('WebAppClassic.store.OrderStore', {
+﻿
+Ext.define('WebAppClassic.store.OrderStore', {
     extend: 'Ext.data.Store',
     requires: [
-        'WebAppClassic.model.OrderModel'
+        'WebAppClassic.model.OrderModel',
+       
     ],
     alias: 'store.orderStore',
     pageSize: 8,
@@ -15,7 +17,7 @@
     autoLoad: true,
     //autoLoad: false,
     model: 'WebAppClassic.model.OrderModel',
-     //item per page
+    //item per page
     proxy: {
         type: 'ajax',
         url: '/Api/PurchaseOrder/GetPageOrder',
@@ -32,13 +34,17 @@
 
 Ext.define('WebAppClassic.store.OrderDetailStore', {
     extend: 'Ext.data.Store',
-    requires: [
-        'WebAppClassic.model.OrderModel'
-    ],
-    alias: 'store.orderDetailStore',
-    
-    //model: 'WebAppClassic.model.OrderModel',
-
+    autoLoad: false, 
+    pageSize: 3,
+    lastOptions: {params: {start: 0, limit: 3}},
+    proxy:{
+        type: 'memory',
+        enablePaging: true,
+        reader: {
+            type: 'json',
+            rootProperty: 'users'
+        }
+    },
     fields: [
         { name:'Id', type:'string' },
         { name: 'PurchaseOrderId', type: 'string' },

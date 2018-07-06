@@ -10,7 +10,31 @@
     ]
 });
 
+Ext.define('OrderDetailModel', {
+    extend: 'Ext.data.Model',
+    fields: [
+         { name: 'Id', type: 'string' },
+        { name: 'PurchaseOrderId', type: 'string' },
+        { name: 'PurchaseOrderNo', type: 'string' },
+        { name: 'ProductId', type: 'string' },
+        { name: 'OrderQty', type: 'string' },
+        { name: 'IsDeleted', type: 'string' },
+        { name: 'Remark', type: 'string' },
+        { name: 'CreateBy', type: 'string' },
+        { name: 'ModifyBy', type: 'string' },
+        { name: 'ModifyDate', type: 'string' },
+        { name: 'Bacode', type: 'string' },
+        { name: 'Name', type: 'string' },
+        { name: 'Size', type: 'string' },
+        { name: 'Color', type: 'string' },
+        { name: 'Count', type: 'string' }
+    ],
+});
+ 
+
 var orderStore = Ext.create('WebAppClassic.store.OrderStore');
+var orderDetailStore = Ext.create('WebAppClassic.store.OrderDetailStore');
+   // 
 
 //debugger;
 Ext.apply(Ext.form.field.VTypes, {
@@ -36,6 +60,7 @@ Ext.apply(Ext.form.field.VTypes, {
     },
     daterangeText: 'Start date must be less than end date'
 });
+
 
 Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
     extend: "Ext.panel.Panel",
@@ -162,7 +187,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
 
                 Ext.Ajax.request({
                     method: 'GET',
-                    url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=1'+ '&itemNum=3',
+                    url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=0'+ '&itemNum=0',
                     headers: { 'Content-Type': 'application/json' },
                     // params: JSON.stringify(order),
                     dataType: 'json',
@@ -173,8 +198,12 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                             //console.log(data.Data);
                             Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
                             var count = orderView.getSelectionModel().getSelected().items[0].data.Remark;
-
-                            Ext.getCmp('orderId').down('#titleCount').setValue(count)
+                            
+                            //console.log("ASdf");
+                            Ext.getCmp('orderId').down('#titleCount').setValue(count);
+                            Ext.getCmp('orderId').down('#orderDetailGrid').getStore().getProxy().setData(data.Data) ;
+                            Ext.getCmp('orderId').down('#orderDetailGrid').getStore().load(1);
+                           
                             //Ext.getCmp('orderId').down('grid').getStore().reload();
                             //thisView.destroy();
                         } else {
@@ -193,9 +222,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
         region: 'south',
         xtype: 'grid',
 
-        store: {
-            type: 'orderDetailStore'
-        },
+        store: orderDetailStore,
         columns: [
             //{ text: 'ProductId', dataIndex: 'ProductId', flex: 1 },
             { text: 'Bacode', dataIndex: 'Bacode', flex: 1 },
@@ -217,112 +244,13 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
             layout: 'column',
             itemId: 'pageBar',
             items: [{
-                xtype: 'button',
-                text: 'last',
-                listeners: {
-                    click: function () {
-                        var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
-                        var pageNum = Ext.getCmp("orderId").down("#detailDisplayField").getValue();
-                        var itemNum = "3";
-
-                        if (parseInt(pageNum) > 1) {
-                            pageNum = pageNum - 1;
-                        }
-                        
-                        Ext.Ajax.request({
-                            method: 'GET',
-                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum + '&itemNum=' + itemNum,
-                            headers: { 'Content-Type': 'application/json' },
-                            success: function (Result) {
-                                var data = Ext.decode(Result.responseText);
-                                if (data.IsSuccess == true) {
-                                    console.log("success");
-                                    console.log(data.Data);
-                                    Ext.getCmp('orderId').down("#detailDisplayField").setValue(pageNum);
-                                    //Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
-                                    Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
-                                    //console.log(orderView.down('grid').getStore());
-                                } else {
-                                    alert(data.ErrorMessage);
-                                }
-                            }
-                        });
-                    }
-                }
-            }, {
-                xtype: "displayfield",
-                itemId:"detailDisplayField",
-                value: "1",
-                margin: "0, 10",
-            }, {
-                xtype: 'button',
-                text: 'next',
-                listeners: {
-                    click: function () {
-                        var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
-                        var pageNum = Ext.getCmp("orderId").down("#detailDisplayField").getValue(); pageNum = parseInt(pageNum) + 1;
-                        var itemNum = "3";
-                        Ext.Ajax.request({
-                            method: 'GET',
-                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum + '&itemNum=' + itemNum,
-                            headers: { 'Content-Type': 'application/json' },
-                            success: function (Result) {
-                                var data = Ext.decode(Result.responseText);
-                                if (data.IsSuccess == true) {
-                                    console.log("success");
-                                    console.log(data.Data);
-                                    Ext.getCmp('orderId').down('#detailDisplayField').setValue(pageNum);
-                                    Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
-                                } else {
-                                    alert(data.ErrorMessage);
-                                }
-                            }
-                        });
-                    }
-                }
-            }, {
-                xtype: 'textfield',
-                name: 'page',
-                itemId: "detailTextField",
-                value: '1',
-                width: 50,
-            }, {
-                xtype: "button",
-                text: 'jump',
-                listeners: {
-                    click: function () {
-                        var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
-
-                        var pageNum = Ext.getCmp("orderId").down('#detailTextField').getValue();
-                        if (pageNum <= 0) {
-                            alert(">0")
-                        }
-                        var itemNum = "3";
-                        Ext.Ajax.request({
-                            method: 'GET',
-                            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum + '&itemNum=' + itemNum,
-                            headers: { 'Content-Type': 'application/json' },
-                            success: function (Result) {
-                                var data = Ext.decode(Result.responseText);
-                                if (data.IsSuccess == true) {
-                                    console.log("success");
-                                    console.log(data.Data);
-                                    Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
-                                    Ext.getCmp("orderId").down('#detailDisplayField').setValue(pageNum);
-                                } else {
-                                    alert(data.ErrorMessage);
-                                }
-                            }
-                        });
-                    }
-                }
-            }, ]
-
-
+                store: orderDetailStore,
+                pageSize: 3,
+                xtype: 'pagingtoolbar',
+                displayInfo: true
+            }]
 
         }],
-
-
     }]
 
 });
@@ -394,3 +322,139 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
 //        }
 //    },
 //},
+
+//{
+//    xtype: 'button',
+//    text: 'last',
+//    listeners: {
+//        click: function () {
+//            var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
+//            var pageNum = Ext.getCmp("orderId").down("#detailDisplayField").getValue();
+//            var itemNum = "3";
+
+//            if (parseInt(pageNum) > 1) {
+//                pageNum = pageNum - 1;
+//            }
+                        
+//            Ext.Ajax.request({
+//                method: 'GET',
+//                url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum + '&itemNum=' + itemNum,
+//                headers: { 'Content-Type': 'application/json' },
+//                success: function (Result) {
+//                    var data = Ext.decode(Result.responseText);
+//                    if (data.IsSuccess == true) {
+//                        console.log("success");
+//                        console.log(data.Data);
+//                        Ext.getCmp('orderId').down("#detailDisplayField").setValue(pageNum);
+//                        //Ext.getCmp("orderId").down("#pageBar").down("textfield").setValue(pageNum);
+//                        Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
+//                        //console.log(orderView.down('grid').getStore());
+//                    } else {
+//                        alert(data.ErrorMessage);
+//                    }
+//                }
+//            });
+//        }
+//    }
+//}, {
+//xtype: "displayfield",
+//itemId:"detailDisplayField",
+//value: "1",
+//margin: "0, 10",
+//}, {
+//xtype: 'button',
+//text: 'next',
+//listeners: {
+//    click: function () {
+//        var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
+//        var pageNum = Ext.getCmp("orderId").down("#detailDisplayField").getValue(); pageNum = parseInt(pageNum) + 1;
+//        var itemNum = "3";
+//        Ext.Ajax.request({
+//            method: 'GET',
+//            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum + '&itemNum=' + itemNum,
+//            headers: { 'Content-Type': 'application/json' },
+//            success: function (Result) {
+//                var data = Ext.decode(Result.responseText);
+//                if (data.IsSuccess == true) {
+//                    console.log("success");
+//                    console.log(data.Data);
+//                    Ext.getCmp('orderId').down('#detailDisplayField').setValue(pageNum);
+//                    Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
+//                } else {
+//                    alert(data.ErrorMessage);
+//                }
+//            }
+//        });
+//    }
+//}
+//}, {
+//    xtype: 'textfield',
+//    name: 'page',
+//    itemId: "detailTextField",
+//    value: '1',
+//    width: 50,
+//    }, {
+//xtype: "button",
+//text: 'jump',
+//listeners: {
+//    click: function () {
+//        var viewData = Ext.getCmp('orderId').down('exportablegrid').getSelectionModel().getSelected().items[0].data;
+
+//        var pageNum = Ext.getCmp("orderId").down('#detailTextField').getValue();
+//        if (pageNum <= 0) {
+//            alert(">0")
+//        }
+//        var itemNum = "3";
+//        Ext.Ajax.request({
+//            method: 'GET',
+//            url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=' + pageNum + '&itemNum=' + itemNum,
+//            headers: { 'Content-Type': 'application/json' },
+//            success: function (Result) {
+//                var data = Ext.decode(Result.responseText);
+//                if (data.IsSuccess == true) {
+//                    console.log("success");
+//                    console.log(data.Data);
+//                    Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
+//                    Ext.getCmp("orderId").down('#detailDisplayField').setValue(pageNum);
+//                } else {
+//                    alert(data.ErrorMessage);
+//                }
+//            }
+//        });
+//    }
+//}
+//}
+
+//Ext.create('Ext.ux.data.PagingStore', {
+//    requires: [
+//        'WebAppClassic.model.OrderModel',
+//    ],
+//    model: 'WebAppClassic.model.OrderModel',
+//    pageSize: 3,
+//    lastOptions: { start: 0, limit: 3, page: 1 },
+//    fields: [
+//        { name: 'Id', type: 'string' },
+//        { name: 'PurchaseOrderId', type: 'string' },
+//        { name: 'PurchaseOrderNo', type: 'string' },
+//        { name: 'ProductId', type: 'string' },
+//        { name: 'OrderQty', type: 'string' },
+//        { name: 'IsDeleted', type: 'string' },
+//        { name: 'Remark', type: 'string' },
+//        { name: 'CreateBy', type: 'string' },
+//        { name: 'ModifyBy', type: 'string' },
+//        { name: 'ModifyDate', type: 'string' },
+//        { name: 'Bacode', type: 'string' },
+//        { name: 'Name', type: 'string' },
+//        { name: 'Size', type: 'string' },
+//        { name: 'Color', type: 'string' },
+//        { name: 'Count', type: 'string' }
+//    ],
+//    //proxy: {
+//    //    type: 'ajax',
+//    //    url: 'artist.json',
+//    //    reader: {
+//    //        type: 'json',
+//    //        root: 'rows'
+//    //    }
+//    //}
+//});
