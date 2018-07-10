@@ -3,9 +3,10 @@
     alias: 'controller.modifyOrderController',
     
     deleteOrder: function () {
-        var select = this.getView().down('exportablegrid').getSelectionModel().getSelected().items[0].data;
+        var select = this.getView().down('exportablegrid').getSelectionModel().getSelected().items[0].data;       
         delete select.id;
         select.IsDeleted = true;
+        select.ModifyBy = localStorage.getItem("Account");
         Ext.MessageBox.confirm('delete', 'yes?', function (btn, text) {
             if (btn == "yes") {     
                 Ext.Ajax.request({
@@ -125,12 +126,14 @@
         var newDetailArray = [];
         var orderNo = orderValue.OrderNo;
         
+        orderValue.CreateBy = localStorage.getItem("Account");
+        orderValue.ModifyBy = localStorage.getItem("Account");
         orderDetailValue.forEach(function (element) {
             detailArray[detailArray.length] = element.data;
         });
         
         for(var i = 0; i < detailArray.length; i++) {
-            var a = { PurchaseOrderNo: orderNo, ProductId: detailArray[i].ProductId, OrderQty: detailArray[i].OrderQty }
+            var a = { PurchaseOrderNo: orderNo, ProductId: detailArray[i].ProductId, OrderQty: detailArray[i].OrderQty, ModifyBy: localStorage.getItem("Account"), CreateBy: detailArray[i].CreateBy, CreateDate: detailArray[i].CreateDate, Remark: detailArray[i].Remark }
             newDetailArray[newDetailArray.length] = a       
         };
 
@@ -226,7 +229,7 @@
         order.DeliveryDate = newOrder.DeliveryDate;
         order.DeliveryAddress = newOrder.DeliveryAddress;
         order.PayMethod = newOrder.PayMethod;
-        
+        order.ModifyBy = localStorage.getItem("Account");
         //get the detail     
         var orderDetailValue = this.getView().down('#orderDetailGrid').getStore().getData().items;
         var detailArray = [];
@@ -236,7 +239,7 @@
         });
         
         for (var i = 0; i < detailArray.length; i++) {
-            var a = { PurchaseOrderNo: order.OrderNo, ProductId: detailArray[i].ProductId, OrderQty: detailArray[i].OrderQty }
+            var a = { PurchaseOrderNo: order.OrderNo, ProductId: detailArray[i].ProductId, OrderQty: detailArray[i].OrderQty, ModifyBy: localStorage.getItem("Account"), CreateBy: detailArray[i].CreateBy, CreateDate: detailArray[i].CreateDate, Remark: detailArray[i].Remark }
             newDetailArray[newDetailArray.length] = a
         };
         

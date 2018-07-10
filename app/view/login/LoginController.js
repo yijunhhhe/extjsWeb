@@ -17,13 +17,12 @@ Ext.define('WebAppClassic.view.login.LoginController', {
 		    headers: { 'Content-Type': 'application/json' },
 		    success: function (Result) {
 		        var data = Ext.decode(Result.responseText);
-		        if (data.ErrorMessage == "user doesnt exist") {
-		            alert("user does not exist");
-		        } else if(data.ErrorMessage == "incorrect password") {
-		            alert("incorrect password");
+		        if (data.ErrorMessage == "user doesnt exist or password incorrect") {
+		            alert("user doesnt exist or password incorrect");
 		        } else {
 		            console.log(data);
 		            localStorage.setItem("LoggedIn", true);
+		            localStorage.setItem("Account", accountInfo.accountNo);
 		            loginView.destroy();
 		            Ext.create({
 		                xtype: 'app-main'

@@ -41,8 +41,7 @@ Ext.define('WebAppClassic.view.main.Main', {
 	    
 	    items: [
             {
-              xtype: 'button',
-              ui:'round',  
+              xtype: 'button',              
 	          text: 'Logout',         
 	          margin: '10 0', 
 	          handler: 'onClickButton'

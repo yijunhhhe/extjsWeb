@@ -25,9 +25,9 @@
         userInfo.IsDisabled = userModel.IsDisabled;
         userInfo.IsDeleted = userModel.IsDeleted;
         userInfo.Remark = userModel.Remark;
-        userInfo.CreateBy = userModel.CreateBy;
+        userInfo.CreateBy = localStorage.getItem("Account");
         userInfo.CreateDate = userModel.CreateDate;
-        userInfo.ModifyBy = userModel.ModifyBy;
+        userInfo.ModifyBy = localStorage.getItem("Account");
         userInfo.ModifyDate = userModel.ModifyDate;
         //console.log(JSON.stringify(userInfo));
         Ext.Ajax.request({
@@ -44,8 +44,7 @@
                     var store = Ext.getCmp('user').down("#searchuser").getStore();
                     store.reload();
                     addUserView.up('user').setActiveTab(0);
-                    addUserView.getForm().reset();
-                    
+                    addUserView.getForm().reset();     
                 } else {
                     alert(data.ErrorMessage);
                 }
@@ -56,12 +55,34 @@
     },
 
     searchUser: function () {
-        var mystore = this.getView().getStore();
-        var searchUserView = this.getView();
-        var userModel = searchUserView.getViewModel();
-        var account = userModel.data.AccountNo;
+        var filterObject = Ext.getCmp('searchUserId').down('#searchForm').getForm().getValues();
+        
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '/Api/Account/SearchAccount',
+            headers: { 'Content-Type': 'application/json' },
+            params: JSON.stringify(filterObject),
+            dataType: 'json',
+            success: function (Result) {
+                var data = Ext.decode(Result.responseText);
+                if (data.IsSuccess == true) {
+                    console.log("success");
+                    console.log(data.Data);
+                    Ext.getCmp('searchUserId').getStore().setData(data.Data);
+                    //Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(1);
+                    //Ext.getCmp("orderId").down("#totalNumberItem").setValue(data.Data.length);
+                    //console.log(orderView.down('grid').getStore());
+                } else {
+                    alert(data.ErrorMessage);
+                }
+            }
+        });
+        //var mystore = this.getView().getStore();
+        //var searchUserView = this.getView();
+        //var userModel = searchUserView.getViewModel();
+        //var account = userModel.data.AccountNo;
 
-        mystore.filter('AccountNo', account);
+        //mystore.filter('AccountNo', account);
         
     },
 
@@ -92,8 +113,7 @@
             userValue.Role = userValue.Role.toString();
         } else {
             userValue.Role = "";
-        }
-        
+        }      
         delete select.id;
         select.AccountNo = userValue.AccountNo;
         select.Password = userValue.Password;
@@ -105,6 +125,8 @@
         select.IsDisabled = userValue.IsDisabled;
         select.Remark = select.Remark;
         
+        select.ModifyBy = localStorage.getItem("Account");
+       
         Ext.Ajax.request({
             method: 'POST',
             url: '/api/Account/EditAccount',
@@ -132,12 +154,13 @@
         if (this.getView().getSelectionModel().getSelected().items.length == 0) {
             alert("please select an user");
         } else {
+            var currentUser = localStorage.getItem("Account");
             var data = this.getView().getSelectionModel().getSelected().items[0].data.Id;
             Ext.MessageBox.confirm('delete', 'yes?', function (btn, text) {
                 if (btn == "yes") {
                     Ext.Ajax.request({
                         method: 'POST',
-                        url: '/api/Account/DeleteAccount?Id=' + data,
+                        url: '/api/Account/DeleteAccount?Id=' + data + "&User= " + localStorage.getItem("Account") ,
                         headers: { 'Content-Type': 'application/json' },
                         dataType: 'json',
                         success: function (Result) {

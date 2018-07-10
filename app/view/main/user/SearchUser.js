@@ -29,13 +29,38 @@
         { text: 'IsDisabled', dataIndex: 'IsDisabled', flex: 1, },
     ],
 
-    tbar:[
+    tbar: [
         {
-            xtype: 'textfield', 
-            name: 'username',
-            fieldLabel: 'Search by Account',
-            bind: '{AccountNo}',
-        }, {
+            xtype: 'form',
+            layout: 'column',
+            itemId: 'searchForm',
+            defaults: {
+                labelWidth: 70,
+                width: 200,
+                margin: '0 5',
+            },
+            items: [
+                {
+                    width:250,
+                    labelWidth: 120,
+                    xtype: 'textfield',
+                    name: 'AccountNo',
+                    fieldLabel: 'Search by Account',
+                    bind: '{AccountNo}',
+                },
+                {
+                    itemId: 'Name',
+                    xtype: 'textfield',
+                    name: 'Name',
+                    fieldLabel: 'Name',
+                }, {
+                    itemId: 'Role',
+                    xtype: 'textfield',
+                    name: 'Role',
+                    fieldLabel: 'Role',
+                },]
+        },
+         {
             xtype: 'button',
             text: 'Search',
             listeners: {
