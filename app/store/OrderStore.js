@@ -1,5 +1,4 @@
-﻿
-Ext.define('WebAppClassic.store.OrderStore', {
+﻿Ext.define('WebAppClassic.store.OrderStore', {
     extend: 'Ext.data.Store',
     requires: [
         'WebAppClassic.model.OrderModel',
@@ -64,12 +63,28 @@ Ext.define('WebAppClassic.store.OrderDetailStore', {
     ],
 });
 
+Ext.define('WebAppClassic.store.SearchOrderStore', {
+    extend: 'Ext.data.Store',
+    fields: [
+        { name: 'Type', type: 'string' },
+
+    ],
+    data: [
+         { "Type": "OrderNo", },
+         { "Type": "DeliveryAddress", },
+    ]
+});
+
+Ext.define('WebAppClassic.store.ProductFilterStore', {
+    extend: 'Ext.data.Store',
+    fields: [
+        { name: 'Id', type: 'string' },
+        { name: 'Name', type: 'string' },
+        { name: 'Bacode', type: 'string' },
+        { name: 'Code', type: 'string' },
+        { name: 'Color', type: 'string' },
+        { name: 'Size', type: 'string' },
+    ],
+});
 
 
-
-//store.load({
-//    params: {
-//        start: 0,
-//        limit: 8
-//    }
-//});

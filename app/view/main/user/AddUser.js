@@ -19,10 +19,8 @@
             xtype: 'userfield',
         },
     ],
-
     buttons: [{
         text: 'Submit',
-        
         listeners: {
             click:'addUser'
         }

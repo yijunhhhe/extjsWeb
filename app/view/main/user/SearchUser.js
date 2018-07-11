@@ -80,10 +80,6 @@
             listeners: {
                 click:'deleteUser'
             }
-        }
-           
+        }    
     ],
-    
-   
-
 });

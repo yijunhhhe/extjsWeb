@@ -65,6 +65,5 @@ Ext.define('WebAppClassic.view.login.Login', {
         xtype: 'label',
         itemId: 'lbl',
         
-    }]
-		
+    }]		
 });

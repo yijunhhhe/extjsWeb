@@ -1,42 +1,7 @@
-﻿var search = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Type', type: 'string' },
-
-    ],
-
-    data: [
-         { "Type": "OrderNo", },
-         { "Type": "DeliveryAddress", },
-    ]
-});
-
-Ext.define('OrderDetailModel', {
-    extend: 'Ext.data.Model',
-    fields: [
-         { name: 'Id', type: 'string' },
-        { name: 'PurchaseOrderId', type: 'string' },
-        { name: 'PurchaseOrderNo', type: 'string' },
-        { name: 'ProductId', type: 'string' },
-        { name: 'OrderQty', type: 'string' },
-        { name: 'IsDeleted', type: 'string' },
-        { name: 'Remark', type: 'string' },
-        { name: 'CreateBy', type: 'string' },
-        { name: 'ModifyBy', type: 'string' },
-        { name: 'ModifyDate', type: 'string' },
-        { name: 'Bacode', type: 'string' },
-        { name: 'Name', type: 'string' },
-        { name: 'Size', type: 'string' },
-        { name: 'Color', type: 'string' },
-        { name: 'Count', type: 'string' }
-    ],
-});
- 
-
+﻿var search = Ext.create('WebAppClassic.store.SearchOrderStore');
 var orderStore = Ext.create('WebAppClassic.store.OrderStore');
 var orderDetailStore = Ext.create('WebAppClassic.store.OrderDetailStore');
-   // 
 
-//debugger;
 Ext.apply(Ext.form.field.VTypes, {
     daterange: function (val, field) {
         var date = field.parseDate(val);
@@ -61,7 +26,6 @@ Ext.apply(Ext.form.field.VTypes, {
     daterangeText: 'Start date must be less than end date'
 });
 
-
 Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
     extend: "Ext.panel.Panel",
     requires: [
@@ -79,7 +43,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
     height: 650,
     
     items: [{
-        
         region: 'center',
         store: orderStore,
         xtype: 'exportablegrid',       
@@ -89,7 +52,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
             xtype: 'pagingtoolbar',    
             displayInfo: true
         }],
-
         tbar: [{
             xtype: 'form',
             standardSubmit: true,
@@ -176,55 +138,19 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
             { text: 'DeliveryAddress', dataIndex: 'DeliveryAddress', flex: 1, },
             { text: 'DeliveryDate', dataIndex: 'DeliveryDate', flex: 1 },
             { text: 'Status', dataIndex: 'Status', flex: 1 },
-
-
         ],
         listeners: {
-            rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
-                var orderView = this.getView();
-                var viewData = this.getView().getSelectionModel().getSelected().items[0].data;
-                //var thisView = this.getView();
-
-                Ext.Ajax.request({
-                    method: 'GET',
-                    url: '/Api/PurchaseOrderDetail/SearchPurchaseOrderDetail?id=' + viewData.Id + '&code=a' + '&pageNum=0'+ '&itemNum=0',
-                    headers: { 'Content-Type': 'application/json' },
-                    // params: JSON.stringify(order),
-                    dataType: 'json',
-                    success: function (Result) {
-                        var data = Ext.decode(Result.responseText);
-                        //console.log(Result);
-                        if (data.IsSuccess == true) {
-                            //console.log(data.Data);
-                            Ext.getCmp('orderId').down('#orderDetailGrid').getStore().setData(data.Data);
-                            var count = orderView.getSelectionModel().getSelected().items[0].data.Remark;
-                            
-                            //console.log("ASdf");
-                            Ext.getCmp('orderId').down('#titleCount').setValue(count);
-                            Ext.getCmp('orderId').down('#orderDetailGrid').getStore().getProxy().setData(data.Data) ;
-                            Ext.getCmp('orderId').down('#orderDetailGrid').getStore().load(1);
-                           
-                            //Ext.getCmp('orderId').down('grid').getStore().reload();
-                            //thisView.destroy();
-                        } else {
-                            alert(data.ErrorMessage);
-                        }
-                    }
-                });
-            },
+            rowclick: 'orderClick',
         },
     },
     {
         height: 250,
         maxHeight: 400,
         itemId: 'orderDetailGrid',
-
         region: 'south',
         xtype: 'grid',
-
         store: orderDetailStore,
         columns: [
-            //{ text: 'ProductId', dataIndex: 'ProductId', flex: 1 },
             { text: 'Bacode', dataIndex: 'Bacode', flex: 1 },
             { text: 'Name', dataIndex: 'Name', flex: 1 },
             { text: 'Size', dataIndex: 'Size', flex: 1 },
@@ -236,9 +162,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
            xtype: 'displayfield',
            name: 'orderno',
            fieldLabel: 'OrderDetail',
-           //bind: '{OrderNo}',
-       }
-        ],
+       }],
         bbar: [{
             xtype: 'form',
             layout: 'column',
@@ -249,10 +173,8 @@ Ext.define("WebAppClassic.view.main.purchaseorder.Order", {
                 xtype: 'pagingtoolbar',
                 displayInfo: true
             }]
-
         }],
     }]
-
 });
 
 

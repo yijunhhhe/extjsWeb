@@ -1,14 +1,4 @@
-﻿var typeCombo = Ext.create('Ext.data.Store' ,{
-    fields: ['Type'],
-    data: [
-        { "Type": "通用", },
-        { "Type": "账号密码类", },
-        { "Type": "授权卡类", },
-        { "Type": "EPC", },
-        { "Type": "PWD", },
-        { "Type": "ALL", }
-    ]
-});
+﻿var typeCombo = Ext.create('WebAppClassic.store.TypeCombo');
 
 Ext.define('WebAppClassic.view.main.user.UserField', {
     extend: 'Ext.form.Panel',
@@ -75,8 +65,7 @@ Ext.define('WebAppClassic.view.main.user.UserField', {
             name: 'Role',
             inputValue: 'ADMIN',
         }
-        ],
-        
+        ],   
     }, {
         xtype:'checkboxfield',
         fieldLabel: 'Disabled',
@@ -89,24 +78,7 @@ Ext.define('WebAppClassic.view.main.user.UserField', {
         name: 'Remark',
         bind: '{Remark}',
     },
-    //{
-    //    fieldLabel: 'CreateBy',
-    //    name: 'CreateBy',
-    //    bind: '{CreateBy}',
-    //}, {
-    //    fieldLabel: 'CreateDate',
-    //    name: 'CreateDate',
-    //    bind: '{CreateDate}',
-    //}, {
-    //    fieldLabel: 'ModifyBy',
-    //    name: 'ModifyBy',
-    //    bind: '{ModifyBy}',
-    //}, {
-    //    fieldLabel: 'ModifyDate',
-    //    name: 'ModifyDate',
-    //    bind: '{ModifyDate}',
-    //},
-
+   
     ]
    
 });

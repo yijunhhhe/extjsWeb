@@ -8,8 +8,6 @@
         var addUserView = this.getView();
         var userModel = addUserView.down('#userfield').getViewModel().data;
         var userInfo = {};
-        //console.log(addUserView.down('#userfield').down('#checkbox').getValue().Role);
-        //console.log(addUserView.down('#userfield').getViewModel().data);
         userInfo.AccountNo = userModel.AccountNo;
         userInfo.Password = userModel.Password;
         userInfo.EpcCode = userModel.EpcCode;
@@ -49,14 +47,11 @@
                     alert(data.ErrorMessage);
                 }
             }
-
         })
-
     },
 
     searchUser: function () {
-        var filterObject = Ext.getCmp('searchUserId').down('#searchForm').getForm().getValues();
-        
+        var filterObject = Ext.getCmp('searchUserId').down('#searchForm').getForm().getValues(); 
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/Account/SearchAccount',
@@ -69,21 +64,11 @@
                     console.log("success");
                     console.log(data.Data);
                     Ext.getCmp('searchUserId').getStore().setData(data.Data);
-                    //Ext.getCmp("orderId").down("#pageBar").down("displayfield").setValue(1);
-                    //Ext.getCmp("orderId").down("#totalNumberItem").setValue(data.Data.length);
-                    //console.log(orderView.down('grid').getStore());
                 } else {
                     alert(data.ErrorMessage);
                 }
             }
-        });
-        //var mystore = this.getView().getStore();
-        //var searchUserView = this.getView();
-        //var userModel = searchUserView.getViewModel();
-        //var account = userModel.data.AccountNo;
-
-        //mystore.filter('AccountNo', account);
-        
+        });        
     },
 
     selectUser: function () {
@@ -101,7 +86,6 @@
             data.Role = data.Role.split(",");
             form.setValues(data);
         }
-       
     },
 
     modifyUser: function () {
@@ -123,8 +107,7 @@
         select.Type = userValue.Type;
         select.Role = userValue.Role;
         select.IsDisabled = userValue.IsDisabled;
-        select.Remark = select.Remark;
-        
+        select.Remark = select.Remark;      
         select.ModifyBy = localStorage.getItem("Account");
        
         Ext.Ajax.request({
@@ -176,11 +159,9 @@
                             }
                         },
                         failure: function (Result) {
-
                         }
                     });
                 } else {
-
                 }
             });
         }

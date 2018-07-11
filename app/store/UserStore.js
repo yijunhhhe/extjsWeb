@@ -15,8 +15,18 @@
             type: 'json',
             rootProperty: 'data'
         }
-
     }
+});
 
-
+Ext.define('WebAppClassic.store.TypeCombo', {
+    extend: 'Ext.data.Store',
+    fields: ['Type'],
+    data: [
+        { "Type": "通用", },
+        { "Type": "账号密码类", },
+        { "Type": "授权卡类", },
+        { "Type": "EPC", },
+        { "Type": "PWD", },
+        { "Type": "ALL", }
+    ]
 });

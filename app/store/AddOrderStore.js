@@ -90,7 +90,6 @@ Ext.define('WebAppClassic.store.BrandStore', {
     },
 });
 
-
 Ext.define('WebAppClassic.store.Payment', {
     extend: 'Ext.data.Store',
     fields: ['Type'],

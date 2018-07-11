@@ -21,11 +21,6 @@
     }, {
         title: 'edit user',
         xtype: 'edituser',
-
     }],
-
-
-
-
 
 });
