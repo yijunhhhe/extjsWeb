@@ -1,114 +1,8 @@
-﻿var orderDetail = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Id', type: 'string' },
-        { name: 'PurchaseOrderId', type: 'string' },
-        { name: 'PurchaseOrderNo', type: 'string' },
-        { name: 'ProductId', type: 'string' },
-        { name: 'OrderQty', type: 'string' },
-        { name: 'IsDeleted', type: 'string' },
-        { name: 'Remark', type: 'string' },
-        { name: 'CreateBy', type: 'string' },
-        { name: 'ModifyBy', type: 'string' },
-        { name: 'ModifyDate', type: 'string' },
-        { name: 'Bacode', type: 'string' },
-        { name: 'Name', type: 'string' },
-        { name: 'Size', type: 'string' },
-        { name: 'Color', type: 'string' },
-        { name: 'Code', type: 'string'}
-    ],
-})
-
-var payMethodCombo = Ext.create('Ext.data.Store', {
-    fields: ['PayMethod'],
-    data: [
-        { "PayMethod": "CASH", },
-        { "PayMethod": "TRANSFER", }, 
-    ]
-});
-
-var statusCombo = Ext.create('Ext.data.Store', {
-    fields: ['Status'],
-    data: [
-        { "Status": "CREATE", },
-        { "Status": "PROCESS", },
-    ]
-});
-
-var brand = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Id', type: 'string' },
-        { name: 'Type', type: 'string' },
-        { name: 'Name', type: 'string' },
-    ],
-
-    filters: [{
-        property: 'Type',
-        value: 'Brand'
-    }],
-    proxy: {
-        type: 'ajax',
-        url: '/Api/Organization/GetAllOrganization',
-        actionMethod: 'Get',
-        reader: {
-            type: 'json',
-            rootProperty: 'Data'
-        }
-    },
-    autoLoad: true,
-})
-
-var dc = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Id', type: 'string' },
-        { name: 'Type', type: 'string' },
-        { name: 'Name', type: 'string' },
-    ],
-
-    filters: [{
-        property: 'Type',
-        value: 'Store'
-    }],
-
-    proxy: {
-        type: 'ajax',
-        url: '/Api/Organization/GetAllOrganization',
-        actionMethod: 'Get',
-        reader: {
-            type: 'json',
-            rootProperty: 'Data'
-        }
-    },
-})
-var factory = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Id', type: 'string' },
-        { name: 'Type', type: 'string' },
-        { name: 'Name', type: 'string' },
-    ],
-
-    filters: [{
-        property: 'Type',
-        value: 'Factory'
-    }],
-
-    proxy: {
-        type: 'ajax',
-        url: '/Api/Organization/GetAllOrganization',
-        actionMethod: 'Get',
-        reader: {
-            type: 'json',
-            rootProperty: 'Data'
-        }
-    },
-})
-
-var product = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Id', type: 'string' },
-        { name: 'Name', type: 'string' },
-    ],
-
-})
+﻿var orderDetail = Ext.create('WebAppClassic.store.AddOrderStore');
+var payMethodCombo = Ext.create('WebAppClassic.store.PayMethod');
+var brand = Ext.create('WebAppClassic.store.BrandStore');
+var dc = Ext.create('WebAppClassic.store.DcStore');
+var factory = Ext.create('WebAppClassic.store.FactoryStore');
 
 Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
     extend: 'Ext.window.Window',
@@ -216,8 +110,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                 listeners: {
                     rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
                         //fill out the form
-                        var orderDetail = this.getView().getSelectionModel().getSelected().items[0].data;
-                        //console.log(orderDetail);         
+                        var orderDetail = this.getView().getSelectionModel().getSelected().items[0].data;       
                         this.getView().up('form').getForm().setValues(orderDetail);
                     },
                 },
@@ -235,13 +128,7 @@ Ext.define('WebAppClassic.view.main.purchaseorder.EditOrder', {
                 {
                     text: "Delete",
                     listeners: {
-                        click: function () {
-                            var store = this.up('form').down('grid').getStore();
-                            var index = store.indexOf(this.up('form').down('grid').getView().getSelectionModel().getSelection()[0]);
-                            if (index != -1) {
-                                this.up('form').down('grid').getView().getStore().removeAt(index);               
-                            }
-                        }
+                        click: 'deleteOrderDetail',
                     }
                 }],
             }

@@ -1,104 +1,8 @@
-﻿var orderDetail = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Id', type: 'string' },
-        { name: 'PurchaseOrderId', type: 'string' },
-        { name: 'PurchaseOrderNo', type: 'string' },
-        { name: 'ProductId', type: 'string' },
-        { name: 'OrderQty', type: 'string' },
-        { name: 'IsDeleted', type: 'string' },
-        { name: 'Remark', type: 'string' },
-        { name: 'CreateBy', type: 'string' },
-        { name: 'ModifyBy', type: 'string' },
-        { name: 'ModifyDate', type: 'string' },
-        { name: 'Bacode', type: 'string' },
-        { name: 'Name', type: 'string' },
-        { name: 'Size', type: 'string' },
-        { name: 'Color', type: 'string' },
-        { name: 'Code', type: 'string' },
-    ],
-})
-
-
-var brand = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Id', type: 'string' },
-        { name: 'Type', type: 'string' },
-        { name: 'Name', type: 'string' },
-    ],
-
-    filters: [{
-        property: 'Type',
-        value: 'Brand'
-    }],
-    proxy: {
-        type: 'ajax',
-        url: '/Api/Organization/GetAllOrganization',
-        actionMethod: 'Get',
-        reader: {
-            type: 'json',
-            rootProperty: 'Data'
-        }
-    },
-})
-var dc = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Id', type: 'string' },
-        { name: 'Type', type: 'string' },
-        { name: 'Name', type: 'string' },
-    ],
-
-    filters: [{
-        property: 'Type',
-        value: 'Store'
-    }],
-
-    proxy: {
-        type: 'ajax',
-        url: '/Api/Organization/GetAllOrganization',
-        actionMethod: 'Get',
-        reader: {
-            type: 'json',
-            rootProperty: 'Data'
-        }
-    },
-})
-var factory = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Id', type: 'string' },
-        { name: 'Type', type: 'string' },
-        { name: 'Name', type: 'string' },
-    ],
-
-    filters: [{
-        property: 'Type',
-        value: 'Factory'
-    }],
-
-    proxy: {
-        type: 'ajax',
-        url: '/Api/Organization/GetAllOrganization',
-        actionMethod: 'Get',
-        reader: {
-            type: 'json',
-            rootProperty: 'Data'
-        }
-    },
-})
-
-var product = Ext.create('Ext.data.Store', {
-    fields: [
-        { name: 'Id', type: 'string' },
-        { name: 'Name', type: 'string' },
-    ],
-})
-
-var payment = Ext.create('Ext.data.Store', {
-    fields: ['Type'],
-    data: [
-        { "Type": "CASH", },
-        { "Type": "TRANSFER", },
-    ]
-});
+﻿var orderDetail = Ext.create('WebAppClassic.store.AddOrderStore');
+var brand = Ext.create('WebAppClassic.store.BrandStore');
+var dc = Ext.create('WebAppClassic.store.DcStore');
+var factory = Ext.create('WebAppClassic.store.FactoryStore');
+var payment = Ext.create('WebAppClassic.store.Payment');
 
 Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
     extend: 'Ext.window.Window',
@@ -115,8 +19,9 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
     requires: [
         'WebAppClassic.view.main.purchaseorder.ModifyOrderController',
         'WebAppClassic.view.main.purchaseorder.OrderDetailViewModel',
+        'WebAppClassic.store.OrderStore',
+        'WebAppClassic.store.AddOrderStore',
     ],
-
     controller: 'modifyOrderController',
     viewModel: {
         type: "orderDetailViewModel"
@@ -129,7 +34,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
     width: 900,
     items: [
         {
-
             itemId: 'orderItemId',
             xtype: 'form',
             layout: 'column',
@@ -214,7 +118,6 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
             title: 'Order Detail',
             defaultType: 'textfield',
             items: [
-
             {
                 xtype: 'grid',
                 scrollable: true,
@@ -230,8 +133,7 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
                 listeners: {
                     rowclick: function (grid, record, tr, rowIndex, e, eOpts) {
                         //fill out the form
-                        var orderDetail = this.getView().getSelectionModel().getSelected().items[0].data;
-                        //console.log(orderDetail);
+                        var orderDetail = this.getView().getSelectionModel().getSelected().items[0].data;            
                         this.getView().up('form').getForm().setValues(orderDetail);
                     },
                 },
@@ -243,17 +145,9 @@ Ext.define("WebAppClassic.view.main.purchaseorder.AddOrder", {
                 }, {
                     text: "Delete",
                     listeners: {
-                        click: function () {
-                            var store = this.up('form').down('grid').getStore();
-                            var index = store.indexOf(this.up('form').down('grid').getView().getSelectionModel().getSelection()[0]);
-                            if (index != -1) {
-                                this.up('form').down('grid').getView().getStore().removeAt(index);
-                            }
-                        }
+                        click: 'deleteOrderDetail',
                     }
-                }
-                ]
-
+                }]
             },
             ],
 

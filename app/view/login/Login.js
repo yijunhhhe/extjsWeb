@@ -14,14 +14,11 @@ Ext.define('WebAppClassic.view.login.Login', {
         type: 'loginViewModel'
     },
 	
-	title: 'Login Window',
-	
-    bodyPadding: 10,
-   
+	title: 'Login Window',	
+    bodyPadding: 10,  
     closable: false,
     autoShow: true,
-	
-	
+
     items:{
 		bodyPadding:0,
         xtype: 'form',

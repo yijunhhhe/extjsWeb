@@ -35,6 +35,15 @@
             }
         });
     },
+
+    deleteOrderDetail: function(){
+        var store = this.getView().down('grid').getStore();
+        var index = store.indexOf(this.getView().down('grid').getView().getSelectionModel().getSelection()[0]);
+        if (index != -1) {
+            this.getView().down('grid').getView().getStore().removeAt(index);
+        }
+    },
+
     getExcel: function(){
         var filterObject = Ext.getCmp('orderId').down('#searchForm').getForm().getValues();
         var orderView = Ext.getCmp('orderId');
@@ -165,7 +174,6 @@
     },
 
     productFilter: function(){
-    
         var filter = this.getView().down('form').getForm().getValues();
 
         Ext.Ajax.request({
