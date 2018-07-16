@@ -54,9 +54,7 @@ Ext.define('WebAppClassic.view.login.Login', {
             {
                 text: 'Download',
                 listeners: {
-                    click: function () {
-                        window.open("/Api/Account/DownloadExcel");
-                    },
+                    tap: 'readTagClick',
                 }
             }
         ]

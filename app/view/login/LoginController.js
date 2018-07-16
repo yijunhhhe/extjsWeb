@@ -2,6 +2,14 @@ Ext.define('WebAppClassic.view.login.LoginController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.login',
 	
+    readTagClick: function(){
+        var me = this;
+        var result = apiController.getApi().readTag();
+        if (result) {
+            me.epcReceive(result);
+        }
+    },
+
     onLoginClick: function() {
 		var loginView = this.getView();
 		var viewModel = loginView.getViewModel();
