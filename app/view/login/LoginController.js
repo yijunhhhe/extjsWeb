@@ -2,7 +2,6 @@ Ext.define('WebAppClassic.view.login.LoginController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.login',
     initCtl: function () {
-        alert("yes");
         var me = this;
         me.IsScanning = false;
         if (!Base.isDesktop) {
@@ -49,6 +48,12 @@ Ext.define('WebAppClassic.view.login.LoginController', {
             return;
         }
         me.getView().down('#epc').setValue(epccode);
+       
+        var viewModel = Ext.getCmp('loginId').getViewModel();
+        var accountInfo = {};
+        accountInfo.accountNo = viewModel.data.accountNo;
+        accountInfo.password = viewModel.data.password;
+        accountInfo.EpcCode = epccode;
         Ext.Ajax.request({
             method: 'POST',
             url: '/Api/Account/Login',
@@ -63,7 +68,7 @@ Ext.define('WebAppClassic.view.login.LoginController', {
                     console.log(data);
                     localStorage.setItem("LoggedIn", true);
                     localStorage.setItem("Account", accountInfo.accountNo);
-                    loginView.destroy();
+                    Ext.getCmp('loginId').destroy();
                     Ext.create({
                         xtype: 'app-main'
                     });
@@ -83,6 +88,7 @@ Ext.define('WebAppClassic.view.login.LoginController', {
 		var accountInfo = {}
 		accountInfo.accountNo = viewModel.data.accountNo;
 		accountInfo.password = viewModel.data.password;
+		accountInfo.EpcCode = "A16361991258212075330000";
 		console.log(accountInfo);
 		Ext.Ajax.request({
             method:'POST',

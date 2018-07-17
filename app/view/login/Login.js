@@ -1,7 +1,7 @@
 Ext.define('WebAppClassic.view.login.Login', {
     extend: 'Ext.window.Window',
     xtype: 'login',
-
+    id: 'loginId',
     requires: [
         'WebAppClassic.view.login.LoginController',
         'Ext.form.Panel',
