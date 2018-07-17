@@ -7,43 +7,46 @@ Ext.define('WebAppClassic.view.login.Login', {
         'Ext.form.Panel',
 		'WebAppClassic.view.login.LoginViewModel'
     ],
-    navigation:'ui',
-	controller: 'login',
-	
-	viewModel: {
+    navigation: 'ui',
+    controller: 'login',
+
+    viewModel: {
         type: 'loginViewModel'
     },
-	
-	title: 'Login Window',	
-    bodyPadding: 10,  
+    
+    title: 'Login Window',
+    bodyPadding: 10,
     closable: false,
     autoShow: true,
-
-    items:{
-		bodyPadding:0,
+    listeners: {
+        painted: 'initCtl'
+    },
+    items: {
+        bodyPadding: 0,
         xtype: 'form',
         reference: 'form',
         defaultType: 'textfield',
         items: [
             {
-            xtype: 'textfield',
-            name: 'username',
-            fieldLabel: 'Username',
-            allowBlank: false,
-			bind: '{accountNo}'
-        }, {
-            xtype: 'textfield',
-            name: 'password',
-            inputType: 'password',
-            fieldLabel: 'Password',
-			bind: '{password}',
-		
-            allowBlank: false,
-        }, {
-            xtype: 'displayfield',
-            hideEmptyLabel: false,
-            value: 'Enter any non-blank password'
-        }],
+                itemId: 'epc',
+                xtype: 'textfield',
+                name: 'username',
+                fieldLabel: 'Username',
+                allowBlank: false,
+                bind: '{accountNo}'
+            }, {
+                xtype: 'textfield',
+                name: 'password',
+                inputType: 'password',
+                fieldLabel: 'Password',
+                bind: '{password}',
+
+                allowBlank: false,
+            }, {
+                xtype: 'displayfield',
+                hideEmptyLabel: false,
+                value: 'Enter any non-blank password'
+            }],
         buttons: [{
             text: 'Login',
             formBind: true,
@@ -51,17 +54,17 @@ Ext.define('WebAppClassic.view.login.Login', {
                 click: 'onLoginClick'
             }
         },
-            {
-                text: 'Download',
-                listeners: {
-                    tap: 'readTagClick',
-                }
+        {
+            text: 'ReadTag',
+            listeners: {
+                click: 'readTagClick',
             }
+        }
         ]
     },
     fbar: [{
         xtype: 'label',
         itemId: 'lbl',
-        
-    }]		
+
+    }]
 });

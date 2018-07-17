@@ -1,12 +1,12 @@
-Ext.define('WebAppModern.view.main.BaseController', {
+Ext.define('WebAppClassic.view.login.BaseController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.base',
     singleton: true,
 
     requires: [
-        'Ext.Toast',
-        'Ext.MessageBox',
-        'Ext.Toolbar'
+        'Ext.window.Toast',
+        'Ext.window.MessageBox',
+        'Ext.toolbar.Toolbar'
     ],
 
     isDesktop: !window.AndroidApi,

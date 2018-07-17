@@ -10,7 +10,9 @@ Ext.define('WebAppClassic.Application', {
 
 	requires:[
 		'WebAppClassic.view.main.Main',
-		'WebAppClassic.view.login.Login'
+		'WebAppClassic.view.login.Login',
+        'WebAppClassic.view.login.Api',
+        'WebAppClassic.view.login.BaseController'
 	],
     quickTips: false,
     platformConfig: {

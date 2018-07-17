@@ -1,5 +1,5 @@
-﻿Ext.define('WebAppModern.view.main.Api', {
-    extend: 'Ext.app.ViewController',
+﻿Ext.define('WebAppClassic.view.login.Api', {
+    extend: 'Ext.window.Window',
     singleton: true,
     alias: 'controller.api',
 
@@ -9,14 +9,16 @@
 
     constructor: function () {
         var me = this;
-        if (window.AndroidApi)
+        if (window.AndroidApi) {
             me.apiBuild();
+        }
     },
 
     apiBuild: function () {
-        var me = this,
-            android = window.AndroidApi;
+        var me = this;
+        android = window.AndroidApi;
         apiController = me;
+        
         onAndroidMessage = this.receiver;
         me.api = api;
     },
